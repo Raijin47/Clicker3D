@@ -94,7 +94,297 @@ ModelImporter:
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
-    extraExposedTransformPaths: []
+    extraExposedTransformPaths:
+    - Armature/Hips
+    - Armature/Hips/cf_j_siri_L
+    - Armature/Hips/cf_j_siri_R
+    - Armature/Hips/cf_j_sk_00_00 15251
+    - Armature/Hips/cf_j_sk_00_00 16645
+    - Armature/Hips/cf_j_sk_01_00 15321
+    - Armature/Hips/cf_j_sk_02_00 15391
+    - Armature/Hips/cf_j_sk_00_00 15251/cf_j_sk_00_01 15261
+    - Armature/Hips/cf_j_sk_00_00 15251/cf_j_sk_00_01 15261/cf_j_sk_00_02 15271
+    - Armature/Hips/cf_j_sk_00_00 15251/cf_j_sk_00_01 15261/cf_j_sk_00_02 15271/cf_j_sk_00_03
+      15281
+    - Armature/Hips/cf_j_sk_00_00 15251/cf_j_sk_00_01 15261/cf_j_sk_00_02 15271/cf_j_sk_00_03
+      15281/cf_j_sk_00_04 15291
+    - Armature/Hips/cf_j_sk_00_00 16645/cf_j_sk_00_01 16655
+    - Armature/Hips/cf_j_sk_00_00 16645/cf_j_sk_00_01 16655/cf_j_sk_00_02 16665
+    - Armature/Hips/cf_j_sk_00_00 16645/cf_j_sk_00_01 16655/cf_j_sk_00_02 16665/cf_j_sk_00_03
+      16675
+    - Armature/Hips/cf_j_sk_00_00 16645/cf_j_sk_00_01 16655/cf_j_sk_00_02 16665/cf_j_sk_00_03
+      16675/cf_j_sk_00_04 16685
+    - Armature/Hips/cf_j_sk_01_00 15321/cf_j_sk_01_01 15331
+    - Armature/Hips/cf_j_sk_01_00 15321/cf_j_sk_01_01 15331/cf_j_sk_01_02 15341
+    - Armature/Hips/cf_j_sk_01_00 15321/cf_j_sk_01_01 15331/cf_j_sk_01_02 15341/cf_j_sk_01_03
+      15351
+    - Armature/Hips/cf_j_sk_01_00 15321/cf_j_sk_01_01 15331/cf_j_sk_01_02 15341/cf_j_sk_01_03
+      15351/cf_j_sk_01_04 15361
+    - Armature/Hips/cf_j_sk_01_00 16715
+    - Armature/Hips/cf_j_sk_01_00 16715/cf_j_sk_01_01 16725
+    - Armature/Hips/cf_j_sk_01_00 16715/cf_j_sk_01_01 16725/cf_j_sk_01_02 16735
+    - Armature/Hips/cf_j_sk_01_00 16715/cf_j_sk_01_01 16725/cf_j_sk_01_02 16735/cf_j_sk_01_03
+      16745
+    - Armature/Hips/cf_j_sk_01_00 16715/cf_j_sk_01_01 16725/cf_j_sk_01_02 16735/cf_j_sk_01_03
+      16745/cf_j_sk_01_04 16755
+    - Armature/Hips/cf_j_sk_02_00 15391/cf_j_sk_02_01 15401
+    - Armature/Hips/cf_j_sk_02_00 15391/cf_j_sk_02_01 15401/cf_j_sk_02_02 15411
+    - Armature/Hips/cf_j_sk_02_00 15391/cf_j_sk_02_01 15401/cf_j_sk_02_02 15411/cf_j_sk_02_03
+      15421
+    - Armature/Hips/cf_j_sk_02_00 15391/cf_j_sk_02_01 15401/cf_j_sk_02_02 15411/cf_j_sk_02_03
+      15421/cf_j_sk_02_04 15431
+    - Armature/Hips/cf_j_sk_02_00 16785
+    - Armature/Hips/cf_j_sk_02_00 16785/cf_j_sk_02_01 16795
+    - Armature/Hips/cf_j_sk_02_00 16785/cf_j_sk_02_01 16795/cf_j_sk_02_02 16805
+    - Armature/Hips/cf_j_sk_02_00 16785/cf_j_sk_02_01 16795/cf_j_sk_02_02 16805/cf_j_sk_02_03
+      16815
+    - Armature/Hips/cf_j_sk_02_00 16785/cf_j_sk_02_01 16795/cf_j_sk_02_02 16805/cf_j_sk_02_03
+      16815/cf_j_sk_02_04 16825
+    - Armature/Hips/cf_j_sk_03_00 15461
+    - Armature/Hips/cf_j_sk_03_00 15461/cf_j_sk_03_01 15471
+    - Armature/Hips/cf_j_sk_03_00 15461/cf_j_sk_03_01 15471/cf_j_sk_03_02 15481
+    - Armature/Hips/cf_j_sk_03_00 15461/cf_j_sk_03_01 15471/cf_j_sk_03_02 15481/cf_j_sk_03_03
+      15491
+    - Armature/Hips/cf_j_sk_03_00 16855
+    - Armature/Hips/cf_j_sk_03_00 16855/cf_j_sk_03_01 16865
+    - Armature/Hips/cf_j_sk_03_00 16855/cf_j_sk_03_01 16865/cf_j_sk_03_02 16875
+    - Armature/Hips/cf_j_sk_03_00 16855/cf_j_sk_03_01 16865/cf_j_sk_03_02 16875/cf_j_sk_03_03
+      16885
+    - Armature/Hips/cf_j_sk_03_00 16855/cf_j_sk_03_01 16865/cf_j_sk_03_02 16875/cf_j_sk_03_03
+      16885/cf_j_sk_03_04 16895
+    - Armature/Hips/cf_j_sk_04_00 15531
+    - Armature/Hips/cf_j_sk_04_00 15531/cf_j_sk_04_01 15541
+    - Armature/Hips/cf_j_sk_04_00 15531/cf_j_sk_04_01 15541/cf_j_sk_04_02 15551
+    - Armature/Hips/cf_j_sk_04_00 15531/cf_j_sk_04_01 15541/cf_j_sk_04_02 15551/cf_j_sk_04_03
+      15561
+    - Armature/Hips/cf_j_sk_04_00 15531/cf_j_sk_04_01 15541/cf_j_sk_04_02 15551/cf_j_sk_04_03
+      15561/cf_j_sk_04_04 15571
+    - Armature/Hips/cf_j_sk_04_00 16925
+    - Armature/Hips/cf_j_sk_04_00 16925/cf_j_sk_04_01 16935
+    - Armature/Hips/cf_j_sk_04_00 16925/cf_j_sk_04_01 16935/cf_j_sk_04_02 16945
+    - Armature/Hips/cf_j_sk_04_00 16925/cf_j_sk_04_01 16935/cf_j_sk_04_02 16945/cf_j_sk_04_03
+      16955
+    - Armature/Hips/cf_j_sk_04_00 16925/cf_j_sk_04_01 16935/cf_j_sk_04_02 16945/cf_j_sk_04_03
+      16955/cf_j_sk_04_04 16965
+    - Armature/Hips/cf_j_sk_05_00 15601
+    - Armature/Hips/cf_j_sk_05_00 15601/cf_j_sk_05_01 15611
+    - Armature/Hips/cf_j_sk_05_00 15601/cf_j_sk_05_01 15611/cf_j_sk_05_02 15621
+    - Armature/Hips/cf_j_sk_05_00 15601/cf_j_sk_05_01 15611/cf_j_sk_05_02 15621/cf_j_sk_05_03
+      15631
+    - Armature/Hips/cf_j_sk_05_00 15601/cf_j_sk_05_01 15611/cf_j_sk_05_02 15621/cf_j_sk_05_03
+      15631/cf_j_sk_05_04 15641
+    - Armature/Hips/cf_j_sk_05_00 16995
+    - Armature/Hips/cf_j_sk_05_00 16995/cf_j_sk_05_01 17005
+    - Armature/Hips/cf_j_sk_05_00 16995/cf_j_sk_05_01 17005/cf_j_sk_05_02 17015
+    - Armature/Hips/cf_j_sk_05_00 16995/cf_j_sk_05_01 17005/cf_j_sk_05_02 17015/cf_j_sk_05_03
+      17025
+    - Armature/Hips/cf_j_sk_05_00 16995/cf_j_sk_05_01 17005/cf_j_sk_05_02 17015/cf_j_sk_05_03
+      17025/cf_j_sk_05_04 17035
+    - Armature/Hips/cf_j_sk_06_00 15671
+    - Armature/Hips/cf_j_sk_06_00 15671/cf_j_sk_06_01 15681
+    - Armature/Hips/cf_j_sk_06_00 15671/cf_j_sk_06_01 15681/cf_j_sk_06_02 15691
+    - Armature/Hips/cf_j_sk_06_00 15671/cf_j_sk_06_01 15681/cf_j_sk_06_02 15691/cf_j_sk_06_03
+      15701
+    - Armature/Hips/cf_j_sk_06_00 15671/cf_j_sk_06_01 15681/cf_j_sk_06_02 15691/cf_j_sk_06_03
+      15701/cf_j_sk_06_04 15711
+    - Armature/Hips/cf_j_sk_06_00 17065
+    - Armature/Hips/cf_j_sk_06_00 17065/cf_j_sk_06_01 17075
+    - Armature/Hips/cf_j_sk_06_00 17065/cf_j_sk_06_01 17075/cf_j_sk_06_02 17085
+    - Armature/Hips/cf_j_sk_06_00 17065/cf_j_sk_06_01 17075/cf_j_sk_06_02 17085/cf_j_sk_06_03
+      17095
+    - Armature/Hips/cf_j_sk_06_00 17065/cf_j_sk_06_01 17075/cf_j_sk_06_02 17085/cf_j_sk_06_03
+      17095/cf_j_sk_06_04 17105
+    - Armature/Hips/cf_j_sk_07_00 15741
+    - Armature/Hips/cf_j_sk_07_00 15741/cf_j_sk_07_01 15751
+    - Armature/Hips/cf_j_sk_07_00 15741/cf_j_sk_07_01 15751/cf_j_sk_07_02 15761
+    - Armature/Hips/cf_j_sk_07_00 15741/cf_j_sk_07_01 15751/cf_j_sk_07_02 15761/cf_j_sk_07_03
+      15771
+    - Armature/Hips/cf_j_sk_07_00 15741/cf_j_sk_07_01 15751/cf_j_sk_07_02 15761/cf_j_sk_07_03
+      15771/cf_j_sk_07_04 15781
+    - Armature/Hips/cf_j_sk_07_00 17135
+    - Armature/Hips/cf_j_sk_07_00 17135/cf_j_sk_07_01 17145
+    - Armature/Hips/cf_j_sk_07_00 17135/cf_j_sk_07_01 17145/cf_j_sk_07_02 17155
+    - Armature/Hips/cf_j_sk_07_00 17135/cf_j_sk_07_01 17145/cf_j_sk_07_02 17155/cf_j_sk_07_03
+      17165
+    - Armature/Hips/cf_j_sk_07_00 17135/cf_j_sk_07_01 17145/cf_j_sk_07_02 17155/cf_j_sk_07_03
+      17165/cf_j_sk_07_04 17175
+    - Armature/Hips/Left leg
+    - Armature/Hips/Left leg/Left knee
+    - Armature/Hips/Left leg/Left knee/cf_j_leg03_L
+    - Armature/Hips/Left leg/Left knee/Left ankle
+    - Armature/Hips/Left leg/Left knee/Left ankle/Left toe
+    - Armature/Hips/Left leg/Thigh_L 18775
+    - Armature/Hips/Right leg
+    - Armature/Hips/Right leg/Right knee
+    - Armature/Hips/Right leg/Right knee/cf_j_leg03_R
+    - Armature/Hips/Right leg/Right knee/Right ankle
+    - Armature/Hips/Right leg/Right knee/Right ankle/Right toe
+    - Armature/Hips/Spine
+    - Armature/Hips/Spine/Chest
+    - Armature/Hips/Spine/Chest/Upper Chest
+    - Armature/Hips/Spine/Chest/Upper Chest/bow_L2 15292
+    - Armature/Hips/Spine/Chest/Upper Chest/bow_L2 15292/bow_L3 15302
+    - Armature/Hips/Spine/Chest/Upper Chest/bow_L2 15292/bow_L3 15302/bow_L4 15312
+    - Armature/Hips/Spine/Chest/Upper Chest/bow_R2 15332
+    - Armature/Hips/Spine/Chest/Upper Chest/bow_R2 15332/bow_R3 15342
+    - Armature/Hips/Spine/Chest/Upper Chest/bow_R2 15332/bow_R3 15342/bow_R4 15352
+    - Armature/Hips/Spine/Chest/Upper Chest/cf_d_bust00
+    - Armature/Hips/Spine/Chest/Upper Chest/cf_d_bust00/cf_j_bust01_L
+    - Armature/Hips/Spine/Chest/Upper Chest/cf_d_bust00/cf_j_bust01_L/cf_j_bust03_L
+    - Armature/Hips/Spine/Chest/Upper Chest/cf_d_bust00/cf_j_bust01_L/cf_j_bust03_L/cf_j_bnip02root_L
+    - Armature/Hips/Spine/Chest/Upper Chest/cf_d_bust00/cf_j_bust01_L/cf_j_bust03_L/cf_j_bnip02root_L/cf_j_bnip02_L
+    - Armature/Hips/Spine/Chest/Upper Chest/cf_d_bust00/cf_j_bust01_R
+    - Armature/Hips/Spine/Chest/Upper Chest/cf_d_bust00/cf_j_bust01_R/cf_j_bust03_R
+    - Armature/Hips/Spine/Chest/Upper Chest/cf_d_bust00/cf_j_bust01_R/cf_j_bust03_R/cf_j_bnip02root_R
+    - Armature/Hips/Spine/Chest/Upper Chest/cf_d_bust00/cf_j_bust01_R/cf_j_bust03_R/cf_j_bnip02root_R/cf_j_bnip02_R
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/Left
+      wrist
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/Left
+      wrist/IndexFinger1_L
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/Left
+      wrist/IndexFinger1_L/IndexFinger2_L
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/Left
+      wrist/IndexFinger1_L/IndexFinger2_L/IndexFinger3_L
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/Left
+      wrist/LittleFinger1_L
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/Left
+      wrist/LittleFinger1_L/LittleFinger2_L
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/Left
+      wrist/LittleFinger1_L/LittleFinger2_L/LittleFinger3_L
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/Left
+      wrist/MiddleFinger1_L
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/Left
+      wrist/MiddleFinger1_L/MiddleFinger2_L
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/Left
+      wrist/MiddleFinger1_L/MiddleFinger2_L/MiddleFinger3_L
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/Left
+      wrist/RingFinger1_L
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/Left
+      wrist/RingFinger1_L/RingFinger2_L
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/Left
+      wrist/RingFinger1_L/RingFinger2_L/RingFinger3_L
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/Left
+      wrist/Thumb0_L
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/Left
+      wrist/Thumb0_L/Thumb1_L
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/Left
+      wrist/Thumb0_L/Thumb1_L/Thumb2_L
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/o_juz
+      10822
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/o_juz_r
+      10852
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/o_syusyu
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/o_watch01
+      12055
+    - Armature/Hips/Spine/Chest/Upper Chest/Left shoulder/Left arm/Left elbow/on_acs_watchoval
+      10984
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/acs_J_neck_00 15067
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/acs_J_neck_00 15067/acs_J_neck_01
+      15077
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/acs_J_neck_00 15214
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/acs_J_neck_00 15214/acs_J_neck_01
+      15224
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairB_top
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairB_top/cf_J_hairB_00
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairB_top/cf_J_hairB_00/cf_J_hairB_01
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairB_top/cf_J_hairB_00/cf_J_hairB_01/cf_J_hairB_02
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairB_top/cf_J_hairB_00/cf_J_hairB_01/cf_J_hairB_02/cf_J_hairB_03
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairB_top/cf_J_hairB_00/cf_J_hairB_01/cf_J_hairB_02/cf_J_hairB_03/cf_J_hairB_04
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairB_top/cf_J_hairB_00/cf_J_hairB_01/cf_J_hairB_02/cf_J_hairB_03/cf_J_hairB_04/cf_J_hairB_05
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairB_top/cf_J_hairBL_00
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairB_top/cf_J_hairBL_00/cf_J_hairBL_01
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairB_top/cf_J_hairBL_00/cf_J_hairBL_01/cf_J_hairBL_02
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairB_top/cf_J_hairBL_00/cf_J_hairBL_01/cf_J_hairBL_02/cf_J_hairBL_03
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairB_top/cf_J_hairBL_00/cf_J_hairBL_01/cf_J_hairBL_02/cf_J_hairBL_03/cf_J_hairBL_04
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairB_top/cf_J_hairBR_00
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairB_top/cf_J_hairBR_00/cf_J_hairBR_01
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairB_top/cf_J_hairBR_00/cf_J_hairBR_01/cf_J_hairBR_02
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairB_top/cf_J_hairBR_00/cf_J_hairBR_01/cf_J_hairBR_02/cf_J_hairBR_03
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairB_top/cf_J_hairBR_00/cf_J_hairBR_01/cf_J_hairBR_02/cf_J_hairBR_03/cf_J_hairBR_04
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairF_top
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairF_top/cf_J_hairFL_02_00
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairF_top/cf_J_hairFL_02_00/cf_J_hairFL_02_01
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairF_top/cf_J_hairFL_02_00/cf_J_hairFL_02_01/cf_J_hairFL_02_02
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/cf_J_hairF_top/cf_J_hairFL_02_00/cf_J_hairFL_02_01/cf_J_hairFL_02_02/cf_J_hairFL_02_03
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/Eye Controller
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/joint2 12978
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/joint2 12978/joint5 12988
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/Left Eye
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/o_acs_ear_star01_01 12997
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/o_acs_ear_star01_01 13416
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/o_acs_ear_star01_02 12967
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/o_acs_ear_star01_02 13386
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/on_cateat_l 13246
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/on_cateat_r 13196
+    - Armature/Hips/Spine/Chest/Upper Chest/Neck/Head/Right Eye
+    - Armature/Hips/Spine/Chest/Upper Chest/Right shoulder
+    - Armature/Hips/Spine/Chest/Upper Chest/Right shoulder/Right arm
+    - Armature/Hips/Spine/Chest/Upper Chest/Right shoulder/Right arm/Right elbow
+    - Armature/Hips/Spine/Chest/Upper Chest/Right shoulder/Right arm/Right elbow/Right
+      wrist
+    - Armature/Hips/Spine/Chest/Upper Chest/Right shoulder/Right arm/Right elbow/Right
+      wrist/IndexFinger1_R
+    - Armature/Hips/Spine/Chest/Upper Chest/Right shoulder/Right arm/Right elbow/Right
+      wrist/IndexFinger1_R/IndexFinger2_R
+    - Armature/Hips/Spine/Chest/Upper Chest/Right shoulder/Right arm/Right elbow/Right
+      wrist/IndexFinger1_R/IndexFinger2_R/IndexFinger3_R
+    - Armature/Hips/Spine/Chest/Upper Chest/Right shoulder/Right arm/Right elbow/Right
+      wrist/LittleFinger1_R
+    - Armature/Hips/Spine/Chest/Upper Chest/Right shoulder/Right arm/Right elbow/Right
+      wrist/LittleFinger1_R/LittleFinger2_R
+    - Armature/Hips/Spine/Chest/Upper Chest/Right shoulder/Right arm/Right elbow/Right
+      wrist/LittleFinger1_R/LittleFinger2_R/LittleFinger3_R
+    - Armature/Hips/Spine/Chest/Upper Chest/Right shoulder/Right arm/Right elbow/Right
+      wrist/MiddleFinger1_R
+    - Armature/Hips/Spine/Chest/Upper Chest/Right shoulder/Right arm/Right elbow/Right
+      wrist/MiddleFinger1_R/MiddleFinger2_R
+    - Armature/Hips/Spine/Chest/Upper Chest/Right shoulder/Right arm/Right elbow/Right
+      wrist/MiddleFinger1_R/MiddleFinger2_R/MiddleFinger3_R
+    - Armature/Hips/Spine/Chest/Upper Chest/Right shoulder/Right arm/Right elbow/Right
+      wrist/RingFinger1_R
+    - Armature/Hips/Spine/Chest/Upper Chest/Right shoulder/Right arm/Right elbow/Right
+      wrist/RingFinger1_R/RingFinger2_R
+    - Armature/Hips/Spine/Chest/Upper Chest/Right shoulder/Right arm/Right elbow/Right
+      wrist/RingFinger1_R/RingFinger2_R/RingFinger3_R
+    - Armature/Hips/Spine/Chest/Upper Chest/Right shoulder/Right arm/Right elbow/Right
+      wrist/Thumb0_R
+    - Armature/Hips/Spine/Chest/Upper Chest/Right shoulder/Right arm/Right elbow/Right
+      wrist/Thumb0_R/Thumb1_R
+    - Armature/Hips/Spine/Chest/Upper Chest/Right shoulder/Right arm/Right elbow/Right
+      wrist/Thumb0_R/Thumb1_R/Thumb2_R
+    - Armature/Hips/X_T_TAIL1 18746
+    - Armature/Hips/X_T_TAIL1 18746/X_T_TAIL2 18756
+    - Armature/Hips/X_T_TAIL1 18746/X_T_TAIL2 18756/X_T_TAIL3 18766
+    - Armature/Hips/X_T_TAIL1 18746/X_T_TAIL2 18756/X_T_TAIL3 18766/X_T_TAIL4 18776
+    - Armature/Hips/X_T_TAIL1 18746/X_T_TAIL2 18756/X_T_TAIL3 18766/X_T_TAIL4 18776/X_T_TAIL5
+      18786
+    - Armature/Hips/X_T_TAIL1 18746/X_T_TAIL2 18756/X_T_TAIL3 18766/X_T_TAIL4 18776/X_T_TAIL5
+      18786/X_T_TAIL6 18796
+    - Armature/Hips/X_T_TAIL1 18746/X_T_TAIL2 18756/X_T_TAIL3 18766/X_T_TAIL4 18776/X_T_TAIL5
+      18786/X_T_TAIL6 18796/X_T_TAIL7 18806
+    - Armature/Hips/X_T_TAIL1 18746/X_T_TAIL2 18756/X_T_TAIL3 18766/X_T_TAIL4 18776/X_T_TAIL5
+      18786/X_T_TAIL6 18796/X_T_TAIL7 18806/X_T_TAIL8 18816
+    - Armature/Hips/X_T_TAIL1 18746/X_T_TAIL2 18756/X_T_TAIL3 18766/X_T_TAIL4 18776/X_T_TAIL5
+      18786/X_T_TAIL6 18796/X_T_TAIL7 18806/X_T_TAIL8 18816/X_T_TAIL9 18826
+    - Armature/Hips/X_T_TAIL1 18746/X_T_TAIL2 18756/X_T_TAIL3 18766/X_T_TAIL4 18776/X_T_TAIL5
+      18786/X_T_TAIL6 18796/X_T_TAIL7 18806/X_T_TAIL8 18816/X_T_TAIL9 18826/X_T_TAIL10
+      18836
+    - Body
+    - Body/Hair
+    - Outfit 00
+    - Outfit 01
+    - Outfit 02
+    - Outfit 03
+    - Outfit 04
+    - Outfit 05
+    - Outfit 06
+    - Outfit 07
+    - Outfit 08
     extraUserProperties: []
     clipAnimations: []
     isReadable: 0
@@ -1234,7 +1524,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName: Hips
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
