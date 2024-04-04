@@ -427,11 +427,11 @@ public class DynamicBoneCollider : DynamicBoneColliderBase
 
         if (m_Bound == Bound.Outside)
         {
-            Gizmos.color = new UnityEngine.Color(1,1,0,0.2f);
+            Gizmos.color = new UnityEngine.Color(1,0,0,0.5f);
         }
         else
         {
-            Gizmos.color = UnityEngine.Color.magenta;
+            Gizmos.color = new UnityEngine.Color(1,0,1,1);
         }
 
         switch (m_CollideType)
