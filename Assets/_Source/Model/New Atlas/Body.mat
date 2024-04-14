@@ -60,7 +60,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 65568b8a44a44c446985ce2c1a82e391, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2d2daca30c8aa9045807bd618301e8d6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskFReflection:
@@ -80,7 +80,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 1d0535a4c03caaa4689943632c6fb984, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -119,7 +119,7 @@ Material:
     - _DoubleSided: 2
     - _DoubleSidedOutline: 1
     - _DstBlend: 0
-    - _EnableTextureTransparent: 0
+    - _EnableTextureTransparent: 1
     - _FReflectionIntensity: 0
     - _FReflectionRoughtness: 0
     - _FarDistanceMaxWidth: 10
