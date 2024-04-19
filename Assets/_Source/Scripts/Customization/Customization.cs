@@ -5,13 +5,14 @@ using Assets.SimpleLocalization;
 
 public class Customization : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _skins;
+    [SerializeField] private Outfit[] _outfits;
     [SerializeField] private GameObject _purchasedSkinInfo;
     [SerializeField] private GameObject _buySkinInfo;
     [SerializeField] private Button _skinButton;
     [SerializeField] private Sprite[] _skinIcons;
     [SerializeField] private Material _hairMaterial;
     [SerializeField] private Material _eyesMaterial;
+    [SerializeField] private Material _bodyMaterial;
     [SerializeField] private LocalizedText _nameText;
     [SerializeField] private LocalizedText _infoText;
     [SerializeField] private Image _skinImage;
@@ -19,11 +20,14 @@ public class Customization : MonoBehaviour
     [SerializeField] private string[] _skinNames;
     [SerializeField] private int _skinPrice;
 
+    [SerializeField] private Texture[] _bodyTextures;
+
     private int _currentSkinEquip;
     private int _currentHairColor;
     private int _currentEyesColor;
     private int _currentSkinID;
 
+    private readonly int _shaderMainTexture = Shader.PropertyToID("_MainTex");
     private readonly int _shaderMainColor = Shader.PropertyToID("_MainColor");
     private readonly int _shaderHighlight = Shader.PropertyToID("_HighlightColor");
     private readonly string _infoEquip = "Equip";
@@ -40,7 +44,6 @@ public class Customization : MonoBehaviour
         SetSkin();
         UpdateUI();
 
-
         for (int i = 0; i < _skinColors.Length; i++) _skinColors[i].Init();
     }
 
@@ -53,9 +56,11 @@ public class Customization : MonoBehaviour
 
     private void SetSkin() 
     {
-        _skins[_currentSkinEquip].SetActive(false);
+        _outfits[_currentSkinEquip].Skin.SetActive(false);
         _currentSkinEquip = _currentSkinID;
-        _skins[_currentSkinEquip].SetActive(true);
+        _outfits[_currentSkinEquip].Skin.SetActive(true);
+
+        _bodyMaterial.SetTexture(_shaderMainTexture, _bodyTextures[_outfits[_currentSkinEquip].BodyType]);
         YandexGame.savesData.CurrentSkinEquip = _currentSkinID;
     }
 
@@ -143,4 +148,14 @@ public class Customization : MonoBehaviour
     {
         _skinColors[id].Unlock();
     }
+}
+
+[System.Serializable]
+public class Outfit
+{
+    [SerializeField] private GameObject _skin;
+    [SerializeField] private int _bodyType;
+
+    public GameObject Skin => _skin;
+    public int BodyType => _bodyType;
 }
