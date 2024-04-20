@@ -22,6 +22,7 @@
         public int CurrentSkinEquip;
         public int CurrentHairColor;
         public int CurrentEyesColor;
+        public int CurrentBodyColor;
 
         public double Money;
         public double Rebith;
@@ -53,6 +54,7 @@
             CurrentSkinEquip = 2;
             CurrentHairColor = 0;
             CurrentEyesColor = 9;
+            CurrentBodyColor = 0;
             SkinsPurchased[2] = true;
             ColorPurchased[0] = true;
             ColorPurchased[9] = true;

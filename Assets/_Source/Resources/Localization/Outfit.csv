@@ -12,4 +12,4 @@ Equip,Одето,en,tr
 Unequip,Одеть,Clothe,tr
 ColorHair,Цвет волос,Hair color,tr
 ColorEye,Цвет глаз,Eye color,tr
-WarningText,"*Только визуал, не влияет на характеристики!","*Visual only, does not affect the characteristics!",tr
+ColorBody,Цвет кожи,En,tr

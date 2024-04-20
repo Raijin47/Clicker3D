@@ -25,6 +25,7 @@ public class Customization : MonoBehaviour
     private int _currentSkinEquip;
     private int _currentHairColor;
     private int _currentEyesColor;
+    private int _currentBodyColor;
     private int _currentSkinID;
 
     private readonly int _shaderMainTexture = Shader.PropertyToID("_MainTex");
@@ -38,9 +39,11 @@ public class Customization : MonoBehaviour
         _currentSkinID = YandexGame.savesData.CurrentSkinEquip;
         _currentHairColor = YandexGame.savesData.CurrentHairColor;
         _currentEyesColor = YandexGame.savesData.CurrentEyesColor;
+        _currentBodyColor = YandexGame.savesData.CurrentBodyColor;
 
         SetHairColor(_currentHairColor);
         SetEyesColor(_currentEyesColor);
+        SetBodyColor(_currentBodyColor);
         SetSkin();
         UpdateUI();
 
@@ -78,6 +81,13 @@ public class Customization : MonoBehaviour
         _currentHairColor = id;
         _hairMaterial.SetColor(_shaderMainColor, _skinColors[_currentHairColor].Color);
         YandexGame.savesData.CurrentHairColor = id;
+    }
+
+    public void SetBodyColor(int id)
+    {
+        _currentBodyColor = id;
+        //_bodyMaterial.SetColor(_shaderMainColor, _)
+        YandexGame.savesData.CurrentBodyColor = id;
     }
 
     public void SetEyesColor(int id)

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 44048643547476746a3a72db23124a58
+guid: 93495c50f022cc14daba3d89f5d4da6e
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -8,67 +8,77 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Body
-    second: {fileID: 2100000, guid: 6fbd323dbe20e5049a0f6d549fef0901, type: 2}
+    second: {fileID: 2100000, guid: 063569f47f28f2744a53f92d4fc31284, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Eyes
-    second: {fileID: 2100000, guid: 70b65423616ba5d468b858e85da9ad76, type: 2}
+    second: {fileID: 2100000, guid: 37d75bb4199eed049a973fb0aca731cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Face
+    second: {fileID: 2100000, guid: f85810af1d74e5545ac1c4366c3c0075, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hair
-    second: {fileID: 2100000, guid: e04d1d97f92038441b653909d8170e26, type: 2}
+    second: {fileID: 2100000, guid: e260f0a19f7cde843a1757e6b3dff5c1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Outfit00
-    second: {fileID: 2100000, guid: 99fdd0f0f931f794c94778311b379b19, type: 2}
+    second: {fileID: 2100000, guid: aaf8fac5a6630544e834636743a45fc6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Outfit01
-    second: {fileID: 2100000, guid: 70960d8b927ae8f46885fc6ccd8e91bb, type: 2}
+    second: {fileID: 2100000, guid: 23bfe7d8e555a674990e2a5b62535b4c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Outfit02
-    second: {fileID: 2100000, guid: cab985dd3fae99e4893461c2230779ac, type: 2}
+    second: {fileID: 2100000, guid: 7c6e5279c3b508848a69b8733a670cc3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Outfit03
-    second: {fileID: 2100000, guid: a73563bd948063e4ba4a33278c8b3d58, type: 2}
+    second: {fileID: 2100000, guid: 1f682fc41b7c3ae438ef1873065207be, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Outfit04
-    second: {fileID: 2100000, guid: 74f482613c1da7b4f8882af92574b070, type: 2}
+    second: {fileID: 2100000, guid: 1e526aba67c2ff7459a87c2354d43081, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Outfit04add
-    second: {fileID: 2100000, guid: c5e21c38eda45c1478b189c71bd0e2d1, type: 2}
+      name: Outfit04Sub
+    second: {fileID: 2100000, guid: b9b26446cdb7f064395513df3b317e6e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Outfit05
-    second: {fileID: 2100000, guid: da1fe375afe0b3e49b5d9121d19d67e8, type: 2}
+    second: {fileID: 2100000, guid: 1a4d776683ef5c44f8ebc4f6e3e21052, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Outfit06
-    second: {fileID: 2100000, guid: 4626fc66a0fa677459f05891dcf98e78, type: 2}
+    second: {fileID: 2100000, guid: 8728c971ee6be0a4b8ebbbd8d153e82e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Outfit06Sub
+    second: {fileID: 2100000, guid: 60112f2041f6ff848b7eb5824446995b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Outfit07
-    second: {fileID: 2100000, guid: 51ad1792ab21a2048932a8351b1c4020, type: 2}
+    second: {fileID: 2100000, guid: 187edd7c829687545871bee0ff5c231c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Outfit08
-    second: {fileID: 2100000, guid: 391b3acb67bfbd54091de22427dc2457, type: 2}
+    second: {fileID: 2100000, guid: 496021b6d597f9d408e81de098dc0a7c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
