@@ -39,7 +39,7 @@ public class Stage : MonoBehaviour
 
     private void OnReset()
     {
-        CurrentStage = (int)(CurrentStage * Modifier.ReductionLostDays);
+        CurrentStage = (int)System.Math.Clamp(CurrentStage * Modifier.ReductionLostDays, 1, int.MaxValue);
         _health.OnReset();
     }
 }

@@ -57,8 +57,9 @@ public class Health : MonoBehaviour
 
     public void OnReset()
     {
-        CurrentHealth = 0d;
         UpdateMaxHealth();
+        _textMaxHealth = ConvertNumber.Convert(_maxHealth);
+        CurrentHealth = 0d;
     }
 
     private void UpdateMaxHealth()
