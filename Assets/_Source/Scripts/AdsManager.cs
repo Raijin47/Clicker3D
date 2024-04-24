@@ -39,13 +39,13 @@ public class AdsManager : MonoBehaviour
 	{
 		switch (id)
 		{
-			case <21: _customization.UnlockColor(id); break;
-            case 21: _timeBonuses[0].Reward(); break;
-            case 22: _timeBonuses[1].Reward(); break;
-            case 23: _timeBonuses[2].Reward(); break;
-            case 24: _timeBonuses[3].Reward(); break;
-            case 25: _rebithManager.AdditionalReward(); break;
-			case 26: _offlineReward.GetReward(true); break;
+			case <31: _customization.UnlockColor(id); break;
+            case 31: _timeBonuses[0].Reward(); break;
+            case 32: _timeBonuses[1].Reward(); break;
+            case 33: _timeBonuses[2].Reward(); break;
+            case 34: _timeBonuses[3].Reward(); break;
+            case 35: _rebithManager.AdditionalReward(); break;
+			case 36: _offlineReward.GetReward(true); break;
 		}
 
         SetAdsModifier(GetAdsModifier() + 1);

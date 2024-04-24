@@ -44,20 +44,20 @@ public class Customization : MonoBehaviour
         SetHairColor(_currentHairColor);
         SetEyesColor(_currentEyesColor);
         SetBodyColor(_currentBodyColor);
-        SetSkin();
+        SetOutfit();
         UpdateUI();
 
         for (int i = 0; i < _skinColors.Length; i++) _skinColors[i].Init();
     }
 
-    public void ButtonSkin()
+    public void ButtonOutfit()
     {
-        if (YandexGame.savesData.SkinsPurchased[_currentSkinID]) SetSkin();
-        else BuySkin();
+        if (YandexGame.savesData.SkinsPurchased[_currentSkinID]) SetOutfit();
+        else BuyOutfit();
         UpdateUI();
     }
 
-    private void SetSkin() 
+    private void SetOutfit() 
     {
         _outfits[_currentSkinEquip].Skin.SetActive(false);
         _currentSkinEquip = _currentSkinID;
@@ -67,7 +67,7 @@ public class Customization : MonoBehaviour
         YandexGame.savesData.CurrentSkinEquip = _currentSkinID;
     }
 
-    private void BuySkin()
+    private void BuyOutfit()
     {
         if (IsPurchaseAvailable())
         {

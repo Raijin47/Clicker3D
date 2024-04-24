@@ -32,7 +32,7 @@
         public int[] DiamondLevel = new int[9];
         public int[] EnchancementLevel = new int[9];
         public bool[] SkinsPurchased = new bool[10];
-        public bool[] ColorPurchased = new bool[20];
+        public bool[] ColorPurchased = new bool[30];
 
         public int[] LastReceiveTime = new int[4];
         public bool[] IsActiveTimer = new bool[4];
