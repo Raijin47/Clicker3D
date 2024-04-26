@@ -51,16 +51,19 @@
         public SavesYG()
         {
             DailyLoginInRow = 1;
-            CurrentSkinEquip = 2;
+            CurrentSkinEquip = 8;
             CurrentHairColor = 0;
-            CurrentEyesColor = 9;
-            CurrentBodyColor = 0;
-            SkinsPurchased[2] = true;
+            CurrentEyesColor = 10;
+            CurrentBodyColor = 20;
+            SkinsPurchased[8] = true;
             ColorPurchased[0] = true;
-            ColorPurchased[9] = true;
+            ColorPurchased[10] = true;
+            ColorPurchased[20] = true;
             CurrentStage = 1;
-
             EnchancementLevel[0] = 1;
+#if UNITY_EDITOR
+            Diamonds = 10000;
+#endif
         }
     }
 }

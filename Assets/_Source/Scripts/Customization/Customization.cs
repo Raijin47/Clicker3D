@@ -86,7 +86,7 @@ public class Customization : MonoBehaviour
     public void SetBodyColor(int id)
     {
         _currentBodyColor = id;
-        //_bodyMaterial.SetColor(_shaderMainColor, _)
+        _bodyMaterial.SetColor(_shaderMainColor, _skinColors[_currentBodyColor].Color);
         YandexGame.savesData.CurrentBodyColor = id;
     }
 

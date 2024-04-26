@@ -44,23 +44,23 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FReflection:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e26beb37a1de1814090e3dfdbe84178b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GlossTexture:
-        m_Texture: {fileID: 2800000, guid: 0da63e2d4987a154fbc6a3831373f91a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 43e967e1c45485f4cab95045a081ef65, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MCap:
-        m_Texture: {fileID: 2800000, guid: 0da63e2d4987a154fbc6a3831373f91a, type: 3}
+        m_Texture: {fileID: 2800000, guid: e26beb37a1de1814090e3dfdbe84178b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MCapMask:
-        m_Texture: {fileID: 2800000, guid: 0da63e2d4987a154fbc6a3831373f91a, type: 3}
+        m_Texture: {fileID: 2800000, guid: e26beb37a1de1814090e3dfdbe84178b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 882d9babb56f37846abdbf4ad0e406fd, type: 3}
+        m_Texture: {fileID: 2800000, guid: 75dc2411dfb03e54e824e36c7c43222f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskFReflection:
@@ -72,7 +72,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskSelfLit:
-        m_Texture: {fileID: 2800000, guid: 0da63e2d4987a154fbc6a3831373f91a, type: 3}
+        m_Texture: {fileID: 2800000, guid: e26beb37a1de1814090e3dfdbe84178b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -92,7 +92,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _PTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e26beb37a1de1814090e3dfdbe84178b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
@@ -100,7 +100,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShadowColorTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e26beb37a1de1814090e3dfdbe84178b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShadowT:
@@ -126,12 +126,12 @@ Material:
     - _GlossColorPower: 2
     - _GlossMapScale: 1
     - _GlossSoftness: 0
-    - _GlossTextureFollowLight: 0
+    - _GlossTextureFollowLight: 1
     - _GlossTextureFollowObjectRotation: 0
-    - _GlossTextureSoftness: 3.45
+    - _GlossTextureSoftness: 5.43
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _HighlightColorPower: 2
+    - _HighlightColorPower: 1.5
     - _L_F_CLD: 0
     - _L_F_FR: 0
     - _L_F_GLO: 1
@@ -177,17 +177,17 @@ Material:
     - _RimLightInLight: 1
     - _RimLightSoftness: 1
     - _RimLightUnfill: 1.5
-    - _SPECIN: -17.06
+    - _SPECIN: 1
     - _SPECMODE: 1
     - _STIL: 0
-    - _SelfLitHighContrast: 1
+    - _SelfLitHighContrast: 0
     - _SelfLitIntensity: 0
     - _SelfLitPower: 1
     - _SelfShadowHardness: 0.6
     - _SelfShadowRealTimeShadowColorPower: 1
     - _SelfShadowShadowTAtViewDirection: 0
     - _SelfShadowThreshold: 0.85
-    - _ShadowColorTexturePower: 0
+    - _ShadowColorTexturePower: -2.46
     - _ShadowTColorPower: 1
     - _ShadowTHardness: 1
     - _ShadowTLightThreshold: 50
@@ -209,11 +209,11 @@ Material:
     - _CustomLightDirection: {r: 0, g: 0, b: 10, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlossColor: {r: 2, g: 2, b: 2, a: 1}
-    - _HighlightColor: {r: 0, g: 0.42745098, b: 1, a: 1}
-    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _HighlightColor: {r: 0, g: 1, b: 0.8627451, a: 1}
+    - _MainColor: {r: 1.4142135, g: 1.4142135, b: 1.4142135, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineOffset: {r: 0, g: 0, b: 0, a: 1}
-    - _OverallShadowColor: {r: 1, g: 0.74509805, b: 0.54901963, a: 1}
+    - _OverallShadowColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _SelfLitColor: {r: 1, g: 1, b: 1, a: 1}
     - _SelfShadowRealTimeShadowColor: {r: 1, g: 1, b: 1, a: 1}
