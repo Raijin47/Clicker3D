@@ -46,6 +46,8 @@
         public bool IsClaimReward;
         public int DailyLoginInRow;
 
+        public bool IsTutorialComplated;
+
         // ...
 
         public SavesYG()
