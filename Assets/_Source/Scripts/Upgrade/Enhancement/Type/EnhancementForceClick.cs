@@ -2,6 +2,8 @@ using System;
 
 public class EnhancementForceClick : EnhancementBase
 {
+    [UnityEngine.SerializeField] private double _degreeIncreaseValue;
+
     protected override void Execute()
     {
         Modifier.EnhancementClickForce = _currentValue;
@@ -26,5 +28,17 @@ public class EnhancementForceClick : EnhancementBase
             Math.Round(_currentValue * Modifier.PrestigeClickForce * Modifier.DiamondIncome * Modifier.ADsBoost)) 
             + " > " + ConvertNumber.Convert(
                 Math.Round(_nextValue * Modifier.PrestigeClickForce * Modifier.DiamondIncome * Modifier.ADsBoost));
+    }
+
+    protected override double CalculateUpgradeValue()
+    {
+        double value = IncreaseValue.Calculate(Level, _baseValue, _degreeIncreaseValue);
+        return value;
+    }
+
+    protected override double CalculateUpgradeNext()
+    {
+        double value = IncreaseValue.Calculate(Level + 1, _baseValue, _degreeIncreaseValue);
+        return value;
     }
 }
