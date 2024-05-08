@@ -3,6 +3,9 @@ using YG;
 
 public abstract class DiamondBase : UpgradeBase
 {
+    [SerializeField] private double _fixedIncreasePrice;
+
+
     protected override void AddListener()
     {
         GlobalEvent.OnDiamondChange.AddListener(CheckInteractableButton);
@@ -34,5 +37,10 @@ public abstract class DiamondBase : UpgradeBase
     {
         Locator.Instance.Particle.DiamondTransform.position = Input.mousePosition;
         Locator.Instance.Particle.DiamondParticle.Play();
+    }
+
+    protected override double CalculateUpgradePrice()
+    {
+        return _baseUpgradePrice + Level * _fixedIncreasePrice;
     }
 }
