@@ -117,8 +117,7 @@ public abstract class UpgradeBase : MonoBehaviour, IPointerDownHandler, IPointer
 
     protected virtual double CalculateUpgradePrice()
     {
-        double value = IncreaseValue.Calculate(_level, _baseUpgradePrice, _degreeIncreasePrice);
-        return value;
+        return IncreaseValue.Calculate(_level, _baseUpgradePrice, _degreeIncreasePrice);
     }
 
     protected abstract void Execute();
