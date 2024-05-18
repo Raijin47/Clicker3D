@@ -1,58 +1,58 @@
 Key,ru,en,tr
-EnhancementName0,Привлекательность,en,tr
-EnhancementName1,Набор косметики,en,tr
-PetName0,Зелебоба - Ур. ,en,tr
-PetName1,Розовый кролик,en,tr
-PetName2,Гавноед,en,tr
-PetName3,Имя 3го животного,en,tr
-PetName4,Имя 4го животного,en,tr
-PetName5,Имя 5го животного,en,tr
-PetName6,Имя 6го животного,en,tr
-PetName7,Имя 7го животного,en,tr
-PetName8,Имя 8го животного,en,tr
-JobName0,Уборщица,en,tr
-JobName1,Секс Шоп,en,tr
-JobName2,МнеГусто,en,tr
-JobName3,Начинающий разработчик игр,en,tr
-JobName4,Начинающий разработчик игр,en,tr
-JobName5,Начинающий разработчик игр,en,tr
-JobName6,Начинающий разработчик игр,en,tr
-JobName7,Начинающий разработчик игр,en,tr
-JobName8,Студия разработки игр,en,tr
-RebithName0,Бог кликеров,en,tr
-RebithName1,Манипуляции на рынке,en,tr
-RebithName2,Машина времени,en,tr
-RebithName3,Богиня любви,en,tr
-RebithName4,До седьмого пота,en,tr
-RebithName5,Любовь к животным,en,tr
-RebithName6,Подушка на все случа жизни,en,tr
-DiamondName0,Любовь реальна?,en,tr
-DiamondName1,Помощь богини любви,en,tr
-DiamondName2,Машина времени,en,tr
-DiamondName3,Сладких сновидений,en,tr
-DiamondName4,Какой-то текст,en,tr
-DiamondName5,Какой-то текст,en,tr
-DiamondName6,Какой-то текст,en,tr
+EnhancementName0,Привлекательность - Ур.,en,tr
+EnhancementName1,Набор косметики - Ур.,en,tr
+PetName0,Розовый мишка - Ур.,en,tr
+PetName1,Кролик - Ур.,en,tr
+PetName2,Сиамская кошка - Ур.,en,tr
+PetName3,Просто панда - Ур.,en,tr
+PetName4,Алый кролик - Ур.,en,tr
+PetName5,Кот - Ур.,en,tr
+PetName6,Пурпурный медвед - Ур.,en,tr
+PetName7,Бешенный кролик - Ур.,en,tr
+PetName8,Трёхцветик - Ур.,en,tr
+JobName0,Пончик - Ур.,en,tr
+JobName1,Печеньки - Ур.,en,tr
+JobName2,Конфеты с ликёром - Ур.,en,tr
+JobName3,Леденцы - Ур.,en,tr
+JobName4,Кексик - Ур.,en,tr
+JobName5,Терамису - Ур.,en,tr
+JobName6,Мармеладки - Ур.,en,tr
+JobName7,Мороженка - Ур.,en,tr
+JobName8,Тортик - Ур.,en,tr
+RebithName0,Бог кликеров - Ур.,en,tr
+RebithName1,Манипуляции на рынке - Ур.,en,tr
+RebithName2,Машина времени - Ур.,en,tr
+RebithName3,Богиня любви - Ур.,en,tr
+RebithName4,До седьмого пота - Ур.,en,tr
+RebithName5,Любовь к животным - Ур.,en,tr
+RebithName6,Подушка на все случа жизни - Ур.,en,tr
+DiamondName0,Любовь реальна? - Ур.,en,tr
+DiamondName1,Помощь богини любви - Ур.,en,tr
+DiamondName2,Машина времени - Ур.,en,tr
+DiamondName3,Сладких сновидений - Ур.,en,tr
+DiamondName4,Какой-то текст - Ур.,en,tr
+DiamondName5,Какой-то текст - Ур.,en,tr
+DiamondName6,Какой-то текст - Ур.,en,tr
 EnhancementDescription0,Увеличивает силу клика,en,tr
 EnhancementDescription1,Увеличивает шанс критического клика,en,tr
-PetDescription0,Какое-то ебанутое животное,en,tr
-PetDescription1,Милый и пушистый,en,tr
-PetDescription2,Какой-то текст,en,tr
-PetDescription3,Описание 3го животного,en,tr
-PetDescription4,Описание 4го животного,en,tr
-PetDescription5,Описание 5го животного,en,tr
-PetDescription6,Описание 6го животного,en,tr
-PetDescription7,Описание 7го животного,en,tr
-PetDescription8,Описание 8го животного,en,tr
-JobDescription0,Мыть полы в туалете тяжко,en,tr
-JobDescription1,Давольно увлекательная работа,en,tr
-JobDescription2,Ахуенная работа,en,tr
-JobDescription3,Уверенно успешная работа или нет...,en,tr
-JobDescription4,Уверенно успешная работа или нет...,en,tr
-JobDescription5,Уверенно успешная работа или нет...,en,tr
-JobDescription6,Уверенно успешная работа или нет...,en,tr
-JobDescription7,Уверенно успешная работа или нет...,en,tr
-JobDescription8,Стабильность - залог успеха,en,tr
+PetDescription0,"Слегка туповат, но многие считают его милым.",en,tr
+PetDescription1,"Безумный обжора, никакой морковки не напасёшься...",en,tr
+PetDescription2,"Обоятельный котик, особенно когда сходит мимо лотка.",en,tr
+PetDescription3,"Вроде и милый, но он тут только из-за денег.",en,tr
+PetDescription4,"Слишком активный, даже когда спит.",en,tr
+PetDescription5,Любит всех и вся... и рыбку и молоко и много всего вкусного.,en,tr
+PetDescription6,"Лучший друг безумного тусера, но в отличии от него старается не спать на тусах.",en,tr
+PetDescription7,"С виду ужастный, но на самом деле крайне обоятельный кролик.",en,tr
+PetDescription8,Самая активная кошка на районе.,en,tr
+JobDescription0,"Любимое лакомство полицейских, да и не только.",en,tr
+JobDescription1,"Печеньки с шоколадом, что может быть лучше...",en,tr
+JobDescription2,Осторожно!!! Вредно для здоровья - зубы лечить нынче дорого.,en,tr
+JobDescription3,Заебешься сосать,en,tr
+JobDescription4,"Кексики это хорошо, но стоит знать меру.",en,tr
+JobDescription5,"Меньше вреда для зубов, хоть и с шоколадом",en,tr
+JobDescription6,Чёт на жевательном,en,tr
+JobDescription7,Идеальный десерт в жаркую погоду.,en,tr
+JobDescription8,Вкусный тортик с вишенкой.,en,tr
 RebithDescription0,Увеличивает силу клика,en,tr
 RebithDescription1,Снижает стоимость улучшений за монеты,en,tr
 RebithDescription2,Вероятность пропустить этап,en,tr
@@ -70,7 +70,7 @@ DiamondDescription6,Эфективность бонусов за рекламу,
 HelpTitle0,Улучшения,en,tr
 HelpTitle1,Бонусы,en,tr
 HelpTitle2,Питомцы,en,tr
-HelpTitle3,Акции,en,tr
+HelpTitle3,Сладости,en,tr
 HelpTitle4,Престиж,en,tr
 HelpTitle5,Магазин,en,tr
 Help0,Базовые улучшения. Cбрасываются после престижа.,en,tr
@@ -89,7 +89,7 @@ Skin6,Официантка,Skin 6,tr
 Skin7,Стильная,Skin 7,tr
 Skin8,Повседневная,Skin 8,tr
 PetTitle,Питомцы,en,tr
-JobTitle,Акции,en,tr
+JobTitle,Сладости,en,tr
 TitleEnhancement,Базовые улучшения,en,tr
 TitleAdsBonus,Рекламные бонусы,en,tr
 Get,Получить,en,tr
