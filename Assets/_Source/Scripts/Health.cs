@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using YG;
+using System.Collections;
 
 public class Health : MonoBehaviour
 {
@@ -14,12 +15,18 @@ public class Health : MonoBehaviour
     private double _maxHealth;
     private string _textMaxHealth;
 
+    private Coroutine _updateMaxHealthCoroutine;
+
+
     public void Init()
     {
         UpdateMaxHealth();
         _textMaxHealth = ConvertNumber.Convert(_maxHealth);
         CurrentHealth = YandexGame.savesData.CurrentHealth;
         GlobalEvent.OnHealthReduction.AddListener(HealthReduction);
+
+        //_updateMaxHealthCoroutine = StartCoroutine(UpdateMaxHealthProcess());
+
     }
 
     public double CurrentHealth
@@ -28,9 +35,18 @@ public class Health : MonoBehaviour
         set
         {
             _currentHealth = value;
-            if (_currentHealth >= _maxHealth) 
+
+            if (_currentHealth >= _maxHealth)
             {
-                while(_currentHealth >= _maxHealth)
+                _stage.CurrentStage++;
+                _currentHealth -= _maxHealth;
+                UpdateMaxHealth();
+                return;
+            }
+
+            if (_currentHealth >= _maxHealth)
+            {
+                while (_currentHealth >= _maxHealth)
                 {
                     _stage.CurrentStage++;
                     _currentHealth -= _maxHealth;
@@ -40,6 +56,17 @@ public class Health : MonoBehaviour
             }
             UpdateUI();
             YandexGame.savesData.CurrentHealth = _currentHealth;
+        }
+    }
+
+    private IEnumerator UpdateMaxHealthProcess(double value)
+    {
+        while (_currentHealth >= _maxHealth)
+        {
+            _stage.CurrentStage++;
+            _currentHealth -= _maxHealth;
+            UpdateMaxHealth();
+            yield return null;
         }
     }
 
