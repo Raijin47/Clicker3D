@@ -64,8 +64,7 @@
             CurrentStage = 1;
             EnchancementLevel[0] = 1;
 #if UNITY_EDITOR
-            Diamonds = 50000000000;
-            Rebith = 50000000000;
+            Diamonds = 5000;
 #endif
         }
     }

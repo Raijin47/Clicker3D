@@ -52,7 +52,7 @@ public class RebithManager : UpgradeManagerBase
 
     public void AdditionalReward()
     {
-        _wallet.Rebith += CalculateValue() * 1.5f;
+        _wallet.Rebith += System.Math.Round(CalculateValue() * 1.5f);
         _rebirth—onfirmationPanel[0].SetActive(false);
         _rebirth—onfirmationPanel[1].SetActive(false);
         GlobalEvent.SendRebith();
@@ -62,8 +62,7 @@ public class RebithManager : UpgradeManagerBase
 
     private double CalculateValue()
     {
-        double value = IncreaseValue.Calculate(_stage.CurrentStage, _baseRewardRebith, _currentDegreeIncreaseRebith) * Modifier.PrestigeMultiplier;
-        return value;
+        return System.Math.Round(IncreaseValue.Calculate(_stage.CurrentStage, _baseRewardRebith, _currentDegreeIncreaseRebith) * Modifier.PrestigeMultiplier);
     }
 
     private void UpdateRebithReward()

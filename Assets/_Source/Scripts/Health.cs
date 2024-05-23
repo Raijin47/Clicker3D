@@ -11,11 +11,13 @@ public class Health : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _textHealth;
     [SerializeField] private double _baseHealth;
     [SerializeField] private double _degreeIncreaseHealth;
+
     private double _currentHealth;
     private double _maxHealth;
     private string _textMaxHealth;
     private readonly string _division = " / ";
-
+    private const double _additionalBaseHealth = 99;
+    private const float _one = 1f;
     private Coroutine _maxHealthUpdateProcessCoroutine;
 
 
@@ -63,7 +65,7 @@ public class Health : MonoBehaviour
 
     private void UpdateUI()
     {
-        if(_currentHealth / _maxHealth > float.MaxValue) _imageHealth.fillAmount = 1;
+        if(_currentHealth / _maxHealth > float.MaxValue) _imageHealth.fillAmount = _one;
         else _imageHealth.fillAmount = (float)(_currentHealth / _maxHealth);
 
         _textHealth.text = ConvertNumber.Convert(_currentHealth) + _division + _textMaxHealth;
@@ -75,22 +77,9 @@ public class Health : MonoBehaviour
         CurrentHealth = 0d;
     }
 
-    private void Start()
-    {
-        for (int i = 1; i <= 100; i++)
-        {
-            if (i % 5 == 0)
-            {
-                Debug.Log(i * 10);
-                //Debug.Log("Number " + i + " is divisible by 5");
-                // Здесь можно добавить вашу логику для отметки числа
-            }
-        }
-    }
-
     private void UpdateMaxHealth()
     {
-        _maxHealth = System.Math.Round(System.Math.Pow(_baseHealth, _stage.CurrentStage * 0.01) * Modifier.HealthReductionModifier);
+        _maxHealth = System.Math.Round((System.Math.Pow(_baseHealth, _stage.CurrentStage * _degreeIncreaseHealth) + _additionalBaseHealth) * Modifier.HealthReductionModifier);
         //_maxHealth = IncreaseValue.Calculate(_stage.CurrentStage, _baseHealth, _degreeIncreaseHealth) * Modifier.HealthReductionModifier;
         _textMaxHealth = ConvertNumber.Convert(_maxHealth);
     }

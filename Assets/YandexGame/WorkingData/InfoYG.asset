@@ -50,15 +50,15 @@ MonoBehaviour:
     type: numeric
     players:
     - rank: 1
-      name: anonymous
-      score: 10
-      photo: https://justplaygames.ru/public/icon_player.png
-      uniqueID: 123
-    - rank: 2
       name: Ivan
       score: 15
       photo: https://justplaygames.ru/public/icon_player.png
       uniqueID: 321
+    - rank: 2
+      name: Player this
+      score: 40
+      photo: https://justplaygames.ru/public/icon_player.png
+      uniqueID: 000
     - rank: 3
       name: Tanya
       score: 23
@@ -70,50 +70,30 @@ MonoBehaviour:
       photo: https://justplaygames.ru/public/icon_player.png
       uniqueID: 321
     - rank: 5
-      name: Player this
-      score: 40
-      photo: https://justplaygames.ru/public/icon_player.png
-      uniqueID: 000
-    - rank: 6
       name: Player6
       score: 50
       photo: https://justplaygames.ru/public/icon_player.png
       uniqueID: 321
-    - rank: 7
+    - rank: 6
       name: Player7
       score: 60
       photo: https://justplaygames.ru/public/icon_player.png
       uniqueID: 1521
-    - rank: 8
+    - rank: 7
       name: Playe8
       score: 50
       photo: https://justplaygames.ru/public/icon_player.png
       uniqueID: 6425
-    - rank: 9
+    - rank: 8
       name: 246dfg
       score: 50
       photo: https://justplaygames.ru/public/icon_player.png
       uniqueID: 23463
-    - rank: 10
+    - rank: 9
       name: 32fgsd
       score: 50
       photo: https://justplaygames.ru/public/icon_player.png
       uniqueID: 3783
-    - rank: 11
-      name: f3fsd
-      score: 50
-      photo: https://justplaygames.ru/public/icon_player.png
-      uniqueID: 13512
-    - rank: 12
-      name: f34d
-      score: 50
-      photo: https://justplaygames.ru/public/icon_player.png
-      uniqueID: 15123
-    - rank: 13
-      name: Player6
-      score: 50
-      photo: https://justplaygames.ru/public/icon_player.png
-      uniqueID: 1612331
     thisPlayer:
       rank: 2
       score: 10

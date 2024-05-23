@@ -4,15 +4,13 @@ using UnityEngine;
 public class PetBonus : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _particleBonus, _particleGetBonus;
-    [SerializeField] private ParticleSystem _particleGold, _particleDiamond;
+    [SerializeField] private ParticleSystem _particleDiamond;
     [SerializeField] private Transform _transform;
     [SerializeField] private BoxCollider _collider;
     [SerializeField] private Camera _camera;
 
     [SerializeField] private float _bonusCreationFrequency;
     [SerializeField] private float _chanceCreateBonus;
-    [SerializeField] private float _chanceCreateDiamond;
-    [SerializeField] private double _modifierMoney;
     [SerializeField] private float _minDiamondReward, _maxDiamondReward;
 
     private Coroutine _updateTimerCoroutine;
@@ -24,6 +22,7 @@ public class PetBonus : MonoBehaviour
     {
         _timer = new Timer(_bonusCreationFrequency);
         StartTimer();
+        GlobalEvent.OnRebith.AddListener(DestroyBonus);
     }
 
     private void StartTimer()
@@ -97,33 +96,23 @@ public class PetBonus : MonoBehaviour
 
     private void GetBonus()
     {
+        Locator.Instance.Wallet.Diamonds += DiamondReward();
+        _particleDiamond.Play();
+
+        DestroyBonus();
+        _particleGetBonus.Play();
+    }
+
+    private void DestroyBonus()
+    {
         _collider.enabled = false;
         _particleBonus.Stop();
-        _particleGetBonus.Play();
-
-        if(_chanceCreateDiamond > Random.value)
-        {
-            Locator.Instance.Wallet.Diamonds += DiamondReward();
-            _particleDiamond.Play();
-        }
-        else
-        {
-            Locator.Instance.Wallet.Money += MoneyReward();
-            _particleGold.Play();
-        }
-
-
         StartTimer();
     }
 
     private double DiamondReward()
     {
         return (int)Random.Range(_minDiamondReward, _maxDiamondReward);
-    }
-
-    private double MoneyReward()
-    {
-        return (Locator.Instance.Click.ClickIncome + Locator.Instance.JobsManager.CurrentIncome) * _modifierMoney;
     }
 
     private void ActivateBonus(Vector3 position)
