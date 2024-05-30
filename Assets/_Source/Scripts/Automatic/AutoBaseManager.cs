@@ -12,14 +12,12 @@ public abstract class AutoBaseManager : MonoBehaviour
     [SerializeField] private GameObject _buyPanel;
     [SerializeField] protected AutoBase[] _autoBases;
     [SerializeField] private double[] _price;
-    [SerializeField] private double _degreeIncreasePrice;
     private double _currentPrice;
     protected int _id;
     private Timer _timer;
     protected double _income;
     private Coroutine _updateIncomeCoroutine;
 
-    public double DegreeIncreasePrice => _degreeIncreasePrice;
     public double CurrentIncome => _income;
 
     public void Init(int id)
@@ -111,7 +109,7 @@ public abstract class AutoBaseManager : MonoBehaviour
     {
         for(int i = 0; i < _autoBases.Length; i++)
         {
-            _autoBases[i].UpdateValue();
+            _autoBases[i].GetCurrentIncome();
         }
         CalculateIncome();
     }

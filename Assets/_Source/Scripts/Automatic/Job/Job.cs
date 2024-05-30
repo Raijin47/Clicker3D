@@ -3,14 +3,12 @@ using YG;
 
 public class Job : AutoBase
 {
-    public override void UpdateValue()
-    {
-        CurrentIncome = Math.Round(_baseIncome * Level * Modifier.JobIncomeModifier * Modifier.TimeMoneyBoost * Modifier.DiamondIncome * Modifier.ADsBoost);
-    }
+    private readonly double _increaseEveryLevel = 20;
 
-    protected override void UpdatePrice()
+    public override void GetCurrentIncome()
     {
-        CurrentPrice = Math.Round(IncreaseValue.Calculate(Level, _basePrice, Locator.Instance.JobsManager.DegreeIncreasePrice) * Modifier.CostReductionModifier);
+        CurrentIncome = Math.Round(_baseIncome * Level * Math.Pow(_increasePercent, Math.Floor(Level / _increaseEveryLevel)) *
+            Modifier.JobIncomeModifier * Modifier.TimeMoneyBoost * Modifier.DiamondIncome * Modifier.ADsBoost * Modifier.JobUpgradeMultiply[_id]);
     }
 
     protected override void SaveLevel()
@@ -20,7 +18,8 @@ public class Job : AutoBase
 
     protected override double NextIncome(int level)
     {
-        return Math.Round(_baseIncome * level * Modifier.JobIncomeModifier * Modifier.TimeMoneyBoost * Modifier.DiamondIncome * Modifier.ADsBoost);
+        return Math.Round(_baseIncome * level * Math.Pow(_increasePercent, Math.Floor(level / _increaseEveryLevel)) *  
+            Modifier.JobIncomeModifier * Modifier.TimeMoneyBoost * Modifier.DiamondIncome * Modifier.ADsBoost * Modifier.JobUpgradeMultiply[_id]);
     }
 
     protected override void CalculateIncome()

@@ -216,4 +216,24 @@ public static class Modifier
         }
     }
     #endregion
+
+    #region Upgrades
+    private static double[] _jobUpgradeMultiply = new double[9] {1,1,1,1,1,1,1,1,1};
+
+    public static double[] JobUpgradeMultiply
+    {
+        get => _jobUpgradeMultiply;
+        set
+        {
+            _jobUpgradeMultiply = value;
+        }
+    }
+
+    public static void UpgradeJob(int level, double value)
+    {
+        JobUpgradeMultiply[level] *= value;
+
+        GlobalEvent.SendIncreaseJobIncome();
+    }
+    #endregion
 }

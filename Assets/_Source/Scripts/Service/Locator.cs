@@ -15,7 +15,7 @@ public class Locator : MonoBehaviour
     [SerializeField] private Bootstrap _bootstrap;
     [SerializeField] private Camera _camera;
     [SerializeField] private RebithManager _rebithManager;
-
+    [SerializeField] private UpgradesManager _upgradesManager;
     private void OnEnable() => YandexGame.GetDataEvent += GetData;
     private void OnDisable() => YandexGame.GetDataEvent -= GetData;
     private void Awake()
@@ -38,6 +38,7 @@ public class Locator : MonoBehaviour
     public CameraLookAt CameraLookAt => _cameraLookAt;
     public Camera Camera => _camera;
     public RebithManager RebithManager => _rebithManager;
+    public UpgradesManager UpgradesManager => _upgradesManager;
 
     #region OnValidate
 #if UNITY_EDITOR
@@ -53,6 +54,7 @@ public class Locator : MonoBehaviour
         _particleUIService ??= GetComponent<ParticleUIService>();
         _bootstrap ??= GetComponent<Bootstrap>();
         _rebithManager ??= GetComponent<RebithManager>();
+        _upgradesManager ??= GetComponent<UpgradesManager>();
     }
 #endif
     #endregion

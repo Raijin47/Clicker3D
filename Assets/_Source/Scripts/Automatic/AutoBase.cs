@@ -17,7 +17,10 @@ public abstract class AutoBase : MonoBehaviour, IPointerDownHandler, IPointerUpH
     [SerializeField] protected double _basePrice;
 
     private Coroutine _upgradeProcessCoroutine;
-    private WaitForSeconds _intervalToUpgrade = new WaitForSeconds(.5f);
+
+    private readonly double _degreeIncreasePrice = 1.15;
+    protected readonly double _increasePercent = 1.5;
+    private readonly WaitForSeconds _intervalToUpgrade = new(.5f);
 
     protected double _currentIncome;
     protected double _currentPrice;
@@ -53,7 +56,7 @@ public abstract class AutoBase : MonoBehaviour, IPointerDownHandler, IPointerUpH
         {
             _level = value;
             _levelText.text = _level.ToString();
-            UpdateValue();
+            GetCurrentIncome();
             UpdatePrice();
             SaveLevel();
         }
@@ -68,9 +71,14 @@ public abstract class AutoBase : MonoBehaviour, IPointerDownHandler, IPointerUpH
 
         Level = level;
     }
-    protected abstract void UpdatePrice();
+
+    protected void UpdatePrice()
+    {
+        CurrentPrice = Math.Round(IncreaseValue.Calculate(Level, _basePrice, _degreeIncreasePrice) * Modifier.CostReductionModifier);
+    }
+
     protected abstract void SaveLevel();
-    public abstract void UpdateValue();
+    public abstract void GetCurrentIncome();
     protected abstract void CalculateIncome();
 
     public void OnPointerDown(PointerEventData eventData)
@@ -116,7 +124,7 @@ public abstract class AutoBase : MonoBehaviour, IPointerDownHandler, IPointerUpH
     {
         Locator.Instance.Wallet.Money -= _currentPrice;
         Level++;
-        UpdateValue();
+        GetCurrentIncome();
         CalculateIncome();
     }
 
@@ -134,7 +142,7 @@ public abstract class AutoBase : MonoBehaviour, IPointerDownHandler, IPointerUpH
     public virtual void Deactivate()
     {
         GlobalEvent.OnMoneyChange.RemoveListener(CheckInteractableButton);
-        GlobalEvent.OnCostReduction.RemoveListener(UpdateValue);
+        GlobalEvent.OnCostReduction.RemoveListener(GetCurrentIncome);
         Level = 0;
         _gameObject.SetActive(false);
     }

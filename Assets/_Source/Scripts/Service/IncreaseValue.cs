@@ -4,9 +4,7 @@ public static class IncreaseValue
 {
     public static double Calculate(double level, double baseValue, double degree)
     {
-        level += 1;
-
-        double value = baseValue * Math.Pow(level, degree);
+        double value = baseValue * Math.Pow(degree, level);
         value = Math.Round(value);
         return value;
     }
