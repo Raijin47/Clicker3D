@@ -24,6 +24,7 @@ public class Bootstrap : MonoBehaviour
         Locator.Instance.Health.Init();
         Locator.Instance.JobsManager.Init(YandexGame.savesData.CurrentJob);
         Locator.Instance.PetsManager.Init(YandexGame.savesData.CurrentPet);
+        Locator.Instance.UpgradesManager.Init();
         _offlineReward.Init();
         _customization.Init();
     }

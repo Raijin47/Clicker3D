@@ -37,6 +37,8 @@
         public int[] LastReceiveTime = new int[4];
         public bool[] IsActiveTimer = new bool[4];
 
+        public bool[] IsUpgradeActive = new bool[100];
+
         public int LastLoginTime;
         public bool IsInitOfflineTimer;
 

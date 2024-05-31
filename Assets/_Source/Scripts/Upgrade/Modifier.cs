@@ -154,7 +154,7 @@ public static class Modifier
         get => _jobIncomeModifier;
         set
         {
-            _jobIncomeModifier = value * 0.01d + 1d;
+            _jobIncomeModifier = value * 0.01d;
             GlobalEvent.SendIncreaseJobIncome();
         }
     }
@@ -164,7 +164,7 @@ public static class Modifier
         get => _petIncomeModifier;
         set
         {
-            _petIncomeModifier = value * 0.01d + 1d;
+            _petIncomeModifier = value * 0.01d;
             GlobalEvent.SendIncreasePetIncome();
         }
     }
@@ -214,26 +214,6 @@ public static class Modifier
             GlobalEvent.SendIncreaseClick();
             GlobalEvent.SendIncreaseJobIncome();
         }
-    }
-    #endregion
-
-    #region Upgrades
-    private static double[] _jobUpgradeMultiply = new double[9] {1,1,1,1,1,1,1,1,1};
-
-    public static double[] JobUpgradeMultiply
-    {
-        get => _jobUpgradeMultiply;
-        set
-        {
-            _jobUpgradeMultiply = value;
-        }
-    }
-
-    public static void UpgradeJob(int level, double value)
-    {
-        JobUpgradeMultiply[level] *= value;
-
-        GlobalEvent.SendIncreaseJobIncome();
     }
     #endregion
 }

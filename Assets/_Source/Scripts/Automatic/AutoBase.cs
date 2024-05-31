@@ -15,6 +15,8 @@ public abstract class AutoBase : MonoBehaviour, IPointerDownHandler, IPointerUpH
     [SerializeField] private TextMeshProUGUI _levelText;
     [SerializeField] protected double _baseIncome;
     [SerializeField] protected double _basePrice;
+    [SerializeField] protected UpgradesBase[] _upgradesBases;
+    protected double _personalUpgrade = 1;
 
     private Coroutine _upgradeProcessCoroutine;
 
@@ -56,10 +58,31 @@ public abstract class AutoBase : MonoBehaviour, IPointerDownHandler, IPointerUpH
         {
             _level = value;
             _levelText.text = _level.ToString();
+            UnlockUpgrade();
             GetCurrentIncome();
             UpdatePrice();
             SaveLevel();
         }
+    }
+
+    private void UnlockUpgrade()
+    {
+        if(Level >= 50 && !_upgradesBases[0].IsShow)
+        {
+            _upgradesBases[0].Show();
+        }
+        if(Level >= 75 && !_upgradesBases[1].IsShow)
+        {
+            _upgradesBases[1].Show();
+        }
+    }
+
+    public void GetUpgrade(double value)
+    {
+        _personalUpgrade *= value;
+
+        GetCurrentIncome();
+        CalculateIncome();
     }
 
     public virtual void Activate(int level)
@@ -143,6 +166,7 @@ public abstract class AutoBase : MonoBehaviour, IPointerDownHandler, IPointerUpH
     {
         GlobalEvent.OnMoneyChange.RemoveListener(CheckInteractableButton);
         GlobalEvent.OnCostReduction.RemoveListener(GetCurrentIncome);
+        _personalUpgrade = 1;
         Level = 0;
         _gameObject.SetActive(false);
     }

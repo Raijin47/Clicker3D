@@ -22,13 +22,12 @@ public abstract class AutoBaseManager : MonoBehaviour
 
     public void Init(int id)
     {
+        _timer = new Timer(1f);
         _id = id;
 
         UpdatePrice();
 
         for (int i = 0; i < _id; i++) Activate(i);
-
-        _timer = new Timer(1f);
 
         CalculateIncome();
 
