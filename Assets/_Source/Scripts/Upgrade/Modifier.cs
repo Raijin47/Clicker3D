@@ -116,7 +116,7 @@ public static class Modifier
         get => _prestigeClickForce;
         set
         {
-            _prestigeClickForce = value * 0.01d + 1d;
+            _prestigeClickForce = value * 0.01d;
             GlobalEvent.SendIncreaseClick();
         }
     }
@@ -200,7 +200,6 @@ public static class Modifier
         set
         {
             _timeLoveBoost = value;
-            GlobalEvent.SendIncreaseClick();
             GlobalEvent.SendIncreasePetIncome();
         }
     }

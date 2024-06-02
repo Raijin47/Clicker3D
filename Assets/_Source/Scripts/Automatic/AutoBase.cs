@@ -65,17 +65,7 @@ public abstract class AutoBase : MonoBehaviour, IPointerDownHandler, IPointerUpH
         }
     }
 
-    private void UnlockUpgrade()
-    {
-        if(Level >= 50 && !_upgradesBases[0].IsShow)
-        {
-            _upgradesBases[0].Show();
-        }
-        if(Level >= 75 && !_upgradesBases[1].IsShow)
-        {
-            _upgradesBases[1].Show();
-        }
-    }
+    protected abstract void UnlockUpgrade();
 
     public void GetUpgrade(double value)
     {

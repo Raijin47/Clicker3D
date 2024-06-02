@@ -10,6 +10,7 @@ public class MessageText : MonoBehaviour
     [SerializeField] private float _moveSpeed;
 
     private Coroutine _updatePositionCoroutine;
+    private Coroutine _updateWaitToCleanCoroutine;
     private Timer _timer;
     private void Awake()
     {
@@ -50,6 +51,17 @@ public class MessageText : MonoBehaviour
             yield return null;
         }
 
+        yield return WaitToClean();
         gameObject.SetActive(false);
+    }
+
+    private IEnumerator WaitToClean()
+    {
+        _timer.RestartTimer();
+        while (!_timer.IsCompleted)
+        {
+            _timer.Update();
+            yield return null;
+        }
     }
 }

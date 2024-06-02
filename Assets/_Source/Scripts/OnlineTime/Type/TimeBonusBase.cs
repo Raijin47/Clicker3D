@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class TimeBonusBase : BonusBase
 {
-    [SerializeField] private LocalizedDynamic _textTime;
+    //[SerializeField] private LocalizedDynamic _textTime;
     private readonly string _x = "x";
     protected bool _isActive;
 
@@ -43,6 +43,6 @@ public abstract class TimeBonusBase : BonusBase
 
     protected void UpdateTimeUI()
     {
-        _textTime.SetValue(GetTime().ToString());
+        //_textTime.SetValue(GetTime().ToString());
     }
 }

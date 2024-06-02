@@ -67,6 +67,7 @@
             EnchancementLevel[0] = 1;
 #if UNITY_EDITOR
             Diamonds = 5000;
+            Rebith = 10000;
 #endif
         }
     }

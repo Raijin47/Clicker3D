@@ -25,20 +25,20 @@ public class EnhancementForceClick : EnhancementBase
     {
         _priceText.text = ConvertNumber.Convert(_currentPrice);
         _effectText.text = ConvertNumber.Convert(
-            Math.Round(_currentValue * Modifier.PrestigeClickForce * Modifier.DiamondIncome * Modifier.ADsBoost)) 
+            Math.Round(_currentValue * Modifier.PrestigeClickForce * Modifier.DiamondIncome * Modifier.ADsBoost * Modifier.TimeMoneyBoost)) 
             + " > " + ConvertNumber.Convert(
-                Math.Round(_nextValue * Modifier.PrestigeClickForce * Modifier.DiamondIncome * Modifier.ADsBoost));
+                Math.Round(_nextValue * Modifier.PrestigeClickForce * Modifier.DiamondIncome * Modifier.ADsBoost * Modifier.TimeMoneyBoost));
     }
 
     protected override double CalculateUpgradeValue()
     {
-        double value = IncreaseValue.Calculate(Level, _baseValue, _degreeIncreaseValue);
+        double value = Level * _baseValue;
         return value;
     }
 
     protected override double CalculateUpgradeNext()
     {
-        double value = IncreaseValue.Calculate(Level + 1, _baseValue, _degreeIncreaseValue);
+        double value = (Level + 1) * _baseValue;
         return value;
     }
 }
