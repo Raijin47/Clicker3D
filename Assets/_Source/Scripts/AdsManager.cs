@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using YG;
 
 public class AdsManager : MonoBehaviour
@@ -9,7 +10,11 @@ public class AdsManager : MonoBehaviour
 	[SerializeField] private OfflineReward _offlineReward;
 	[SerializeField] private BonusBase[] _timeBonuses;
 	[SerializeField] private TextMeshProUGUI _adsBonusText;
+	[SerializeField] private Image _fillImage;
 	[SerializeField] private double _adsModifier;
+
+	private readonly double _increasePercent = 1.5;
+	private readonly double _increaseEveryLevel = 10;
 
 	private void OnEnable() => YandexGame.RewardVideoEvent += Rewarded;
 	private void OnDisable() => YandexGame.RewardVideoEvent -= Rewarded;
@@ -22,10 +27,16 @@ public class AdsManager : MonoBehaviour
     private void SetAdsModifier(int level)
     {
 		YandexGame.savesData.AdsLevel = level;
-		Modifier.ADsBoost = YandexGame.savesData.AdsLevel * _adsModifier;
+		Modifier.ADsBoost = YandexGame.savesData.AdsLevel * _adsModifier * System.Math.Pow(_increasePercent, System.Math.Floor(level / _increaseEveryLevel));
+		
+		_adsBonusText.text = ConvertNumber.Convert(YandexGame.savesData.AdsLevel * _adsModifier * System.Math.Pow(_increasePercent, System.Math.Floor(level / _increaseEveryLevel))) + "%";
 
-		_adsBonusText.text = ConvertNumber.Convert(YandexGame.savesData.AdsLevel * _adsModifier) + "%";
-    }
+		double a = level / _increaseEveryLevel;
+
+		float b = (float)(a - System.Math.Floor(a));
+
+		_fillImage.fillAmount = b;
+	}
 
     public void Init()
     {
@@ -35,15 +46,13 @@ public class AdsManager : MonoBehaviour
         SetAdsModifier(YandexGame.savesData.AdsLevel);
 	}
 
-    private void Rewarded(int id)
+	private void Rewarded(int id)
 	{
 		switch (id)
 		{
 			case <31: _customization.UnlockColor(id); break;
             case 31: _timeBonuses[0].Reward(); break;
             case 32: _timeBonuses[1].Reward(); break;
-            case 33: _timeBonuses[2].Reward(); break;
-            case 34: _timeBonuses[3].Reward(); break;
             case 35: _rebithManager.AdditionalReward(); break;
 			case 36: _offlineReward.GetReward(true); break;
 		}

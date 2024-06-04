@@ -54,4 +54,13 @@ public class Pet : AutoBase
         if (Level >= 750 && !_upgradesBases[10].IsShow) _upgradesBases[10].Show();
         if (Level >= 1000 && !_upgradesBases[11].IsShow) _upgradesBases[11].Show();
     }
+
+    protected override void UpdateScale()
+    {
+        double a = Level / _increaseEveryLevel;
+
+        float b = (float)(a - Math.Floor(a));
+
+        _fillImage.fillAmount = b;
+    }
 }

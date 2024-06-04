@@ -16,6 +16,7 @@ public abstract class AutoBase : MonoBehaviour, IPointerDownHandler, IPointerUpH
     [SerializeField] protected double _baseIncome;
     [SerializeField] protected double _basePrice;
     [SerializeField] protected UpgradesBase[] _upgradesBases;
+    [SerializeField] protected Image _fillImage;
     protected double _personalUpgrade = 1;
 
     private Coroutine _upgradeProcessCoroutine;
@@ -61,9 +62,12 @@ public abstract class AutoBase : MonoBehaviour, IPointerDownHandler, IPointerUpH
             UnlockUpgrade();
             GetCurrentIncome();
             UpdatePrice();
+            UpdateScale();
             SaveLevel();
         }
     }
+
+    protected abstract void UpdateScale();
 
     protected abstract void UnlockUpgrade();
 
