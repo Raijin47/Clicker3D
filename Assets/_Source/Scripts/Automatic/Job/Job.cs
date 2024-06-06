@@ -7,7 +7,7 @@ public class Job : AutoBase
 
     public override void GetCurrentIncome()
     {
-        CurrentIncome = Math.Round(_baseIncome * Level * Math.Pow(_increasePercent, Math.Floor(Level / _increaseEveryLevel)) * _personalUpgrade *
+        CurrentIncome = Math.Round(_baseIncome * Level * Math.Pow(_increasePercent, Math.Floor(Level / _increaseEveryLevel)) * _upgradesBase.Modifier *
             Modifier.JobIncomeModifier * Modifier.TimeMoneyBoost * Modifier.DiamondIncome * Modifier.ADsBoost);
     }
 
@@ -18,7 +18,7 @@ public class Job : AutoBase
 
     protected override double NextIncome(int level)
     {
-        return Math.Round(_baseIncome * level * Math.Pow(_increasePercent, Math.Floor(level / _increaseEveryLevel)) * _personalUpgrade *
+        return Math.Round(_baseIncome * level * Math.Pow(_increasePercent, Math.Floor(level / _increaseEveryLevel)) * _upgradesBase.Modifier *
             Modifier.JobIncomeModifier * Modifier.TimeMoneyBoost * Modifier.DiamondIncome * Modifier.ADsBoost);
     }
 
@@ -29,18 +29,33 @@ public class Job : AutoBase
 
     protected override void UnlockUpgrade()
     {
-        if (Level >= 1 && !_upgradesBases[0].IsShow) _upgradesBases[0].Show();
-        if (Level >= 25 && !_upgradesBases[1].IsShow) _upgradesBases[1].Show();
-        if (Level >= 50 && !_upgradesBases[2].IsShow) _upgradesBases[2].Show();
-        if (Level >= 100 && !_upgradesBases[3].IsShow) _upgradesBases[3].Show();
-        if (Level >= 150 && !_upgradesBases[4].IsShow) _upgradesBases[4].Show();
-        if (Level >= 200 && !_upgradesBases[5].IsShow) _upgradesBases[5].Show();
-        if (Level >= 250 && !_upgradesBases[6].IsShow) _upgradesBases[6].Show();
-        if (Level >= 300 && !_upgradesBases[7].IsShow) _upgradesBases[7].Show();
-        if (Level >= 350 && !_upgradesBases[8].IsShow) _upgradesBases[8].Show();
-        if (Level >= 500 && !_upgradesBases[9].IsShow) _upgradesBases[9].Show();
-        if (Level >= 750 && !_upgradesBases[10].IsShow) _upgradesBases[10].Show();
-        if (Level >= 1000 && !_upgradesBases[11].IsShow) _upgradesBases[11].Show();
+        switch(Level)
+        {
+            case >= 1000: _upgradesBase.Show(12); break;
+            case >= 750: _upgradesBase.Show(11); break;
+            case >= 500: _upgradesBase.Show(10); break;
+            case >= 350: _upgradesBase.Show(9); break;
+            case >= 300: _upgradesBase.Show(8); break;
+            case >= 250: _upgradesBase.Show(7); break;
+            case >= 200: _upgradesBase.Show(6); break;
+            case >= 150: _upgradesBase.Show(5); break;
+            case >= 100: _upgradesBase.Show(4); break;
+            case >= 50: _upgradesBase.Show(3); break;
+            case >= 25: _upgradesBase.Show(2); break;
+            case >= 1: _upgradesBase.Show(1); break;
+        }
+        //if (Level >= 1) _upgradesBase.Show(0);
+        //if (Level >= 25) _upgradesBases[1].Show(1);
+        //if (Level >= 50) _upgradesBases[2].Show(2);
+        //if (Level >= 100) _upgradesBases[3].Show(3);
+        //if (Level >= 150) _upgradesBases[4].Show(4);
+        //if (Level >= 200) _upgradesBases[5].Show(5);
+        //if (Level >= 250) _upgradesBases[6].Show(6);
+        //if (Level >= 300) _upgradesBases[7].Show(7);
+        //if (Level >= 350) _upgradesBases[8].Show(8);
+        //if (Level >= 500) _upgradesBases[9].Show(9);
+        //if (Level >= 750) _upgradesBases[10].Show(10);
+        //if (Level >= 1000) _upgradesBases[11].Show(11);
     }
 
     protected override void UpdateScale()

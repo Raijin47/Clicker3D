@@ -67,6 +67,19 @@ DiamondDescription3,Увеличивает время офлайн дохода,
 DiamondDescription4,Объем офлайн дохода,en,tr
 DiamondDescription5,Длительность бонусов за рекламу,en,tr
 DiamondDescription6,Эфективность бонусов за рекламу,en,tr
+UpgradeJobDescription0{0},Увеличивает доход от пончиков на {0}x,en,tr
+UpgradeJobDescription1{0},Увеличивает доход от печенек на {0}x,en,tr
+UpgradeJobDescription2{0},Увеличивает доход от конфет с ликером на {0}x,en,tr
+UpgradeJobDescription3{0},Увеличивает доход от лиденцов на {0}x,en,tr
+UpgradeJobDescription4{0},Увеличивает доход от кексов на {0}x,en,tr
+UpgradeJobDescription5{0},Увеличивает доход от терамису на {0}x,en,tr
+UpgradeJobDescription6{0},Увеличивает доход от мармеладок на {0}x,en,tr
+UpgradeJobDescription7{0},Увеличивает доход от мороженки на {0}x,en,tr
+UpgradeJobDescription8{0},Увеличивает доход от тортика на {0}x,en,tr
+UpgradeSweetName0,Пончик,en,tr
+UpgradeGrade1,Бронзовый,en,tr
+UpgradeGrade2,Медный,en,tr
+UpgradeGrade3,Серебрянный,en,tr
 HelpTitle0,Улучшения,en,tr
 HelpTitle1,Бонусы,en,tr
 HelpTitle2,Питомцы,en,tr
