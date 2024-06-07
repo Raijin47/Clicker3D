@@ -29,33 +29,37 @@ public class Job : AutoBase
 
     protected override void UnlockUpgrade()
     {
-        switch(Level)
+        //switch(Level)
+        //{
+        //    case >= 1000: _upgradesBase.Show(12); break;
+        //    case >= 750: _upgradesBase.Show(11); break;
+        //    case >= 500: _upgradesBase.Show(10); break;
+        //    case >= 350: _upgradesBase.Show(9); break;
+        //    case >= 300: _upgradesBase.Show(8); break;
+        //    case >= 250: _upgradesBase.Show(7); break;
+        //    case >= 200: _upgradesBase.Show(6); break;
+        //    case >= 150: _upgradesBase.Show(5); break;
+        //    case >= 100: _upgradesBase.Show(4); break;
+        //    case >= 50: _upgradesBase.Show(3); break;
+        //    case >= 25: _upgradesBase.Show(2); break;
+        //    case >= 1: _upgradesBase.Show(1); break;
+        //}
+
+        switch (Level)
         {
-            case >= 1000: _upgradesBase.Show(12); break;
-            case >= 750: _upgradesBase.Show(11); break;
-            case >= 500: _upgradesBase.Show(10); break;
-            case >= 350: _upgradesBase.Show(9); break;
-            case >= 300: _upgradesBase.Show(8); break;
-            case >= 250: _upgradesBase.Show(7); break;
-            case >= 200: _upgradesBase.Show(6); break;
-            case >= 150: _upgradesBase.Show(5); break;
-            case >= 100: _upgradesBase.Show(4); break;
-            case >= 50: _upgradesBase.Show(3); break;
-            case >= 25: _upgradesBase.Show(2); break;
+            case >= 12: _upgradesBase.Show(12); break;
+            case >= 11: _upgradesBase.Show(11); break;
+            case >= 10: _upgradesBase.Show(10); break;
+            case >= 9: _upgradesBase.Show(9); break;
+            case >= 8: _upgradesBase.Show(8); break;
+            case >= 7: _upgradesBase.Show(7); break;
+            case >= 6: _upgradesBase.Show(6); break;
+            case >= 5: _upgradesBase.Show(5); break;
+            case >= 4: _upgradesBase.Show(4); break;
+            case >= 3: _upgradesBase.Show(3); break;
+            case >= 2: _upgradesBase.Show(2); break;
             case >= 1: _upgradesBase.Show(1); break;
         }
-        //if (Level >= 1) _upgradesBase.Show(0);
-        //if (Level >= 25) _upgradesBases[1].Show(1);
-        //if (Level >= 50) _upgradesBases[2].Show(2);
-        //if (Level >= 100) _upgradesBases[3].Show(3);
-        //if (Level >= 150) _upgradesBases[4].Show(4);
-        //if (Level >= 200) _upgradesBases[5].Show(5);
-        //if (Level >= 250) _upgradesBases[6].Show(6);
-        //if (Level >= 300) _upgradesBases[7].Show(7);
-        //if (Level >= 350) _upgradesBases[8].Show(8);
-        //if (Level >= 500) _upgradesBases[9].Show(9);
-        //if (Level >= 750) _upgradesBases[10].Show(10);
-        //if (Level >= 1000) _upgradesBases[11].Show(11);
     }
 
     protected override void UpdateScale()

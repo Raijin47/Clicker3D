@@ -64,7 +64,7 @@ public class UpgradesBase : MonoBehaviour
     private void UpdateUI()
     {
         _priceText.text = ConvertNumber.Convert(_prices[_currentGrade]);
-        _effectText.SetValue(_increasesValue[_currentGrade].ToString());
+        _effectText.SetValue((_increasesValue[_currentGrade] / _increasesValue[_currentGrade-1]).ToString());
         _frameImage.color = _colors[_currentGrade];
         _gradeText.SetKey(_gradeKeys[_currentGrade]);
         _upgradeObject.SetActive(ActiveGrade < _availableGrade);

@@ -37,7 +37,7 @@
         public int[] LastReceiveTime = new int[4];
         public bool[] IsActiveTimer = new bool[4];
 
-        public int[] UpgradeAutomatic = new int[9];
+        public int[] UpgradeAutomatic = new int[18];
 
         public int LastLoginTime;
         public bool IsInitOfflineTimer;

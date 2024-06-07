@@ -535,6 +535,7 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
   _gradeKeys:
   - UpgradeGrade1
   - UpgradeGrade1
@@ -548,6 +549,7 @@ MonoBehaviour:
   - UpgradeGrade9
   - UpgradeGrade10
   - UpgradeGrade11
+  - UpgradeGrade12
   - UpgradeGrade12
   _prices:
   - 0
@@ -563,8 +565,10 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  - 0
   _increasesValue:
   - 1
+  - 0
   - 0
   - 0
   - 0

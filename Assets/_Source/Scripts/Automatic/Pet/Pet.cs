@@ -41,18 +41,21 @@ public class Pet : AutoBase
 
     protected override void UnlockUpgrade()
     {
-        //if (Level >= 10 && !_upgradesBases[0].IsShow) _upgradesBases[0].Show();
-        //if (Level >= 50 && !_upgradesBases[1].IsShow) _upgradesBases[1].Show();
-        //if (Level >= 100 && !_upgradesBases[2].IsShow) _upgradesBases[2].Show();
-        //if (Level >= 150 && !_upgradesBases[3].IsShow) _upgradesBases[3].Show();
-        //if (Level >= 200 && !_upgradesBases[4].IsShow) _upgradesBases[4].Show();
-        //if (Level >= 250 && !_upgradesBases[5].IsShow) _upgradesBases[5].Show();
-        //if (Level >= 300 && !_upgradesBases[6].IsShow) _upgradesBases[6].Show();
-        //if (Level >= 350 && !_upgradesBases[7].IsShow) _upgradesBases[7].Show();
-        //if (Level >= 400 && !_upgradesBases[8].IsShow) _upgradesBases[8].Show();
-        //if (Level >= 500 && !_upgradesBases[9].IsShow) _upgradesBases[9].Show();
-        //if (Level >= 750 && !_upgradesBases[10].IsShow) _upgradesBases[10].Show();
-        //if (Level >= 1000 && !_upgradesBases[11].IsShow) _upgradesBases[11].Show();
+        switch (Level)
+        {
+            case >= 1000: _upgradesBase.Show(12); break;
+            case >= 750: _upgradesBase.Show(11); break;
+            case >= 500: _upgradesBase.Show(10); break;
+            case >= 400: _upgradesBase.Show(9); break;
+            case >= 350: _upgradesBase.Show(8); break;
+            case >= 300: _upgradesBase.Show(7); break;
+            case >= 250: _upgradesBase.Show(6); break;
+            case >= 200: _upgradesBase.Show(5); break;
+            case >= 150: _upgradesBase.Show(4); break;
+            case >= 100: _upgradesBase.Show(3); break;
+            case >= 50: _upgradesBase.Show(2); break;
+            case >= 10: _upgradesBase.Show(1); break;
+        }
     }
 
     protected override void UpdateScale()
