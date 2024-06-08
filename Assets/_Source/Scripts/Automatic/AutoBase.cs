@@ -34,7 +34,8 @@ public abstract class AutoBase : MonoBehaviour, IPointerDownHandler, IPointerUpH
         protected set
         {
             _currentIncome = Math.Round(value);
-            _incomeText.text = ConvertNumber.Convert(CurrentIncome) + " > " + ConvertNumber.Convert(NextIncome(_level + 1));
+
+            _incomeText.text = ConvertNumber.Convert(CurrentIncome) + TextUtility.MoreSign + ConvertNumber.Convert(NextIncome(_level + 1));
         }
     }
 
