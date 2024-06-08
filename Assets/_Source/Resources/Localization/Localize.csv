@@ -69,18 +69,65 @@ DiamondDescription5,Длительность бонусов за рекламу,
 DiamondDescription6,Эфективность бонусов за рекламу,en,tr
 UpgradeJobDescription0{0},Производство пончиков увеличивается в {0}х раз.,en,tr
 UpgradeJobDescription1{0},Производство печенек увеличивается в {0}x раз.,en,tr
-UpgradeJobDescription2{0},Увеличивает доход от конфет с ликером на {0}x,en,tr
+UpgradeJobDescription2{0},Производство конфет с ликёром увеличивается в {0}x раз.,en,tr
 UpgradeJobDescription3{0},Увеличивает доход от лиденцов на {0}x,en,tr
 UpgradeJobDescription4{0},Увеличивает доход от кексов на {0}x,en,tr
 UpgradeJobDescription5{0},Увеличивает доход от терамису на {0}x,en,tr
 UpgradeJobDescription6{0},Увеличивает доход от мармеладок на {0}x,en,tr
 UpgradeJobDescription7{0},Увеличивает доход от мороженки на {0}x,en,tr
 UpgradeJobDescription8{0},Производство тортиков увеличивается в {0}x раз.,en,tr
-UpgradePetDescription0{0},Привлекательность Джека увеличивается в {0}х раз.,en,tr
+UpgradePetDescription0{0},Привлекательность 0 увеличивается в {0}х раз.,en,tr
+UpgradePetDescription1{0},Привлекательность 1 увеличивается в {0}х раз.,en,tr
+UpgradePetDescription2{0},Привлекательность 2 увеличивается в {0}х раз.,en,tr
+UpgradePetDescription3{0},Привлекательность 3 увеличивается в {0}х раз.,en,tr
+UpgradePetDescription4{0},Привлекательность 4 увеличивается в {0}х раз.,en,tr
+UpgradePetDescription5{0},Привлекательность 5 увеличивается в {0}х раз.,en,tr
+UpgradePetDescription6{0},Привлекательность 6 увеличивается в {0}х раз.,en,tr
+UpgradePetDescription7{0},Привлекательность 7 увеличивается в {0}х раз.,en,tr
+UpgradePetDescription8{0},Привлекательность 8 увеличивается в {0}х раз.,en,tr
+UpgradePetDescription9{0},Привлекательность 9 увеличивается в {0}х раз.,en,tr
 UpgradeSweetName0,Пончик,en,tr
+UpgradeSweetName1,Пончик1,en,tr
+UpgradeSweetName2,Пончик2,en,tr
+UpgradeSweetName3,Пончик3,en,tr
+UpgradeSweetName4,Пончик4,en,tr
+UpgradeSweetName5,Пончик5,en,tr
+UpgradeSweetName6,Пончик6,en,tr
+UpgradeSweetName7,Пончик7,en,tr
+UpgradeSweetName8,Пончик8,en,tr
+UpgradePetName0,Пет 0,en,tr
+UpgradePetName1,Пет 1,en,tr
+UpgradePetName2,Пет 2,en,tr
+UpgradePetName3,Пет 3,en,tr
+UpgradePetName4,Пет 4,en,tr
+UpgradePetName5,Пет 5,en,tr
+UpgradePetName6,Пет 6,en,tr
+UpgradePetName7,Пет 7,en,tr
+UpgradePetName8,Пет 8,en,tr
 UpgradeGrade1,Бронзовый,en,tr
 UpgradeGrade2,Медный,en,tr
-UpgradeGrade3,Серебрянный,en,tr
+UpgradeGrade3,Грейд 3,en,tr
+UpgradeGrade4,Грейд 4,en,tr
+UpgradeGrade5,Грейд 5,en,tr
+UpgradeGrade6,Грейд 6,en,tr
+UpgradeGrade7,Грейд 7,en,tr
+UpgradeGrade8,Грейд 8,en,tr
+UpgradeGrade9,Грейд 9,en,tr
+UpgradeGrade10,Грейд 10,en,tr
+UpgradeGrade11,Грейд 11,en,tr
+UpgradeGrade12,Грейд 12,en,tr
+UpgradePetGrade1,Grade1,en,tr
+UpgradePetGrade2,Grade2,en,tr
+UpgradePetGrade3,Grade3,en,tr
+UpgradePetGrade4,Grade4,en,tr
+UpgradePetGrade5,Grade5,en,tr
+UpgradePetGrade6,Grade6,en,tr
+UpgradePetGrade7,Grade7,en,tr
+UpgradePetGrade8,Grade8,en,tr
+UpgradePetGrade9,Grade9,en,tr
+UpgradePetGrade10,Grade10,en,tr
+UpgradePetGrade11,Grade11,en,tr
+UpgradePetGrade12,Grade12,en,tr
 HelpTitle0,Улучшения,en,tr
 HelpTitle1,Бонусы,en,tr
 HelpTitle2,Питомцы,en,tr
