@@ -35,7 +35,7 @@ public abstract class DiamondBase : UpgradeBase
 
     protected override void PlayParticle()
     {
-        Locator.Instance.Particle.DiamondTransform.position = Input.mousePosition;
+        Locator.Instance.Particle.DiamondTransform.position = _upgradeButton.transform.position;
         Locator.Instance.Particle.DiamondParticle.Play();
     }
 

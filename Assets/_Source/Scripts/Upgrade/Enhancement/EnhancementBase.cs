@@ -54,7 +54,7 @@ public abstract class EnhancementBase : UpgradeBase
 
     protected override void PlayParticle()
     {
-        Locator.Instance.Particle.GoldTransform.position = Input.mousePosition;
+        Locator.Instance.Particle.GoldTransform.position = _upgradeButton.transform.position;
         Locator.Instance.Particle.GoldParticle.Play();
     }
 }

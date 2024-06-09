@@ -32,7 +32,7 @@ public abstract class RebithBase : UpgradeBase
 
     protected override void PlayParticle()
     {
-        Locator.Instance.Particle.PrestigeTransform.position = Input.mousePosition;
+        Locator.Instance.Particle.PrestigeTransform.position = _upgradeButton.transform.position;
         Locator.Instance.Particle.PrestigeParticle.Play();
     }
 }

@@ -101,7 +101,7 @@ public abstract class AutoBase : MonoBehaviour, IPointerDownHandler, IPointerUpH
         if (IsPurchaseAvailable())
         {
             Upgrade();
-            Locator.Instance.Particle.GoldTransform.position = Input.mousePosition;
+            Locator.Instance.Particle.GoldTransform.position = _buttonUpgrade.transform.position;
             Locator.Instance.Particle.GoldParticle.Play();
             _upgradeProcessCoroutine = StartCoroutine(UpgradeProcess());
         }

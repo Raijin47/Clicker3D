@@ -10,7 +10,7 @@ public abstract class UpgradeBase : MonoBehaviour, IPointerDownHandler, IPointer
     [SerializeField] private TextMeshProUGUI _levelText;
     [SerializeField] protected TextMeshProUGUI _priceText;
     [SerializeField] protected TextMeshProUGUI _effectText;
-    [SerializeField] private Button _upgradeButton;
+    [SerializeField] protected Button _upgradeButton;
 
     [SerializeField] protected double _baseUpgradePrice;
     [SerializeField] private double _degreeIncreasePrice;
