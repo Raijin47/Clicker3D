@@ -109,7 +109,6 @@ public static class Modifier
     private static double _costReductionModifier;
     private static double _jobIncomeModifier;
     private static double _petIncomeModifier;
-    private static double _startMoney;
 
     public static double PrestigeClickForce
     {
@@ -167,12 +166,6 @@ public static class Modifier
             _petIncomeModifier = value * 0.01d;
             GlobalEvent.SendIncreasePetIncome();
         }
-    }
-
-    public static double StartMoney
-    {
-        get => _startMoney;
-        set => _startMoney = value;
     }
     #endregion
 

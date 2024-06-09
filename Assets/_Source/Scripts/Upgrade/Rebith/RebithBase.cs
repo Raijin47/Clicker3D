@@ -1,8 +1,10 @@
-using UnityEngine;
 using YG;
+using System;
 
 public abstract class RebithBase : UpgradeBase
 {
+    private const double _priceModifire = 0.05d;
+
     protected override void AddListener()
     {
         GlobalEvent.OnRebithChange.AddListener(CheckInteractableButton);
@@ -34,5 +36,14 @@ public abstract class RebithBase : UpgradeBase
     {
         Locator.Instance.Particle.PrestigeTransform.position = _upgradeButton.transform.position;
         Locator.Instance.Particle.PrestigeParticle.Play();
+    }
+
+    protected override double CalculateUpgradePrice()
+    {
+        return Math.Round(_baseUpgradePrice + Level * (_baseUpgradePrice + _priceModifire * Level));
+        //return Math.Round(_baseUpgradePrice + Level * (_baseUpgradePrice * 1.00001d * Level));
+        //return System.Math.Round(1 + Level * (_baseUpgradePrice +
+        //    _baseUpgradePrice * 0.005d * Level));
+
     }
 }

@@ -34,13 +34,4 @@ public abstract class RebithIncreaseScaleBase : RebithBase
 
         _fillImage.fillAmount = b;
     }
-
-    protected override double CalculateUpgradePrice()
-    {
-        //return Math.Round(_baseUpgradePrice + Level * (_baseUpgradePrice + 0.5d * Level));
-        return Math.Round(1 + Level * (_baseUpgradePrice + 
-            _baseUpgradePrice * 0.005d * Level));
-
-        //return Math.Round(_baseUpgradePrice + Level * (_baseUpgradePrice +  0.1d * Math.Floor(Level / 2d)));
-    }
 }

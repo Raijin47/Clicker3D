@@ -59,6 +59,6 @@ public class Wallet : MonoBehaviour
 
     private void OnReset()
     {
-        Money = Modifier.StartMoney;
+        Money = 0;
     }
 }
