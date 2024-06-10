@@ -9,7 +9,13 @@ public abstract class RebithIncreaseScaleBase : RebithBase
     private const double _increaseEveryLevel = 10;
     private const double _increasePercent = 2;
 
-    protected override void UpdateUI()
+    protected override void UpdateTextMax()
+    {
+        _effectText.text = ConvertNumber.Convert(_currentValue) + TextUtility.Percent;
+        UpdateScale();
+    }
+
+    protected override void UpdateTextProcess()
     {
         _priceText.text = ConvertNumber.Convert(_currentPrice);
         _effectText.text = ConvertNumber.Convert(_currentValue) + TextUtility.PercentAndMore + ConvertNumber.Convert(_nextValue) + TextUtility.Percent;

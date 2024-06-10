@@ -1,4 +1,4 @@
-public class DiamondTimeBoostAds : DiamondLimited
+public class DiamondTimeBoostAds : DiamondBase
 {
     protected override void Execute()
     {
@@ -7,11 +7,11 @@ public class DiamondTimeBoostAds : DiamondLimited
 
     protected override void UpdateTextMax()
     {
-        _effectText.text = "x" + _currentValue;
+        _effectText.text = TextUtility.Multiply + _currentValue;
     }
 
     protected override void UpdateTextProcess()
     {
-        _effectText.text = "x" + _currentValue + " > x" + _nextValue;
+        _effectText.text = TextUtility.Multiply + _currentValue + TextUtility.MoreAndMultiply + _nextValue;
     }
 }

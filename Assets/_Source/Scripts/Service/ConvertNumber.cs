@@ -40,7 +40,7 @@ public static class ConvertNumber
             indexer++;
         }
 
-        digit = Math.Round(digit, 3);//indexer >= 2 ? 3 : 2);
+        digit = Math.Round(digit, 2);
         return $"{digit}{_typeValue[indexer]}";
     }
 }

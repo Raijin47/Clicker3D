@@ -1,4 +1,4 @@
-public class DiamondLoveForce : DiamondLimited
+public class DiamondLoveForce : DiamondBase
 {
     protected override void Execute()
     {
@@ -7,11 +7,11 @@ public class DiamondLoveForce : DiamondLimited
 
     protected override void UpdateTextMax()
     {
-        _effectText.text = _currentValue + "%";
+        _effectText.text = _currentValue + TextUtility.Percent;
     }
 
     protected override void UpdateTextProcess()
     {
-        _effectText.text = _currentValue + "% > " + _nextValue + "%";
+        _effectText.text = _currentValue + TextUtility.PercentAndMore + _nextValue + TextUtility.Percent;
     }
 }

@@ -1,4 +1,4 @@
-public class DiamondOfflineIncomeModifire : DiamondLimited
+public class DiamondOfflineIncomeModifire : DiamondBase
 {
     protected override void Execute()
     {
@@ -7,11 +7,11 @@ public class DiamondOfflineIncomeModifire : DiamondLimited
 
     protected override void UpdateTextMax()
     {
-        _effectText.text = _currentValue + "%";
+        _effectText.text = _currentValue + TextUtility.Percent;
     }
 
     protected override void UpdateTextProcess()
     {
-        _effectText.text = _currentValue + "% > " + _nextValue + "%";
+        _effectText.text = _currentValue + TextUtility.PercentAndMore + _nextValue + TextUtility.Percent;
     }
 }

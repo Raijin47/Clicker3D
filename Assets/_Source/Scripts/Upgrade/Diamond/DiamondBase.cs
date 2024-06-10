@@ -19,7 +19,7 @@ public abstract class DiamondBase : UpgradeBase
 
     protected override bool IsPurchaseAvailable()
     {
-        bool _isPurchaseAvailable = Locator.Instance.Wallet.Diamonds >= _currentPrice;
+        bool _isPurchaseAvailable = Locator.Instance.Wallet.Diamonds >= _currentPrice && Level != _maxLevel;
         return _isPurchaseAvailable;
     }
 

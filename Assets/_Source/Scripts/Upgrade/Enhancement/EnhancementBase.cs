@@ -1,5 +1,4 @@
 using System;
-using UnityEngine;
 using YG;
 
 public abstract class EnhancementBase : UpgradeBase
@@ -20,7 +19,6 @@ public abstract class EnhancementBase : UpgradeBase
     private void UpdatePrice()
     {
         _currentPrice = CalculateUpgradePrice();
-        UpdateUI();
         CheckInteractableButton();
     }
 

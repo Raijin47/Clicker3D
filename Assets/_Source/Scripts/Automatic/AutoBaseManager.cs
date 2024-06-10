@@ -66,7 +66,7 @@ public abstract class AutoBaseManager : MonoBehaviour
             SaveAuto();
             UpdatePrice();
             CalculateIncome();
-            Locator.Instance.Particle.GoldTransform.position = Input.mousePosition;
+            Locator.Instance.Particle.GoldTransform.position = _buttonBuy.transform.position;
             Locator.Instance.Particle.GoldParticle.Play();
         }    
     }

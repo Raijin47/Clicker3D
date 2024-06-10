@@ -18,7 +18,7 @@ public abstract class RebithBase : UpgradeBase
 
     protected override bool IsPurchaseAvailable()
     {
-        bool _isPurchaseAvailable = Locator.Instance.Wallet.Rebith >= _currentPrice;
+        bool _isPurchaseAvailable = Locator.Instance.Wallet.Rebith >= _currentPrice && Level != _maxLevel;
         return _isPurchaseAvailable;
     }
 
@@ -41,6 +41,9 @@ public abstract class RebithBase : UpgradeBase
     protected override double CalculateUpgradePrice()
     {
         return Math.Round(_baseUpgradePrice + Level * (_baseUpgradePrice + _priceModifire * Level));
+        //return Math.Round((Level + 1) * (_baseUpgradePrice * 1.02));
+
+
         //return Math.Round(_baseUpgradePrice + Level * (_baseUpgradePrice * 1.00001d * Level));
         //return System.Math.Round(1 + Level * (_baseUpgradePrice +
         //    _baseUpgradePrice * 0.005d * Level));

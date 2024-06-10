@@ -11,11 +11,14 @@ public abstract class UpgradeBase : MonoBehaviour, IPointerDownHandler, IPointer
     [SerializeField] protected TextMeshProUGUI _priceText;
     [SerializeField] protected TextMeshProUGUI _effectText;
     [SerializeField] protected Button _upgradeButton;
+    [SerializeField] private GameObject _textProcess;
+    [SerializeField] private GameObject _textMax;
 
     [SerializeField] protected double _baseUpgradePrice;
     [SerializeField] private double _degreeIncreasePrice;
     [SerializeField] protected double _baseValue;
     [SerializeField] protected double _fixedIncreaseValue;
+    [SerializeField] protected int _maxLevel;
 
     private Coroutine _upgradeProcessCoroutine;
     private WaitForSeconds _intervalToUpgrade = new WaitForSeconds(.5f);
@@ -120,11 +123,28 @@ public abstract class UpgradeBase : MonoBehaviour, IPointerDownHandler, IPointer
         return IncreaseValue.Calculate(_level, _baseUpgradePrice, _degreeIncreasePrice);
     }
 
+    protected void UpdateUI()
+    {
+        if (Level == _maxLevel)
+        {
+            _textProcess.SetActive(false);
+            _textMax.SetActive(true);
+            UpdateTextMax();
+        }
+        else
+        {
+            _priceText.text = ConvertNumber.Convert(_currentPrice);
+            UpdateTextProcess();
+        }
+    }
+
+
     protected abstract void Execute();
-    protected abstract void UpdateUI();
     protected abstract int GetLevel();
     protected abstract void AddListener();
     protected abstract void ExecutePurchase();
     protected abstract bool IsPurchaseAvailable();
     protected abstract void SetLevel();
+    protected abstract void UpdateTextMax();
+    protected abstract void UpdateTextProcess();
 }

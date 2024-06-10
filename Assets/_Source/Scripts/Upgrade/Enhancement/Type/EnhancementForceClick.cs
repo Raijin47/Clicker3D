@@ -21,15 +21,6 @@ public class EnhancementForceClick : EnhancementBase
         GlobalEvent.OnIncreaseClick.AddListener(UpdateUI);
     }
 
-    protected override void UpdateUI()
-    {
-        _priceText.text = ConvertNumber.Convert(_currentPrice);
-        _effectText.text = ConvertNumber.Convert(
-            Math.Round(_currentValue * Modifier.PrestigeClickForce * Modifier.DiamondIncome * Modifier.ADsBoost * Modifier.TimeMoneyBoost)) 
-            + " > " + ConvertNumber.Convert(
-                Math.Round(_nextValue * Modifier.PrestigeClickForce * Modifier.DiamondIncome * Modifier.ADsBoost * Modifier.TimeMoneyBoost));
-    }
-
     protected override double CalculateUpgradeValue()
     {
         double value = Level * _baseValue;
@@ -40,5 +31,20 @@ public class EnhancementForceClick : EnhancementBase
     {
         double value = (Level + 1) * _baseValue;
         return value;
+    }
+
+    protected override void UpdateTextMax()
+    {
+        _effectText.text = ConvertNumber.Convert(
+            Math.Round(_currentValue * Modifier.PrestigeClickForce * Modifier.DiamondIncome * Modifier.ADsBoost * Modifier.TimeMoneyBoost));
+    }
+
+    protected override void UpdateTextProcess()
+    {
+        _priceText.text = ConvertNumber.Convert(_currentPrice);
+        _effectText.text = ConvertNumber.Convert(
+            Math.Round(_currentValue * Modifier.PrestigeClickForce * Modifier.DiamondIncome * Modifier.ADsBoost * Modifier.TimeMoneyBoost))
+            + TextUtility.MoreSign + ConvertNumber.Convert(
+                Math.Round(_nextValue * Modifier.PrestigeClickForce * Modifier.DiamondIncome * Modifier.ADsBoost * Modifier.TimeMoneyBoost));
     }
 }

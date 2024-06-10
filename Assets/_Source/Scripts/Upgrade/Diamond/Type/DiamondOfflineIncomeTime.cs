@@ -1,6 +1,6 @@
 using System;
 
-public class DiamondOfflineIncomeTime : DiamondLimited
+public class DiamondOfflineIncomeTime : DiamondBase
 {
     protected override void Execute()
     {
@@ -17,6 +17,6 @@ public class DiamondOfflineIncomeTime : DiamondLimited
     {
         DateTimeOffset dateTimeOffset = DateTimeOffset.FromUnixTimeSeconds((int)_currentValue);
         DateTimeOffset nextTimeOffset = DateTimeOffset.FromUnixTimeSeconds((int)_nextValue);
-        _effectText.text = dateTimeOffset.ToString("HH:mm:ss") + " > " + nextTimeOffset.ToString("HH:mm:ss");
+        _effectText.text = dateTimeOffset.ToString("HH:mm:ss") + TextUtility.MoreSign + nextTimeOffset.ToString("HH:mm:ss");
     }
 }
