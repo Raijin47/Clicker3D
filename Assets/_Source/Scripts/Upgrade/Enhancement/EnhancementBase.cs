@@ -1,8 +1,9 @@
-using System;
 using YG;
 
 public abstract class EnhancementBase : UpgradeBase
 {
+    private const double _degreeIncreasePrice = 1.15;
+
     protected override void AddListener()
     {
         GlobalEvent.OnMoneyChange.AddListener(CheckInteractableButton);
@@ -46,8 +47,7 @@ public abstract class EnhancementBase : UpgradeBase
 
     protected override double CalculateUpgradePrice()
     {
-        double value = Math.Round(base.CalculateUpgradePrice() * Modifier.CostReductionModifier);
-        return value;
+        return IncreaseValue.Calculate(Level, _baseUpgradePrice, _degreeIncreasePrice) * Modifier.CostReductionModifier;
     }
 
     protected override void PlayParticle()

@@ -2,8 +2,6 @@ using System;
 
 public class EnhancementForceClick : EnhancementBase
 {
-    [UnityEngine.SerializeField] private double _degreeIncreaseValue;
-
     protected override void Execute()
     {
         Modifier.EnhancementClickForce = _currentValue;

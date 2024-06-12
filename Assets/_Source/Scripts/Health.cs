@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using YG;
+using System;
 using System.Collections;
 
 public class Health : MonoBehaviour
@@ -9,15 +10,16 @@ public class Health : MonoBehaviour
     [SerializeField] private Stage _stage;
     [SerializeField] private Image _imageHealth;
     [SerializeField] private TextMeshProUGUI _textHealth;
-    [SerializeField] private double _baseHealth;
-    [SerializeField] private double _degreeIncreaseHealth;
+    private const double _baseHealth = 100;
+    private const double _degreeIncreaseHealth = 1.07d;
 
     private double _currentHealth;
     private double _maxHealth;
     private string _textMaxHealth;
-    private readonly string _division = " / ";
-    private const double _additionalBaseHealth = 99;
+    private const string _division = " / ";
     private const float _one = 1f;
+    private const double _increasePercent = 5;
+    private const double _increaseEveryLevel = 10;
     private Coroutine _maxHealthUpdateProcessCoroutine;
 
 
@@ -79,8 +81,11 @@ public class Health : MonoBehaviour
 
     private void UpdateMaxHealth()
     {
-        _maxHealth = System.Math.Round((System.Math.Pow(_baseHealth, _stage.CurrentStage * _degreeIncreaseHealth) + _additionalBaseHealth) * Modifier.HealthReductionModifier);
-        //_maxHealth = IncreaseValue.Calculate(_stage.CurrentStage, _baseHealth, _degreeIncreaseHealth) * Modifier.HealthReductionModifier;
+        _maxHealth =
+            //IncreaseValue.CalculateConstant(_stage.CurrentStage, 0.3d, 1)
+            IncreaseValue.CalculateDegree(_stage.CurrentStage, _baseHealth, _degreeIncreaseHealth)
+            * Math.Pow(_increasePercent, Math.Floor(_stage.CurrentStage / _increaseEveryLevel))
+            * Modifier.HealthReductionModifier;
         _textMaxHealth = ConvertNumber.Convert(_maxHealth);
     }
 

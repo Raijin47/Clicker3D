@@ -14,8 +14,8 @@ public class RebithManager : UpgradeManagerBase
 
     [SerializeField] private int _dayToRebith;
 
-    [SerializeField] private double _baseRewardRebith;
-    [SerializeField] private double _degreeIncreaseRewardRebith;
+    private const double _baseRewardRebith = 10d;
+    private const double _degreeIncreaseRewardRebith= 1.32d;
 
     private double _currentDegreeIncreaseRebith;
     private string _currentRewardString;
@@ -62,7 +62,7 @@ public class RebithManager : UpgradeManagerBase
 
     private double CalculateValue()
     {
-        return System.Math.Round(IncreaseValue.Calculate(_stage.CurrentStage, _baseRewardRebith, _currentDegreeIncreaseRebith) * Modifier.PrestigeMultiplier);
+        return System.Math.Round(IncreaseValue.CalculateDegree(_stage.CurrentStage, _baseRewardRebith, _currentDegreeIncreaseRebith) * Modifier.PrestigeMultiplier);
     }
 
     private void UpdateRebithReward()

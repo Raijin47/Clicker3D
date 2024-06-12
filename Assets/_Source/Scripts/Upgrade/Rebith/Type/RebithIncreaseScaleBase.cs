@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public abstract class RebithIncreaseScaleBase : RebithBase
 {
     [SerializeField] private Image _fillImage;
-    [SerializeField] private double _degreeIncreaseValue;
     private const double _increaseEveryLevel = 10;
     private const double _increasePercent = 2;
 

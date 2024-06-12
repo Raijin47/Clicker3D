@@ -1,9 +1,8 @@
 using YG;
-using System;
 
 public abstract class RebithBase : UpgradeBase
 {
-    private const double _priceModifire = 0.05d;
+    private const double _increaseDegreePrice = 1.3d;
 
     protected override void AddListener()
     {
@@ -40,13 +39,6 @@ public abstract class RebithBase : UpgradeBase
 
     protected override double CalculateUpgradePrice()
     {
-        return Math.Round(_baseUpgradePrice + Level * (_baseUpgradePrice + _priceModifire * Level));
-        //return Math.Round((Level + 1) * (_baseUpgradePrice * 1.02));
-
-
-        //return Math.Round(_baseUpgradePrice + Level * (_baseUpgradePrice * 1.00001d * Level));
-        //return System.Math.Round(1 + Level * (_baseUpgradePrice +
-        //    _baseUpgradePrice * 0.005d * Level));
-
+        return IncreaseValue.CalculateDegree(Level, _baseUpgradePrice, _increaseDegreePrice);
     }
 }

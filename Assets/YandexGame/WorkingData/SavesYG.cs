@@ -34,8 +34,8 @@
         public bool[] SkinsPurchased = new bool[10];
         public bool[] ColorPurchased = new bool[30];
 
-        public int[] LastReceiveTime = new int[4];
-        public bool[] IsActiveTimer = new bool[4];
+        public int[] LastReceiveTime = new int[2];
+        public bool[] IsActiveTimer = new bool[2];
 
         public int[] UpgradeAutomatic = new int[18];
 

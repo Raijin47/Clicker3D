@@ -20,8 +20,8 @@ public abstract class AutoBase : MonoBehaviour, IPointerDownHandler, IPointerUpH
 
     private Coroutine _upgradeProcessCoroutine;
 
-    private readonly double _degreeIncreasePrice = 1.15;
-    protected readonly double _increasePercent = 1.5;
+    private const double _degreeIncreasePrice = 1.15;
+    protected const double _increasePercent = 1.5;
     private readonly WaitForSeconds _intervalToUpgrade = new(.5f);
 
     protected double _currentIncome;

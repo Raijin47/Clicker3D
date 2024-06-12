@@ -3,7 +3,7 @@ using System;
 
 public class Pet : AutoBase
 {
-    private readonly double _increaseEveryLevel = 10;
+    private const double _increaseEveryLevel = 10;
 
     public override void GetCurrentIncome()
     {

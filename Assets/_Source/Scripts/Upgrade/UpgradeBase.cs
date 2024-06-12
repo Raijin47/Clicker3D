@@ -15,7 +15,6 @@ public abstract class UpgradeBase : MonoBehaviour, IPointerDownHandler, IPointer
     [SerializeField] private GameObject _textMax;
 
     [SerializeField] protected double _baseUpgradePrice;
-    [SerializeField] private double _degreeIncreasePrice;
     [SerializeField] protected double _baseValue;
     [SerializeField] protected double _fixedIncreaseValue;
     [SerializeField] protected int _maxLevel;
@@ -118,11 +117,6 @@ public abstract class UpgradeBase : MonoBehaviour, IPointerDownHandler, IPointer
         return _baseValue + (Level + 1) * _fixedIncreaseValue;
     }
 
-    protected virtual double CalculateUpgradePrice()
-    {
-        return IncreaseValue.Calculate(_level, _baseUpgradePrice, _degreeIncreasePrice);
-    }
-
     protected void UpdateUI()
     {
         if (Level == _maxLevel)
@@ -138,7 +132,7 @@ public abstract class UpgradeBase : MonoBehaviour, IPointerDownHandler, IPointer
         }
     }
 
-
+    protected abstract double CalculateUpgradePrice();
     protected abstract void Execute();
     protected abstract int GetLevel();
     protected abstract void AddListener();
