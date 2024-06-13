@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class ButtonBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class ButtonAnimation : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     #region Sub-Classes
     [System.Serializable]

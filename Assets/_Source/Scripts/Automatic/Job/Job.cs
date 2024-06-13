@@ -1,14 +1,20 @@
 using System;
+using UnityEngine;
 using YG;
 
 public class Job : AutoBase
 {
-    private readonly double _increaseEveryLevel = 20;
+    [SerializeField] private UpgradesBase _upgradesBase;
+    [SerializeField] private UpgradesPet _upgradesPet;
+    [SerializeField] private Pet _pet;
+
+    private const double _increaseEveryLevel = 20;
 
     public override void GetCurrentIncome()
     {
-        CurrentIncome = Math.Round(_baseIncome * Level * Math.Pow(_increasePercent, Math.Floor(Level / _increaseEveryLevel)) * _upgradesBase.Modifier *
-            Modifier.JobIncomeModifier * Modifier.TimeMoneyBoost * Modifier.DiamondIncome * Modifier.ADsBoost);
+        CurrentIncome = Math.Round(_baseIncome * Level * Math.Pow(_increasePercent, Math.Floor(Level / _increaseEveryLevel) *
+            Modifier.JobIncomeModifier * Modifier.TimeMoneyBoost * Modifier.DiamondIncome * Modifier.ADsBoost) *
+            (1 + _upgradesPet.ModifierPercent * _pet.Level) * _upgradesPet.Modifier);
     }
 
     protected override void SaveLevel()
@@ -18,8 +24,9 @@ public class Job : AutoBase
 
     protected override double NextIncome(int level)
     {
-        return Math.Round(_baseIncome * level * Math.Pow(_increasePercent, Math.Floor(level / _increaseEveryLevel)) * _upgradesBase.Modifier *
-            Modifier.JobIncomeModifier * Modifier.TimeMoneyBoost * Modifier.DiamondIncome * Modifier.ADsBoost);
+        return Math.Round(_baseIncome * level * Math.Pow(_increasePercent, Math.Floor(level / _increaseEveryLevel) *
+            Modifier.JobIncomeModifier * Modifier.TimeMoneyBoost * Modifier.DiamondIncome * Modifier.ADsBoost) *
+            (1 + _upgradesPet.ModifierPercent * _pet.Level) * _upgradesPet.Modifier);
     }
 
     protected override void CalculateIncome()

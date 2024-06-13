@@ -1,8 +1,10 @@
 using YG;
 using System;
+using UnityEngine;
 
 public class Pet : AutoBase
 {
+    [SerializeField] private UpgradesPet _upgradesBase;
     private const double _increaseEveryLevel = 10;
 
     public override void GetCurrentIncome()

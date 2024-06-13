@@ -8,6 +8,7 @@ public class Click : MonoBehaviour
     [SerializeField] private MessageSystem _message;
     [SerializeField] private double _criticalModifier;
     [SerializeField] private ParticleSystem _particle;
+    [SerializeField] private RectTransform _particleTransform;
 
     private double _clickForce, _criticalClickForce;
     private string _textClick, _criticalTextClick;
@@ -22,6 +23,7 @@ public class Click : MonoBehaviour
 
     public void ClickButton()
     {
+        _particleTransform.position = Input.mousePosition;
         _particle.Play();
 
         if(IsCritical())

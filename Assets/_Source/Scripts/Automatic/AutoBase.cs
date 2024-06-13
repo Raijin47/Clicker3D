@@ -13,7 +13,6 @@ public abstract class AutoBase : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _levelText;
     [SerializeField] protected double _baseIncome;
     [SerializeField] protected double _basePrice;
-    [SerializeField] protected UpgradesBase _upgradesBase;
     [SerializeField] protected Image _fillImage;
 
     protected double _price1;
