@@ -2,10 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
-using UnityEngine.EventSystems;
-using System.Collections;
 
-public abstract class AutoBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
+public abstract class AutoBase : MonoBehaviour
 {
     [SerializeField] protected int _id;
     [SerializeField] private GameObject _gameObject;
@@ -18,11 +16,12 @@ public abstract class AutoBase : MonoBehaviour, IPointerDownHandler, IPointerUpH
     [SerializeField] protected UpgradesBase _upgradesBase;
     [SerializeField] protected Image _fillImage;
 
-    private Coroutine _upgradeProcessCoroutine;
+    protected double _price1;
+    protected double _price10;
+    protected double _price100;
 
     private const double _degreeIncreasePrice = 1.15;
     protected const double _increasePercent = 1.5;
-    private readonly WaitForSeconds _intervalToUpgrade = new(.5f);
 
     protected double _currentIncome;
     protected double _currentPrice;
@@ -83,64 +82,59 @@ public abstract class AutoBase : MonoBehaviour, IPointerDownHandler, IPointerUpH
 
         GlobalEvent.OnMoneyChange.AddListener(CheckInteractableButton);
         GlobalEvent.OnCostReduction.AddListener(UpdatePrice);
-
+        GlobalEvent.OnChangeCountUpgrade.AddListener(SwitchPrice);
+        _buttonUpgrade.onClick.AddListener(UpgradeButton);
         Level = level;
     }
 
     protected void UpdatePrice()
     {
-        CurrentPrice = Math.Round(IncreaseValue.Calculate(Level, _basePrice, _degreeIncreasePrice) * Modifier.CostReductionModifier);
+        double currentLevel = Level;
+        double value = 0;
+
+        value += Math.Round(IncreaseValue.Calculate(currentLevel, _basePrice, _degreeIncreasePrice) * Modifier.CostReductionModifier);
+        currentLevel++;
+
+        _price1 = Math.Round(value);
+
+        for (int i = 0; i < 9; i++)
+        {
+            currentLevel++;
+            value += Math.Round(IncreaseValue.Calculate(currentLevel, _basePrice, _degreeIncreasePrice) * Modifier.CostReductionModifier);
+        }
+
+        _price10 = Math.Round(value);
+
+        for (int i = 0; i < 99; i++)
+        {
+            currentLevel++;
+            value += Math.Round(IncreaseValue.Calculate(currentLevel, _basePrice, _degreeIncreasePrice) * Modifier.CostReductionModifier);
+        }
+
+        _price100 = Math.Round(value);
+
+        SwitchPrice();
     }
 
+    protected abstract void SwitchPrice();
     protected abstract void SaveLevel();
+
+    protected abstract void UpdateLevel();
     public abstract void GetCurrentIncome();
     protected abstract void CalculateIncome();
 
-    public void OnPointerDown(PointerEventData eventData)
+    
+    public void UpgradeButton()
     {
         if (IsPurchaseAvailable())
         {
-            Upgrade();
+            Locator.Instance.Wallet.Money -= _currentPrice;
+            UpdateLevel();
+            GetCurrentIncome();
+            CalculateIncome();
             Locator.Instance.Particle.GoldTransform.position = _buttonUpgrade.transform.position;
             Locator.Instance.Particle.GoldParticle.Play();
-            _upgradeProcessCoroutine = StartCoroutine(UpgradeProcess());
         }
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        if (_upgradeProcessCoroutine != null)
-        {
-            StopCoroutine(_upgradeProcessCoroutine);
-            _upgradeProcessCoroutine = null;
-        }
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        if (_upgradeProcessCoroutine != null)
-        {
-            StopCoroutine(_upgradeProcessCoroutine);
-            _upgradeProcessCoroutine = null;
-        }
-    }
-
-    private IEnumerator UpgradeProcess()
-    {
-        yield return _intervalToUpgrade;
-        while (IsPurchaseAvailable())
-        {
-            Upgrade();
-            yield return null;
-        }
-    }
-
-    private void Upgrade()
-    {
-        Locator.Instance.Wallet.Money -= _currentPrice;
-        Level++;
-        GetCurrentIncome();
-        CalculateIncome();
     }
 
     private void CheckInteractableButton()
@@ -158,6 +152,7 @@ public abstract class AutoBase : MonoBehaviour, IPointerDownHandler, IPointerUpH
     {
         GlobalEvent.OnMoneyChange.RemoveListener(CheckInteractableButton);
         GlobalEvent.OnCostReduction.RemoveListener(GetCurrentIncome);
+        GlobalEvent.OnChangeCountUpgrade.RemoveListener(SwitchPrice);
         Level = 0;
         _gameObject.SetActive(false);
     }

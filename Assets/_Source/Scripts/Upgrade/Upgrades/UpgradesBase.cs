@@ -16,7 +16,6 @@ public class UpgradesBase : MonoBehaviour
     [SerializeField] private LocalizedDynamic _effectText;
     [SerializeField] private LocalizedText _gradeText;
 
-
     [SerializeField] private Color[] _colors;
     [SerializeField] private string[] _gradeKeys;
     [SerializeField] private double[] _prices;
@@ -83,6 +82,9 @@ public class UpgradesBase : MonoBehaviour
     public void Deactivate()
     {
         _upgradeObject.SetActive(false);
+        ActiveGrade = 0;
+        _availableGrade = 0;
+        _currentGrade = ActiveGrade + 1;
     }
 
     private void CheckInteractableButton()

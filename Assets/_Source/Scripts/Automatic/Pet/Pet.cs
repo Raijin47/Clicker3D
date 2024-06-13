@@ -66,4 +66,24 @@ public class Pet : AutoBase
 
         _fillImage.fillAmount = b;
     }
+
+    protected override void UpdateLevel()
+    {
+        switch (Locator.Instance.CountLoveUpgrade.CurrentState)
+        {
+            case CountUpgradeButton.CountState.x1: Level += 1; break;
+            case CountUpgradeButton.CountState.x10: Level += 10; break;
+            case CountUpgradeButton.CountState.x100: Level += 100; break;
+        }
+    }
+
+    protected override void SwitchPrice()
+    {
+        switch (Locator.Instance.CountLoveUpgrade.CurrentState)
+        {
+            case CountUpgradeButton.CountState.x1: CurrentPrice = _price1; break;
+            case CountUpgradeButton.CountState.x10: CurrentPrice = _price10; break;
+            case CountUpgradeButton.CountState.x100: CurrentPrice = _price100; break;
+        }
+    }
 }

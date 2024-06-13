@@ -17,6 +17,7 @@ public class GlobalEvent
     public static UnityEvent OnChangeBonusDurationTime = new();
     public static UnityEvent OnChangeModifireBonusAds = new();
     public static UnityEvent OnChangeJobIncome = new();
+    public static UnityEvent OnChangeCountUpgrade = new();
 
     public static void SendChangeMoney() => OnMoneyChange.Invoke();
     public static void SendChangeDiamonds() => OnDiamondChange.Invoke();
@@ -33,4 +34,5 @@ public class GlobalEvent
     public static void SendChangeBonusDurationTime() => OnChangeBonusDurationTime.Invoke();
     public static void SendChangeModifireBonusAds() => OnChangeModifireBonusAds.Invoke();
     public static void SendChangeJobIncome() => OnChangeJobIncome.Invoke();
+    public static void SendChangeCountUpgrade() => OnChangeCountUpgrade.Invoke();
 }

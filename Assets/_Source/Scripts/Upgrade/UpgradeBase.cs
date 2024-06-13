@@ -1,10 +1,8 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using System.Collections;
 
-public abstract class UpgradeBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
+public abstract class UpgradeBase : MonoBehaviour
 {
     [SerializeField] protected int _id;
     [SerializeField] private TextMeshProUGUI _levelText;
@@ -18,9 +16,6 @@ public abstract class UpgradeBase : MonoBehaviour, IPointerDownHandler, IPointer
     [SerializeField] protected double _baseValue;
     [SerializeField] protected double _fixedIncreaseValue;
     [SerializeField] protected int _maxLevel;
-
-    private Coroutine _upgradeProcessCoroutine;
-    private WaitForSeconds _intervalToUpgrade = new WaitForSeconds(.5f);
 
     protected double _currentValue;
     protected double _currentPrice;
@@ -39,54 +34,26 @@ public abstract class UpgradeBase : MonoBehaviour, IPointerDownHandler, IPointer
 
     public void Init()
     {
+        _upgradeButton.onClick.AddListener(UpgradeButton);
         Level = GetLevel();
         AddListener();
         UpdateValue();
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    private void UpgradeButton()
     {
         if (IsPurchaseAvailable())
         {
-            Upgrade();
+            UpgradeLevel();
+            ExecutePurchase();
+            UpdateValue();
             PlayParticle();
-            _upgradeProcessCoroutine = StartCoroutine(UpgradeProcess());
         }
     }
 
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        if(_upgradeProcessCoroutine != null)
-        {
-            StopCoroutine(_upgradeProcessCoroutine);
-            _upgradeProcessCoroutine = null;
-        }
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        if (_upgradeProcessCoroutine != null)
-        {
-            StopCoroutine(_upgradeProcessCoroutine);
-            _upgradeProcessCoroutine = null;
-        }
-    }
-
-    private IEnumerator UpgradeProcess()
-    {
-        yield return _intervalToUpgrade;
-        while (IsPurchaseAvailable())
-        {
-            Upgrade();
-            yield return null;
-        }
-    }
-
-    private void Upgrade()
+    protected virtual void UpgradeLevel()
     {
         Level++;
-        ExecutePurchase();
-        UpdateValue();
     }
 
     protected abstract void PlayParticle();
