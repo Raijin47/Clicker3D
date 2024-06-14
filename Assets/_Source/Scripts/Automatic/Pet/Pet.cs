@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Pet : AutoBase
 {
-    [SerializeField] private UpgradesPet _upgradesBase;
     private const double _increaseEveryLevel = 10;
 
     public override void GetCurrentIncome()
     {
-        CurrentIncome = Math.Round(_baseIncome * Level * Math.Pow(_increasePercent, Math.Floor(Level / _increaseEveryLevel)) * _upgradesBase.Modifier *
-            Modifier.PetIncomeModifier * Modifier.DiamondIncome * Modifier.TimeLoveBoost * Modifier.ADsBoost);       
+        CurrentIncome = Math.Round(_baseIncome * Level * Math.Pow(_increasePercent, Math.Floor(Level / _increaseEveryLevel) *
+            Modifier.PetIncomeModifier * Modifier.DiamondIncome * Modifier.TimeLoveBoost * Modifier.ADsBoost) *
+            Locator.Instance.Improvement.ImprovedPets[_id].Modifier);       
     }
 
     protected override void SaveLevel()
@@ -20,43 +20,44 @@ public class Pet : AutoBase
 
     protected override double NextIncome(int level)
     {
-        return Math.Round(_baseIncome * level * Math.Pow(_increasePercent, Math.Floor(level / _increaseEveryLevel)) * _upgradesBase.Modifier *
-            Modifier.PetIncomeModifier * Modifier.DiamondIncome * Modifier.TimeLoveBoost * Modifier.ADsBoost);
+        return Math.Round(_baseIncome * level * Math.Pow(_increasePercent, Math.Floor(level / _increaseEveryLevel) * 
+            Modifier.PetIncomeModifier * Modifier.DiamondIncome * Modifier.TimeLoveBoost * Modifier.ADsBoost) *
+            Locator.Instance.Improvement.ImprovedPets[_id].Modifier);
     }
 
     public override void Activate(int level)
     {
         base.Activate(level);
-        Locator.Instance.PetsManager.Pets[_id].SetActive(true);
+        Locator.Instance.Pets.Pets[_id].SetActive(true);
     }
 
     public override void Deactivate()
     {
         base.Deactivate();
-        Locator.Instance.PetsManager.Pets[_id].SetActive(false);
+        Locator.Instance.Pets.Pets[_id].SetActive(false);
     }
 
     protected override void CalculateIncome()
     {
-        Locator.Instance.PetsManager.CalculateIncome();
+        Locator.Instance.Pets.CalculateIncome();
     }
 
     protected override void UnlockUpgrade()
     {
         switch (Level)
         {
-            case >= 1000: _upgradesBase.Show(12); break;
-            case >= 750: _upgradesBase.Show(11); break;
-            case >= 500: _upgradesBase.Show(10); break;
-            case >= 400: _upgradesBase.Show(9); break;
-            case >= 350: _upgradesBase.Show(8); break;
-            case >= 300: _upgradesBase.Show(7); break;
-            case >= 250: _upgradesBase.Show(6); break;
-            case >= 200: _upgradesBase.Show(5); break;
-            case >= 150: _upgradesBase.Show(4); break;
-            case >= 100: _upgradesBase.Show(3); break;
-            case >= 50: _upgradesBase.Show(2); break;
-            case >= 10: _upgradesBase.Show(1); break;
+            case >= 1000: Locator.Instance.Improvement.ImprovedPets[_id].Show(12); break;
+            case >= 750: Locator.Instance.Improvement.ImprovedPets[_id].Show(11); break;
+            case >= 500: Locator.Instance.Improvement.ImprovedPets[_id].Show(10); break;
+            case >= 400: Locator.Instance.Improvement.ImprovedPets[_id].Show(9); break;
+            case >= 350: Locator.Instance.Improvement.ImprovedPets[_id].Show(8); break;
+            case >= 300: Locator.Instance.Improvement.ImprovedPets[_id].Show(7); break;
+            case >= 250: Locator.Instance.Improvement.ImprovedPets[_id].Show(6); break;
+            case >= 200: Locator.Instance.Improvement.ImprovedPets[_id].Show(5); break;
+            case >= 150: Locator.Instance.Improvement.ImprovedPets[_id].Show(4); break;
+            case >= 100: Locator.Instance.Improvement.ImprovedPets[_id].Show(3); break;
+            case >= 50: Locator.Instance.Improvement.ImprovedPets[_id].Show(2); break;
+            case >= 10: Locator.Instance.Improvement.ImprovedPets[_id].Show(1); break;
         }
     }
 

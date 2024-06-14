@@ -1,20 +1,16 @@
 using System;
-using UnityEngine;
 using YG;
 
 public class Job : AutoBase
 {
-    [SerializeField] private UpgradesBase _upgradesBase;
-    [SerializeField] private UpgradesPet _upgradesPet;
-    [SerializeField] private Pet _pet;
-
     private const double _increaseEveryLevel = 20;
 
     public override void GetCurrentIncome()
     {
         CurrentIncome = Math.Round(_baseIncome * Level * Math.Pow(_increasePercent, Math.Floor(Level / _increaseEveryLevel) *
-            Modifier.JobIncomeModifier * Modifier.TimeMoneyBoost * Modifier.DiamondIncome * Modifier.ADsBoost) *
-            (1 + _upgradesPet.ModifierPercent * _pet.Level) * _upgradesPet.Modifier);
+            Modifier.JobIncomeModifier * Modifier.TimeMoneyBoost * Modifier.DiamondIncome * Modifier.ADsBoost) *     
+           (1 + Locator.Instance.Pets.AutoBases[_id].Level * Locator.Instance.Improvement.ImprovedPets[_id].ModifierPercent) * 
+            Locator.Instance.Improvement.ImprovedJobs[_id].Modifier);
     }
 
     protected override void SaveLevel()
@@ -26,30 +22,31 @@ public class Job : AutoBase
     {
         return Math.Round(_baseIncome * level * Math.Pow(_increasePercent, Math.Floor(level / _increaseEveryLevel) *
             Modifier.JobIncomeModifier * Modifier.TimeMoneyBoost * Modifier.DiamondIncome * Modifier.ADsBoost) *
-            (1 + _upgradesPet.ModifierPercent * _pet.Level) * _upgradesPet.Modifier);
+           (1 + Locator.Instance.Pets.AutoBases[_id].Level * Locator.Instance.Improvement.ImprovedPets[_id].ModifierPercent) *
+            Locator.Instance.Improvement.ImprovedJobs[_id].Modifier);
     }
 
     protected override void CalculateIncome()
     {
-        Locator.Instance.JobsManager.CalculateIncome();
+        Locator.Instance.Jobs.CalculateIncome();
     }
 
     protected override void UnlockUpgrade()
     {
         switch (Level)
         {
-            case >= 1000: _upgradesBase.Show(12); break;
-            case >= 750: _upgradesBase.Show(11); break;
-            case >= 500: _upgradesBase.Show(10); break;
-            case >= 350: _upgradesBase.Show(9); break;
-            case >= 300: _upgradesBase.Show(8); break;
-            case >= 250: _upgradesBase.Show(7); break;
-            case >= 200: _upgradesBase.Show(6); break;
-            case >= 150: _upgradesBase.Show(5); break;
-            case >= 100: _upgradesBase.Show(4); break;
-            case >= 50: _upgradesBase.Show(3); break;
-            case >= 25: _upgradesBase.Show(2); break;
-            case >= 1: _upgradesBase.Show(1); break;
+            case >= 1000: Locator.Instance.Improvement.ImprovedJobs[_id].Show(12); break;
+            case >= 750: Locator.Instance.Improvement.ImprovedJobs[_id].Show(11); break;
+            case >= 500: Locator.Instance.Improvement.ImprovedJobs[_id].Show(10); break;
+            case >= 350: Locator.Instance.Improvement.ImprovedJobs[_id].Show(9); break;
+            case >= 300: Locator.Instance.Improvement.ImprovedJobs[_id].Show(8); break;
+            case >= 250: Locator.Instance.Improvement.ImprovedJobs[_id].Show(7); break;
+            case >= 200: Locator.Instance.Improvement.ImprovedJobs[_id].Show(6); break;
+            case >= 150: Locator.Instance.Improvement.ImprovedJobs[_id].Show(5); break;
+            case >= 100: Locator.Instance.Improvement.ImprovedJobs[_id].Show(4); break;
+            case >= 50: Locator.Instance.Improvement.ImprovedJobs[_id].Show(3); break;
+            case >= 25: Locator.Instance.Improvement.ImprovedJobs[_id].Show(2); break;
+            case >= 1: Locator.Instance.Improvement.ImprovedJobs[_id].Show(1); break;
         }
     }
 

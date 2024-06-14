@@ -15,7 +15,7 @@ public class Locator : MonoBehaviour
     [SerializeField] private Bootstrap _bootstrap;
     [SerializeField] private Camera _camera;
     [SerializeField] private RebithManager _rebithManager;
-    [SerializeField] private UpgradesManager _upgradesManager;
+    [SerializeField] private ImprovementManager _improvementManager;
     [SerializeField] private CountUpgradeButton _countUpgradeMoney;
     [SerializeField] private CountUpgradeButton _countUpgradeLove;
     private void OnEnable() => YandexGame.GetDataEvent += GetData;
@@ -33,14 +33,14 @@ public class Locator : MonoBehaviour
     public Stage Stage => _stage;
     public Health Health => _health;
     public Wallet Wallet => _wallet;
-    public JobsManager JobsManager => _jobsManager;
-    public PetsManager PetsManager => _petsManager;
+    public JobsManager Jobs => _jobsManager;
+    public PetsManager Pets => _petsManager;
     public ParticleUIService Particle => _particleUIService;
     public Click Click => _click;
     public CameraLookAt CameraLookAt => _cameraLookAt;
     public Camera Camera => _camera;
-    public RebithManager RebithManager => _rebithManager;
-    public UpgradesManager UpgradesManager => _upgradesManager;
+    public RebithManager Rebith => _rebithManager;
+    public ImprovementManager Improvement => _improvementManager;
 
     public CountUpgradeButton CountLoveUpgrade => _countUpgradeLove;
     public CountUpgradeButton CountMoneyUpgrade => _countUpgradeMoney;
@@ -59,7 +59,7 @@ public class Locator : MonoBehaviour
         _particleUIService ??= GetComponent<ParticleUIService>();
         _bootstrap ??= GetComponent<Bootstrap>();
         _rebithManager ??= GetComponent<RebithManager>();
-        _upgradesManager ??= GetComponent<UpgradesManager>();
+        _improvementManager ??= GetComponent<ImprovementManager>();
     }
 #endif
     #endregion

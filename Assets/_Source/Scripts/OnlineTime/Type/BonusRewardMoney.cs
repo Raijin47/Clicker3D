@@ -18,6 +18,6 @@ public class BonusRewardMoney : BonusRewardBase
 
     protected override double GetRewardValue()
     {
-        return (Locator.Instance.Click.ClickIncome + Locator.Instance.JobsManager.CurrentIncome) * _modifierRewardTime * Modifier.ModifireBonusAds;
+        return (Locator.Instance.Click.ClickIncome + Locator.Instance.Jobs.CurrentIncome) * _modifierRewardTime * Modifier.ModifireBonusAds;
     }
 }

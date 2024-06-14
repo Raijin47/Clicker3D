@@ -18,6 +18,7 @@ public abstract class AutoBaseManager : MonoBehaviour
     protected double _income;
     private Coroutine _updateIncomeCoroutine;
 
+    public AutoBase[] AutoBases => _autoBases;
     public double CurrentIncome => _income;
 
     public void Init(int id)

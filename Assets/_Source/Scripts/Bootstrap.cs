@@ -15,16 +15,16 @@ public class Bootstrap : MonoBehaviour
     {
         _adsManager.Init();
         _languageSettings.Init();
-        Locator.Instance.RebithManager.Init();
+        Locator.Instance.Rebith.Init();
         _diamondManager.Init();
         _enhancementManager.Init();
         Locator.Instance.Wallet.Init();
         Locator.Instance.Click.Init();
         Locator.Instance.Stage.Init();
         Locator.Instance.Health.Init();
-        Locator.Instance.JobsManager.Init(YandexGame.savesData.CurrentJob);
-        Locator.Instance.PetsManager.Init(YandexGame.savesData.CurrentPet);
-        Locator.Instance.UpgradesManager.Init();
+        Locator.Instance.Pets.Init(YandexGame.savesData.CurrentPet);
+        Locator.Instance.Jobs.Init(YandexGame.savesData.CurrentJob);
+        Locator.Instance.Improvement.Init();
         _offlineReward.Init();
         _customization.Init();
     }

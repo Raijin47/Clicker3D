@@ -58,9 +58,9 @@ public class PetBonus : MonoBehaviour
             _timer.Update();
             if(_timer.IsCompleted)
             {
-                if (Locator.Instance.PetsManager.IsPetActive() && CanCreate())
+                if (Locator.Instance.Pets.IsPetActive() && CanCreate())
                 {
-                    ActivateBonus(Locator.Instance.PetsManager.GetPosition());
+                    ActivateBonus(Locator.Instance.Pets.GetPosition());
                     _timer.RestartTimer();
                 }
                 else

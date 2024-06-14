@@ -104,6 +104,10 @@ UpgradePetName5,Пет 5,en,tr
 UpgradePetName6,Пет 6,en,tr
 UpgradePetName7,Пет 7,en,tr
 UpgradePetName8,Пет 8,en,tr
+Test{0},Бронзовый {0},Bronze {0},tr
+Testt{0},Серебрянный {0},Silver {0},tr
+Test1,Мишка,Bear,tr
+Test2,Котик,Kitten,tr
 UpgradeGrade1,Бронзовый,en,tr
 UpgradeGrade2,Медный,en,tr
 UpgradeGrade3,Грейд 3,en,tr
