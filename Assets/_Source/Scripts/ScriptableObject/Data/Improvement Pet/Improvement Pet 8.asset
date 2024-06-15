@@ -12,21 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c017e0ee8d6ea44abb0bc4eb849e328, type: 3}
   m_Name: Improvement Pet 8
   m_EditorClassIdentifier: 
-  _name:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  _name: ImprovementPetName8{0}
   _prices:
   - 0
   - 0
@@ -43,32 +29,32 @@ MonoBehaviour:
   - 0
   - 0
   _increasesValue:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 1
+  - 2
+  - 2
+  - 4
+  - 8
+  - 16
+  - 16
+  - 32
+  - 64
+  - 128
+  - 256
+  - 512
+  - 1024
+  - 1024
   _increasesPercent:
   - 0
   - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02

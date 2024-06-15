@@ -6,11 +6,11 @@ namespace Assets.SimpleLocalization
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class LocalizedDual : MonoBehaviour
     {
-        [SerializeField] private string _localizationFirstKey;
-        [SerializeField] private string _localizationSecondKey;
+        [SerializeField] private string _localizationKey;
+        [SerializeField] private string _localizationAdditionalKey;
         [SerializeField] private TextMeshProUGUI _text;
 
-        private string _secondText;
+        private string _additionalKey;
 
         private void Start()
         {
@@ -25,19 +25,19 @@ namespace Assets.SimpleLocalization
 
         private void Localize()
         {
-            _secondText = LocalizationManager.Localize(_localizationSecondKey);
-            _text.text = LocalizationManager.Localize(_localizationFirstKey, _secondText);
+            _additionalKey = LocalizationManager.Localize(_localizationAdditionalKey);
+            _text.text = LocalizationManager.Localize(_localizationKey, _additionalKey);
         }
 
-        public void SetFirstKey(string key)
+        public void SetKeyName(string key)
         {
-            _localizationFirstKey = key;
+            _localizationKey = key;
             Localize();
         }
 
-        public void SetSecondKey(string key)
+        public void SetAdditionalKey(string key)
         {
-            _localizationSecondKey = key;
+            _localizationAdditionalKey = key;
             Localize();
         }
 

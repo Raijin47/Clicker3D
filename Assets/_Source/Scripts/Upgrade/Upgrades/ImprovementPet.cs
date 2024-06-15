@@ -1,9 +1,9 @@
-using UnityEngine;
+using Assets.SimpleLocalization;
 using YG;
 
 public class ImprovementPet : ImprovementBase
 {
-    [SerializeField] private double[] _increasesPercent;
+    private bool _isForJob;
 
     public double ModifierPercent
     {
@@ -16,9 +16,17 @@ public class ImprovementPet : ImprovementBase
         set => YandexGame.savesData.UpgradePet[_id] = value;
     }
 
-    protected override void SetName()
+    protected override void Localize()
     {
-        throw new System.NotImplementedException();
+        string Grade = LocalizationManager.Localize(TextUtility.PetGrade + _currentGrade);
+        _titleName.text = LocalizationManager.Localize(_data.Name, Grade);
+
+        string Name = LocalizationManager.Localize(TextUtility.ImprovementPetDesName + _id);
+
+        string[] Args = new[]{
+            Name,
+            TextUtility.GetColorText((_data.IncreasesValue[_currentGrade] / _data.IncreasesValue[_currentGrade - 1]).ToString()) };
+        _descriptionText.text = LocalizationManager.Localize(TextUtility.ImprovementPetDes0,Args);                    
     }
 
     protected override void SetTargetUpgrade()

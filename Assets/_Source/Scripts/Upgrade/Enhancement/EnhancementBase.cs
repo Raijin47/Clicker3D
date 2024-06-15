@@ -91,7 +91,7 @@ public abstract class EnhancementBase : UpgradeBase
 
         _price10 = Math.Round(value);
 
-        for (int i = 0; i < 99; i++)
+        for (int i = 0; i < 89; i++)
         {
             currentLevel++;
             value += IncreaseValue.Calculate(currentLevel, _baseUpgradePrice, _degreeIncreasePrice) * Modifier.CostReductionModifier;

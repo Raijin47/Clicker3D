@@ -12,6 +12,6 @@ public class CameraLookAt : MonoBehaviour
     {
         _direction = (_target.position - transform.position).normalized;
         _rotGoal = Quaternion.LookRotation(_direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, _rotGoal, _lookSpeed);
+        transform.rotation = Quaternion.Slerp(transform.rotation, _rotGoal, _lookSpeed * Time.deltaTime);
     }
 }

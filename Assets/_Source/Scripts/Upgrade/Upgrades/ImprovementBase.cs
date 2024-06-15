@@ -11,13 +11,13 @@ public abstract class ImprovementBase : MonoBehaviour
     [SerializeField] private Button _button;
     [SerializeField] private GameObject _upgradeObject;
     [SerializeField] private TextMeshProUGUI _priceText;
-    [SerializeField] private LocalizedDynamic _effectText;
-    [SerializeField] private LocalizedText _gradeText;
+    [SerializeField] protected TextMeshProUGUI _descriptionText;
+    [SerializeField] protected TextMeshProUGUI _titleName;
     [SerializeField] protected ImprovementData _data;
     [SerializeField] private string[] _gradeKeys;
 
     private int _availableGrade;
-    private int _currentGrade;
+    protected int _currentGrade;
 
     public double Modifier
     {
@@ -37,6 +37,16 @@ public abstract class ImprovementBase : MonoBehaviour
         UpdateUI();
     }
 
+    private void OnEnable()
+    {
+        LocalizationManager.LocalizationChanged += Localize;
+    }
+
+    private void OnDisable()
+    {
+        LocalizationManager.LocalizationChanged += Localize;
+    }
+
     public void PurchasedUpgrade()
     {
         if(IsPurchaseAvailable())
@@ -46,6 +56,8 @@ public abstract class ImprovementBase : MonoBehaviour
         }
     }
 
+    protected abstract void Localize();
+
     public void Show(int value)
     {
         if (value <= _availableGrade) return;
@@ -54,19 +66,17 @@ public abstract class ImprovementBase : MonoBehaviour
         UpdateUI();      
     }
 
-    //switching keys in scriptable object
     private void UpdateUI()
     {
         if (_currentGrade == 0) return;
         _priceText.text = ConvertNumber.Convert(_data.Price[_currentGrade]);
-        _effectText.SetValue((_data.IncreasesValue[_currentGrade] / _data.IncreasesValue[_currentGrade-1]).ToString());
+        //_effectText.SetValue((_data.IncreasesValue[_currentGrade] / _data.IncreasesValue[_currentGrade-1]).ToString());
         _frameImage.color = Locator.Instance.Improvement.Color[_currentGrade];
         //_gradeText.SetKey(_gradeKeys[_currentGrade]);
         _upgradeObject.SetActive(ActiveGrade < _availableGrade);
-        SetName();
+        Localize();
     }
 
-    protected abstract void SetName();
 
     public void Activate()
     {

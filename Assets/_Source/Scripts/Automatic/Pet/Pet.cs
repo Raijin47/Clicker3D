@@ -1,6 +1,5 @@
 using YG;
 using System;
-using UnityEngine;
 
 public class Pet : AutoBase
 {

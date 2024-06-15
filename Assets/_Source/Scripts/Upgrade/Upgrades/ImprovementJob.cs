@@ -8,10 +8,16 @@ public class ImprovementJob : ImprovementBase
         set => YandexGame.savesData.UpgradeJob[_id] = value;
     }
 
-    protected override void SetName()
+    protected override void Localize()
     {
-
+        //throw new System.NotImplementedException();
     }
+
+    //protected override void SetName()
+    //{
+    //    //_titleName.SetKeyName(TextUtility.ImprovementPetName + _id);
+    //    _titleName.SetAdditionalKey(TextUtility.JobGrade + _currentGrade);
+    //}
 
     protected override void SetTargetUpgrade()
     {

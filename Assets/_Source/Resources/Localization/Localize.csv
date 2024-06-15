@@ -1,15 +1,15 @@
 Key,ru,en,tr
 EnhancementName0,Привлекательность - Ур.,en,tr
 EnhancementName1,Набор косметики - Ур.,en,tr
-PetName0,Розовый мишка - Ур.,en,tr
-PetName1,Кролик - Ур.,en,tr
-PetName2,Сиамская кошка - Ур.,en,tr
-PetName3,Просто панда - Ур.,en,tr
-PetName4,Алый кролик - Ур.,en,tr
-PetName5,Кот - Ур.,en,tr
-PetName6,Пурпурный медвед - Ур.,en,tr
-PetName7,Бешенный кролик - Ур.,en,tr
-PetName8,Трёхцветик - Ур.,en,tr
+PetName0,Джек - Ур.,en,tr
+PetName1,Чип - Ур.,en,tr
+PetName2,Флора - Ур.,en,tr
+PetName3,Винни - Ур.,en,tr
+PetName4,Малина - Ур.,en,tr
+PetName5,Луна - Ур.,en,tr
+PetName6,Карамелька - Ур.,en,tr
+PetName7,Мия - Ур.,en,tr
+PetName8,Скай - Ур.,en,tr
 JobName0,Пончик - Ур.,en,tr
 JobName1,Печеньки - Ур.,en,tr
 JobName2,Конфеты с ликёром - Ур.,en,tr
@@ -86,48 +86,51 @@ UpgradePetDescription6{0},Привлекательность 6 увеличив�
 UpgradePetDescription7{0},Привлекательность 7 увеличивается в {0}х раз.,en,tr
 UpgradePetDescription8{0},Привлекательность 8 увеличивается в {0}х раз.,en,tr
 UpgradePetDescription9{0},Привлекательность 9 увеличивается в {0}х раз.,en,tr
-UpgradeSweetName0,Пончик,en,tr
-UpgradeSweetName1,Пончик1,en,tr
-UpgradeSweetName2,Пончик2,en,tr
-UpgradeSweetName3,Пончик3,en,tr
-UpgradeSweetName4,Пончик4,en,tr
-UpgradeSweetName5,Пончик5,en,tr
-UpgradeSweetName6,Пончик6,en,tr
-UpgradeSweetName7,Пончик7,en,tr
-UpgradeSweetName8,Пончик8,en,tr
-UpgradePetName0,Пет 0,en,tr
-UpgradePetName1,Пет 1,en,tr
-UpgradePetName2,Пет 2,en,tr
-UpgradePetName3,Пет 3,en,tr
-UpgradePetName4,Пет 4,en,tr
-UpgradePetName5,Пет 5,en,tr
-UpgradePetName6,Пет 6,en,tr
-UpgradePetName7,Пет 7,en,tr
-UpgradePetName8,Пет 8,en,tr
-UpgradeGrade1,Бронзовый,en,tr
-UpgradeGrade2,Медный,en,tr
-UpgradeGrade3,Грейд 3,en,tr
-UpgradeGrade4,Грейд 4,en,tr
-UpgradeGrade5,Грейд 5,en,tr
-UpgradeGrade6,Грейд 6,en,tr
-UpgradeGrade7,Грейд 7,en,tr
-UpgradeGrade8,Грейд 8,en,tr
-UpgradeGrade9,Грейд 9,en,tr
-UpgradeGrade10,Грейд 10,en,tr
-UpgradeGrade11,Грейд 11,en,tr
-UpgradeGrade12,Грейд 12,en,tr
-UpgradePetGrade1,Grade1,en,tr
-UpgradePetGrade2,Grade2,en,tr
-UpgradePetGrade3,Grade3,en,tr
-UpgradePetGrade4,Grade4,en,tr
-UpgradePetGrade5,Grade5,en,tr
-UpgradePetGrade6,Grade6,en,tr
-UpgradePetGrade7,Grade7,en,tr
-UpgradePetGrade8,Grade8,en,tr
-UpgradePetGrade9,Grade9,en,tr
-UpgradePetGrade10,Grade10,en,tr
-UpgradePetGrade11,Grade11,en,tr
-UpgradePetGrade12,Grade12,en,tr
+ImprovementJobName0{0},{0} Пончик,{0} Пончик на английском,tr
+ImprovementJobName1{0},{0} Пончик,{0} Пончик на английском,tr
+ImprovementJobName2{0},{0} Пончик,{0} Пончик на английском,tr
+ImprovementJobName3{0},{0} Пончик,{0} Пончик на английском,tr
+ImprovementJobName4{0},{0} Пончик,{0} Пончик на английском,tr
+ImprovementJobName5{0},{0} Пончик,{0} Пончик на английском,tr
+ImprovementJobName6{0},{0} Пончик,{0} Пончик на английском,tr
+ImprovementJobName7{0},{0} Пончик,{0} Пончик на английском,tr
+ImprovementJobName8{0},{0} Пончик,{0} Пончик на английском,tr
+ImprovementPetName0{0},{0} Джек,{0} Jack,tr
+ImprovementPetName1{0},{0} Алан,{0} Jack,tr
+ImprovementPetName2{0},{0} Микки,{0} Jack,tr
+ImprovementPetName3{0},{0} Элайза,{0} Jack,tr
+ImprovementPetName4{0},{0} Имя какое-то,{0} Jack,tr
+ImprovementPetName5{0},{0} Джек,{0} Jack,tr
+ImprovementPetName6{0},{0} Джек,{0} Jack,tr
+ImprovementPetName7{0},{0} Джек,{0} Jack,tr
+ImprovementPetName8{0},{0} Джек,{0} Jack,tr
+ImprovementPetDesName0,Джека,Jack,tr
+ImprovementPetDescriptionGrade0{0}{1},Привлекательность {0} увеличивается в {1}х раз.,{0} attractiveness increases {1}x.,tr
+ImprovementPetDescriptionGrade1{0}{1},За каждый уровень {0} производство {1} увеличивается на <color=orange>1</color>%., For every level of {0}, {1} production increases by 1%.,
+PetGrade1,Бронзовый,Bronze,tr
+PetGrade2,Серебрянный,en,tr
+PetGrade3,Золотой,en,tr
+PetGrade4,PetGrade4,en,tr
+PetGrade5,PetGrade5,en,tr
+PetGrade6,PetGrade6,en,tr
+PetGrade7,PetGrade7,en,tr
+PetGrade8,PetGrade8,en,tr
+PetGrade9,PetGrade9,en,tr
+PetGrade10,PetGrade10,en,tr
+PetGrade11,PetGrade11,en,tr
+PetGrade12,PetGrade12,en,tr
+JobGrade1,JobGrade1,en,tr
+JobGrade2,JobGrade2,en,tr
+JobGrade3,JobGrade3,en,tr
+JobGrade4,JobGrade4,en,tr
+JobGrade5,JobGrade5,en,tr
+JobGrade6,JobGrade6,en,tr
+JobGrade7,JobGrade7,en,tr
+JobGrade8,JobGrade8,en,tr
+JobGrade9,JobGrade9,en,tr
+JobGrade10,JobGrade10,en,tr
+JobGrade11,JobGrade11,en,tr
+JobGrade12,JobGrade12,en,tr
 HelpTitle0,Улучшения,en,tr
 HelpTitle1,Бонусы,en,tr
 HelpTitle2,Питомцы,en,tr
@@ -194,5 +197,6 @@ Sec,/сек.,/sec.,tr
 ShopTitle,Магазин,Shop,tr
 Day{0},День {0},Day {0},tr
 Max,МАКС.,MAX.,tr
+Unlock,Открыть,Unlock,tr
 Rating,Рейтинг,Rating,tr
 BestPlayers,Лучшие Игроки!,Best Players!,tr

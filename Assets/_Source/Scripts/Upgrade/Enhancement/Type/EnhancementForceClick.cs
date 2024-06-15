@@ -42,7 +42,8 @@ public class EnhancementForceClick : EnhancementBase
         _priceText.text = ConvertNumber.Convert(_currentPrice);
         _effectText.text = ConvertNumber.Convert(
             Math.Round(_currentValue * Modifier.PrestigeClickForce * Modifier.DiamondIncome * Modifier.ADsBoost * Modifier.TimeMoneyBoost))
-            + TextUtility.MoreSign + ConvertNumber.Convert(
-                Math.Round(_nextValue * Modifier.PrestigeClickForce * Modifier.DiamondIncome * Modifier.ADsBoost * Modifier.TimeMoneyBoost));
+            + TextUtility.MoreSign + 
+            TextUtility.GetColorText(ConvertNumber.Convert(Math.Round(
+                _nextValue * Modifier.PrestigeClickForce * Modifier.DiamondIncome * Modifier.ADsBoost * Modifier.TimeMoneyBoost)));
     }
 }
