@@ -105,6 +105,7 @@ ImprovementPetName6{0},{0} Джек,{0} Jack,tr
 ImprovementPetName7{0},{0} Джек,{0} Jack,tr
 ImprovementPetName8{0},{0} Джек,{0} Jack,tr
 ImprovementPetDesName0,Джека,Jack,tr
+ImprovementJobName0,Пончиков,Пончиков на английском,tr
 ImprovementPetDescriptionGrade0{0}{1},Привлекательность {0} увеличивается в {1}х раз.,{0} attractiveness increases {1}x.,tr
 ImprovementPetDescriptionGrade1{0}{1},За каждый уровень {0} производство {1} увеличивается на <color=orange>1</color>%., For every level of {0}, {1} production increases by 1%.,
 PetGrade1,Бронзовый,Bronze,tr

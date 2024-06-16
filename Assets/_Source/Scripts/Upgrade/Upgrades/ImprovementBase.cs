@@ -21,7 +21,17 @@ public abstract class ImprovementBase : MonoBehaviour
 
     public double Modifier
     {
-        get => _data.IncreasesValue[ActiveGrade];
+        get
+        {
+            double value = 1;
+            for(int i = 0; i < _currentGrade; i++)
+            {
+                value *= _data.IncreasesValue[i];
+            }
+
+            return value;
+        }
+        //get => _data.IncreasesValue [ActiveGrade];
     }
 
     public abstract int ActiveGrade

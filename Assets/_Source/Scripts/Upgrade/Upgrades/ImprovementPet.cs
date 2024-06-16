@@ -3,8 +3,6 @@ using YG;
 
 public class ImprovementPet : ImprovementBase
 {
-    private bool _isForJob;
-
     public double ModifierPercent
     {
         get => _data.IncreasesPercent[ActiveGrade];
@@ -23,10 +21,26 @@ public class ImprovementPet : ImprovementBase
 
         string Name = LocalizationManager.Localize(TextUtility.ImprovementPetDesName + _id);
 
-        string[] Args = new[]{
+        if(_currentGrade == 2 || _currentGrade == 6)
+        {
+            string[] Args = new[]{
             Name,
-            TextUtility.GetColorText((_data.IncreasesValue[_currentGrade] / _data.IncreasesValue[_currentGrade - 1]).ToString()) };
-        _descriptionText.text = LocalizationManager.Localize(TextUtility.ImprovementPetDes0,Args);                    
+            LocalizationManager.Localize(TextUtility.ImprovementJobName + _id) };
+            _descriptionText.text = LocalizationManager.Localize(TextUtility.ImprovementPetDes1, Args);
+        }
+        else
+        {
+            //string[] Args = new[]{
+            //Name,
+            //TextUtility.GetColorText((_data.IncreasesValue[_currentGrade] / _data.IncreasesValue[_currentGrade - 1]).ToString()) };
+            //_descriptionText.text = LocalizationManager.Localize(TextUtility.ImprovementPetDes0, Args);
+
+            string[] Args = new[]{
+            Name,
+            TextUtility.GetColorText(_data.IncreasesValue[_currentGrade].ToString()) };
+            _descriptionText.text = LocalizationManager.Localize(TextUtility.ImprovementPetDes0, Args);
+        }
+        UnityEngine.Debug.Log(Modifier);
     }
 
     protected override void SetTargetUpgrade()
