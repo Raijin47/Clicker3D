@@ -13,9 +13,11 @@ public static class TextUtility
     public const string ImprovementPetDes1 = "ImprovementPetDescriptionGrade1{0}{1}";
     public const string ImprovementPetDesName = "ImprovementPetDesName";
     public const string ImprovementJobName = "ImprovementJobName";
+    public const string ImprovementJobDesName = "ImprovementJobDesName";
+    public const string ImprovementJobDes = "ImprovementJobDescriptionGrade{0}{1}";
 
     public static string GetColorText(string text)
     {
-        return $"<color=green>{text}</color>";
+        return $"<color=green><b>{text}</b></color>";
     }
 }

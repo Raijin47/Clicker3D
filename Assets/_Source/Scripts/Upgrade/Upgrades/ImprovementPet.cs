@@ -19,28 +19,22 @@ public class ImprovementPet : ImprovementBase
         string Grade = LocalizationManager.Localize(TextUtility.PetGrade + _currentGrade);
         _titleName.text = LocalizationManager.Localize(_data.Name, Grade);
 
-        string Name = LocalizationManager.Localize(TextUtility.ImprovementPetDesName + _id);
+        string Name = TextUtility.GetColorText(LocalizationManager.Localize(TextUtility.ImprovementPetDesName + _id));
 
         if(_currentGrade == 2 || _currentGrade == 6)
         {
             string[] Args = new[]{
             Name,
-            LocalizationManager.Localize(TextUtility.ImprovementJobName + _id) };
+            TextUtility.GetColorText(LocalizationManager.Localize(TextUtility.ImprovementJobName + _id)) };
             _descriptionText.text = LocalizationManager.Localize(TextUtility.ImprovementPetDes1, Args);
         }
         else
         {
-            //string[] Args = new[]{
-            //Name,
-            //TextUtility.GetColorText((_data.IncreasesValue[_currentGrade] / _data.IncreasesValue[_currentGrade - 1]).ToString()) };
-            //_descriptionText.text = LocalizationManager.Localize(TextUtility.ImprovementPetDes0, Args);
-
             string[] Args = new[]{
-            Name,
+                Name,
             TextUtility.GetColorText(_data.IncreasesValue[_currentGrade].ToString()) };
             _descriptionText.text = LocalizationManager.Localize(TextUtility.ImprovementPetDes0, Args);
         }
-        UnityEngine.Debug.Log(Modifier);
     }
 
     protected override void SetTargetUpgrade()

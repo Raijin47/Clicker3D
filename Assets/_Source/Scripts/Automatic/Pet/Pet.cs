@@ -15,6 +15,7 @@ public class Pet : AutoBase
     protected override void SaveLevel()
     {
         YandexGame.savesData.PetLevel[_id] = Level;
+        Locator.Instance.Jobs.AutoBases[_id].GetUpgrade();
     }
 
     protected override double NextIncome(int level)

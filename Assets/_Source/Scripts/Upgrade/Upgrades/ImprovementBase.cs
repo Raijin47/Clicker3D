@@ -16,22 +16,18 @@ public abstract class ImprovementBase : MonoBehaviour
     [SerializeField] protected ImprovementData _data;
     [SerializeField] private string[] _gradeKeys;
 
+    private double _modifier;
     private int _availableGrade;
     protected int _currentGrade;
 
     public double Modifier
     {
-        get
+        get => _modifier;
+        set
         {
-            double value = 1;
-            for(int i = 0; i < _currentGrade; i++)
-            {
-                value *= _data.IncreasesValue[i];
-            }
-
-            return value;
+            _modifier = value; 
+            SetTargetUpgrade();
         }
-        //get => _data.IncreasesValue [ActiveGrade];
     }
 
     public abstract int ActiveGrade
@@ -44,6 +40,7 @@ public abstract class ImprovementBase : MonoBehaviour
     {
         GlobalEvent.OnMoneyChange.AddListener(CheckInteractableButton);
         _currentGrade = ActiveGrade + 1;
+        Modifier = CalculateModifier();
         UpdateUI();
     }
 
@@ -80,9 +77,7 @@ public abstract class ImprovementBase : MonoBehaviour
     {
         if (_currentGrade == 0) return;
         _priceText.text = ConvertNumber.Convert(_data.Price[_currentGrade]);
-        //_effectText.SetValue((_data.IncreasesValue[_currentGrade] / _data.IncreasesValue[_currentGrade-1]).ToString());
         _frameImage.color = Locator.Instance.Improvement.Color[_currentGrade];
-        //_gradeText.SetKey(_gradeKeys[_currentGrade]);
         _upgradeObject.SetActive(ActiveGrade < _availableGrade);
         Localize();
     }
@@ -92,14 +87,26 @@ public abstract class ImprovementBase : MonoBehaviour
     {
         ActiveGrade = _currentGrade;
         _currentGrade = ActiveGrade + 1;
-        SetTargetUpgrade();
+
+        Modifier = CalculateModifier();
         UpdateUI();
+    }
+
+    private double CalculateModifier()
+    {
+        double value = 1;
+        for(int i = 0; i <= ActiveGrade; i++)
+        {
+            value *= _data.IncreasesValue[i];
+        }
+        return value;
     }
 
     protected abstract void SetTargetUpgrade();
 
     public void Deactivate()
     {
+        Modifier = 1;
         _upgradeObject.SetActive(false);
         ActiveGrade = 0;
         _availableGrade = 0;

@@ -1,0 +1,64 @@
+Key,ru,en,tr
+ImprovementJobDescriptionGrade{0}{1},Производство {0} увеличивается в {1}х раз.,en,tr
+ImprovementPetDescriptionGrade0{0}{1},Привлекательность {0} увеличивается в {1}х раз.,{0} attractiveness increases {1}x.,tr
+ImprovementPetDescriptionGrade1{0}{1},За каждый уровень {0} производство {1} увеличивается на <color=green><b>1</b></color>%., For every level of {0}, {1} production increases by 1%.,tr
+ImprovementJobName0{0},{0} Пончик,{0} Пончик на английском,tr
+ImprovementJobName1{0},{0} Печенька,{0} Пончик на английском,tr
+ImprovementJobName2{0},{0} Конфеты,{0} Пончик на английском,tr
+ImprovementJobName3{0},{0} Леденцы,{0} Пончик на английском,tr
+ImprovementJobName4{0},{0} Кексик,{0} Пончик на английском,tr
+ImprovementJobName5{0},{0} Тирамису,{0} Пончик на английском,tr
+ImprovementJobName6{0},{0} Пончик,{0} Пончик на английском,tr
+ImprovementJobName7{0},{0} Пончик,{0} Пончик на английском,tr
+ImprovementJobName8{0},{0} Пончик,{0} Пончик на английском,tr
+ImprovementPetName0{0},{0} Джек,{0} Jack,tr
+ImprovementPetName1{0},{0} Алан,{0} Jack,tr
+ImprovementPetName2{0},{0} Микки,{0} Jack,tr
+ImprovementPetName3{0},{0} Элайза,{0} Jack,tr
+ImprovementPetName4{0},{0} Имя какое-то,{0} Jack,tr
+ImprovementPetName5{0},{0} Джек,{0} Jack,tr
+ImprovementPetName6{0},{0} Джек,{0} Jack,tr
+ImprovementPetName7{0},{0} Джек,{0} Jack,tr
+ImprovementPetName8{0},{0} Джек,{0} Jack,tr
+ImprovementPetDesName0,Джека,Jack,tr
+ImprovementPetDesName1,Мии,Jack,tr
+ImprovementPetDesName2,Лейлы,Jack,tr
+ImprovementPetDesName3,Джека,Jack,tr
+ImprovementPetDesName4,Джека,Jack,tr
+ImprovementPetDesName5,Джека,Jack,tr
+ImprovementPetDesName6,Джека,Jack,tr
+ImprovementPetDesName7,Джека,Jack,tr
+ImprovementPetDesName8,Джека,Jack,tr
+ImprovementJobDesName0,пончиков,Пончиков на английском,tr
+ImprovementJobDesName1,печенек,Пончиков на английском,tr
+ImprovementJobDesName2,конфет,Пончиков на английском,tr
+ImprovementJobDesName3,леденцов,Пончиков на английском,tr
+ImprovementJobDesName4,кексов,Пончиков на английском,tr
+ImprovementJobDesName5,терамису,Пончиков на английском,tr
+ImprovementJobDesName6,мармелада,Пончиков на английском,tr
+ImprovementJobDesName7,мороженного,Пончиков на английском,tr
+ImprovementJobDesName8,тортов,Пончиков на английском,tr
+PetGrade1,Бронзовый,Bronze,tr
+PetGrade2,Серебрянный,en,tr
+PetGrade3,Золотой,en,tr
+PetGrade4,PetGrade4,en,tr
+PetGrade5,PetGrade5,en,tr
+PetGrade6,PetGrade6,en,tr
+PetGrade7,PetGrade7,en,tr
+PetGrade8,PetGrade8,en,tr
+PetGrade9,PetGrade9,en,tr
+PetGrade10,PetGrade10,en,tr
+PetGrade11,PetGrade11,en,tr
+PetGrade12,PetGrade12,en,tr
+JobGrade1,JobGrade1,en,tr
+JobGrade2,JobGrade2,en,tr
+JobGrade3,JobGrade3,en,tr
+JobGrade4,JobGrade4,en,tr
+JobGrade5,JobGrade5,en,tr
+JobGrade6,JobGrade6,en,tr
+JobGrade7,JobGrade7,en,tr
+JobGrade8,JobGrade8,en,tr
+JobGrade9,JobGrade9,en,tr
+JobGrade10,JobGrade10,en,tr
+JobGrade11,JobGrade11,en,tr
+JobGrade12,JobGrade12,en,tr

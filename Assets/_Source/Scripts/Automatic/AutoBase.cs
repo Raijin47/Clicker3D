@@ -104,7 +104,7 @@ public abstract class AutoBase : MonoBehaviour
 
         _price10 = Math.Round(value);
 
-        for (int i = 0; i < 99; i++)
+        for (int i = 0; i < 89; i++)
         {
             currentLevel++;
             value += Math.Round(IncreaseValue.Calculate(currentLevel, _basePrice, _degreeIncreasePrice) * Modifier.CostReductionModifier);

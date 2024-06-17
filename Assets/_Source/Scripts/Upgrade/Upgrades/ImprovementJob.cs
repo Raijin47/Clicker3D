@@ -1,3 +1,4 @@
+using Assets.SimpleLocalization;
 using YG;
 
 public class ImprovementJob : ImprovementBase
@@ -10,14 +11,19 @@ public class ImprovementJob : ImprovementBase
 
     protected override void Localize()
     {
-        //throw new System.NotImplementedException();
-    }
+        string Grade = LocalizationManager.Localize(TextUtility.JobGrade + _currentGrade);
+        _titleName.text = LocalizationManager.Localize(_data.Name, Grade);
 
-    //protected override void SetName()
-    //{
-    //    //_titleName.SetKeyName(TextUtility.ImprovementPetName + _id);
-    //    _titleName.SetAdditionalKey(TextUtility.JobGrade + _currentGrade);
-    //}
+        string Name = LocalizationManager.Localize(TextUtility.ImprovementJobDesName + _id);
+
+        string[] Args = new[]
+        {
+            TextUtility.GetColorText(Name),
+            TextUtility.GetColorText(_data.IncreasesValue[_currentGrade].ToString())
+        };
+
+        _descriptionText.text = LocalizationManager.Localize(TextUtility.ImprovementJobDes, Args);
+    }
 
     protected override void SetTargetUpgrade()
     {

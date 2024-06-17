@@ -12,7 +12,7 @@ PetName7,Мия - Ур.,en,tr
 PetName8,Скай - Ур.,en,tr
 JobName0,Пончик - Ур.,en,tr
 JobName1,Печеньки - Ур.,en,tr
-JobName2,Конфеты с ликёром - Ур.,en,tr
+JobName2,Конфеты - Ур.,en,tr
 JobName3,Леденцы - Ур.,en,tr
 JobName4,Кексик - Ур.,en,tr
 JobName5,Терамису - Ур.,en,tr
@@ -67,71 +67,6 @@ DiamondDescription3,Увеличивает время офлайн дохода,
 DiamondDescription4,Объем офлайн дохода,en,tr
 DiamondDescription5,Длительность бонусов за рекламу,en,tr
 DiamondDescription6,Эфективность бонусов за рекламу,en,tr
-UpgradeJobDescription0{0},Производство пончиков увеличивается в {0}х раз.,en,tr
-UpgradeJobDescription1{0},Производство печенек увеличивается в {0}x раз.,en,tr
-UpgradeJobDescription2{0},Производство конфет с ликёром увеличивается в {0}x раз.,en,tr
-UpgradeJobDescription3{0},Увеличивает доход от лиденцов на {0}x,en,tr
-UpgradeJobDescription4{0},Увеличивает доход от кексов на {0}x,en,tr
-UpgradeJobDescription5{0},Увеличивает доход от терамису на {0}x,en,tr
-UpgradeJobDescription6{0},Увеличивает доход от мармеладок на {0}x,en,tr
-UpgradeJobDescription7{0},Увеличивает доход от мороженки на {0}x,en,tr
-UpgradeJobDescription8{0},Производство тортиков увеличивается в {0}x раз.,en,tr
-UpgradePetDescription0{0},Привлекательность 0 увеличивается в {0}х раз.,en,tr
-UpgradePetDescription1{0},Привлекательность 1 увеличивается в {0}х раз.,en,tr
-UpgradePetDescription2{0},Привлекательность 2 увеличивается в {0}х раз.,en,tr
-UpgradePetDescription3{0},Привлекательность 3 увеличивается в {0}х раз.,en,tr
-UpgradePetDescription4{0},Привлекательность 4 увеличивается в {0}х раз.,en,tr
-UpgradePetDescription5{0},Привлекательность 5 увеличивается в {0}х раз.,en,tr
-UpgradePetDescription6{0},Привлекательность 6 увеличивается в {0}х раз.,en,tr
-UpgradePetDescription7{0},Привлекательность 7 увеличивается в {0}х раз.,en,tr
-UpgradePetDescription8{0},Привлекательность 8 увеличивается в {0}х раз.,en,tr
-UpgradePetDescription9{0},Привлекательность 9 увеличивается в {0}х раз.,en,tr
-ImprovementJobName0{0},{0} Пончик,{0} Пончик на английском,tr
-ImprovementJobName1{0},{0} Пончик,{0} Пончик на английском,tr
-ImprovementJobName2{0},{0} Пончик,{0} Пончик на английском,tr
-ImprovementJobName3{0},{0} Пончик,{0} Пончик на английском,tr
-ImprovementJobName4{0},{0} Пончик,{0} Пончик на английском,tr
-ImprovementJobName5{0},{0} Пончик,{0} Пончик на английском,tr
-ImprovementJobName6{0},{0} Пончик,{0} Пончик на английском,tr
-ImprovementJobName7{0},{0} Пончик,{0} Пончик на английском,tr
-ImprovementJobName8{0},{0} Пончик,{0} Пончик на английском,tr
-ImprovementPetName0{0},{0} Джек,{0} Jack,tr
-ImprovementPetName1{0},{0} Алан,{0} Jack,tr
-ImprovementPetName2{0},{0} Микки,{0} Jack,tr
-ImprovementPetName3{0},{0} Элайза,{0} Jack,tr
-ImprovementPetName4{0},{0} Имя какое-то,{0} Jack,tr
-ImprovementPetName5{0},{0} Джек,{0} Jack,tr
-ImprovementPetName6{0},{0} Джек,{0} Jack,tr
-ImprovementPetName7{0},{0} Джек,{0} Jack,tr
-ImprovementPetName8{0},{0} Джек,{0} Jack,tr
-ImprovementPetDesName0,Джека,Jack,tr
-ImprovementJobName0,Пончиков,Пончиков на английском,tr
-ImprovementPetDescriptionGrade0{0}{1},Привлекательность {0} увеличивается в {1}х раз.,{0} attractiveness increases {1}x.,tr
-ImprovementPetDescriptionGrade1{0}{1},За каждый уровень {0} производство {1} увеличивается на <color=orange>1</color>%., For every level of {0}, {1} production increases by 1%.,
-PetGrade1,Бронзовый,Bronze,tr
-PetGrade2,Серебрянный,en,tr
-PetGrade3,Золотой,en,tr
-PetGrade4,PetGrade4,en,tr
-PetGrade5,PetGrade5,en,tr
-PetGrade6,PetGrade6,en,tr
-PetGrade7,PetGrade7,en,tr
-PetGrade8,PetGrade8,en,tr
-PetGrade9,PetGrade9,en,tr
-PetGrade10,PetGrade10,en,tr
-PetGrade11,PetGrade11,en,tr
-PetGrade12,PetGrade12,en,tr
-JobGrade1,JobGrade1,en,tr
-JobGrade2,JobGrade2,en,tr
-JobGrade3,JobGrade3,en,tr
-JobGrade4,JobGrade4,en,tr
-JobGrade5,JobGrade5,en,tr
-JobGrade6,JobGrade6,en,tr
-JobGrade7,JobGrade7,en,tr
-JobGrade8,JobGrade8,en,tr
-JobGrade9,JobGrade9,en,tr
-JobGrade10,JobGrade10,en,tr
-JobGrade11,JobGrade11,en,tr
-JobGrade12,JobGrade12,en,tr
 HelpTitle0,Улучшения,en,tr
 HelpTitle1,Бонусы,en,tr
 HelpTitle2,Питомцы,en,tr

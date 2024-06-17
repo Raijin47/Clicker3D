@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c017e0ee8d6ea44abb0bc4eb849e328, type: 3}
   m_Name: Improvement Job 3
   m_EditorClassIdentifier: 
-  _name: Job3
+  _name: ImprovementJobName3{0}
   _prices:
   - 0
   - 0

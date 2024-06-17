@@ -28,6 +28,7 @@ public class Locator : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         _bootstrap.Init();
+        for (int i = 0; i <= 5; i++) Debug.Log(i);
     }
 
     public Stage Stage => _stage;
