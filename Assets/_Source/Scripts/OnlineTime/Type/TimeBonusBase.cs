@@ -1,10 +1,5 @@
-using Assets.SimpleLocalization;
-using UnityEngine;
-
 public abstract class TimeBonusBase : BonusBase
 {
-    //[SerializeField] private LocalizedDynamic _textTime;
-    private readonly string _x = "x";
     protected bool _isActive;
 
     protected abstract void Execute();
@@ -18,7 +13,7 @@ public abstract class TimeBonusBase : BonusBase
 
     protected override int GetTime()
     {
-        return (int)(Modifier.BonusDurationTime * _baseTime);
+        return (int)(Modifier.BoostDurationTime);
     }
 
     protected override void ShowInfo()
@@ -37,9 +32,12 @@ public abstract class TimeBonusBase : BonusBase
 
     protected override void UpdateBonusValue()
     {
-        _textValue.text = _x + Modifier.ModifireBonusAds;
+        UpdateUI();
         Execute();
     }
+
+    protected abstract void UpdateUI();
+
 
     protected void UpdateTimeUI()
     {

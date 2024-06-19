@@ -21,7 +21,7 @@ public class ImprovementPet : ImprovementBase
 
         string Name = TextUtility.GetColorText(LocalizationManager.Localize(TextUtility.ImprovementPetDesName + _id));
 
-        if(_currentGrade == 2 || _currentGrade == 6)
+        if (_currentGrade == 2 || _currentGrade == 6 || _currentGrade == 10)
         {
             string[] Args = new[]{
             Name,

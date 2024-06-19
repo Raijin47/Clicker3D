@@ -34,16 +34,16 @@ public class EnhancementForceClick : EnhancementBase
     protected override void UpdateTextMax()
     {
         _effectText.text = ConvertNumber.Convert(
-            Math.Round(_currentValue * Modifier.PrestigeClickForce * Modifier.DiamondIncome * Modifier.ADsBoost * Modifier.TimeMoneyBoost));
+            Math.Round(_currentValue * Modifier.PrestigeClickForce * Modifier.ADsBoost * Modifier.TimeMoneyBoost));
     }
 
     protected override void UpdateTextProcess()
     {
         _priceText.text = ConvertNumber.Convert(_currentPrice);
         _effectText.text = ConvertNumber.Convert(
-            Math.Round(_currentValue * Modifier.PrestigeClickForce * Modifier.DiamondIncome * Modifier.ADsBoost * Modifier.TimeMoneyBoost))
+            Math.Round(_currentValue * Modifier.PrestigeClickForce * Modifier.ADsBoost * Modifier.TimeMoneyBoost))
             + TextUtility.MoreSign + 
             TextUtility.GetColorText(ConvertNumber.Convert(Math.Round(
-                _nextValue * Modifier.PrestigeClickForce * Modifier.DiamondIncome * Modifier.ADsBoost * Modifier.TimeMoneyBoost)));
+                _nextValue * Modifier.PrestigeClickForce * Modifier.ADsBoost * Modifier.TimeMoneyBoost)));
     }
 }

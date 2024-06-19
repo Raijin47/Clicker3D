@@ -7,10 +7,10 @@ public class Job : AutoBase
 
     public override void GetCurrentIncome()
     {
-        CurrentIncome = Math.Round(_baseIncome * Level * Math.Pow(_increasePercent, Math.Floor(Level / _increaseEveryLevel) *
-            Modifier.JobIncomeModifier * Modifier.TimeMoneyBoost * Modifier.DiamondIncome * Modifier.ADsBoost) *     
+        CurrentIncome = _baseIncome * Level * Math.Pow(_increasePercent, Math.Floor(Level / _increaseEveryLevel)) *
+            Modifier.JobIncomeModifier * Modifier.TimeMoneyBoost * Modifier.ADsBoost *     
            (1 + Locator.Instance.Pets.AutoBases[_id].Level * Locator.Instance.Improvement.ImprovedPets[_id].ModifierPercent) * 
-            Locator.Instance.Improvement.ImprovedJobs[_id].Modifier);
+            Locator.Instance.Improvement.ImprovedJobs[_id].Modifier;
     }
 
     protected override void SaveLevel()
@@ -20,8 +20,8 @@ public class Job : AutoBase
 
     protected override double NextIncome(int level)
     {
-        return Math.Round(_baseIncome * level * Math.Pow(_increasePercent, Math.Floor(level / _increaseEveryLevel) *
-            Modifier.JobIncomeModifier * Modifier.TimeMoneyBoost * Modifier.DiamondIncome * Modifier.ADsBoost) *
+        return Math.Round(_baseIncome * level * Math.Pow(_increasePercent, Math.Floor(level / _increaseEveryLevel)) *
+            Modifier.JobIncomeModifier * Modifier.TimeMoneyBoost * Modifier.ADsBoost *
            (1 + Locator.Instance.Pets.AutoBases[_id].Level * Locator.Instance.Improvement.ImprovedPets[_id].ModifierPercent) *
             Locator.Instance.Improvement.ImprovedJobs[_id].Modifier);
     }
@@ -77,5 +77,22 @@ public class Job : AutoBase
             case CountUpgradeButton.CountState.x10: CurrentPrice = _price10; break;
             case CountUpgradeButton.CountState.x100: CurrentPrice = _price100; break;
         }
+    }
+
+    protected override double CostReduction()
+    {
+        return Modifier.CostReductionPurchase;
+    }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        GlobalEvent.OnCostReductionPurchase.AddListener(UpdatePrice);
+    }
+
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+        GlobalEvent.OnCostReductionPurchase.RemoveListener(UpdatePrice);
     }
 }

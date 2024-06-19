@@ -1,17 +1,23 @@
+using System;
+
 public class DiamondTimeBoostAds : DiamondBase
 {
     protected override void Execute()
     {
-        Modifier.BonusDurationTime = _currentValue;
+        Modifier.BoostDurationTime = _currentValue;
     }
 
     protected override void UpdateTextMax()
     {
-        _effectText.text = TextUtility.Multiply + _currentValue;
+        DateTimeOffset dateTimeOffset = DateTimeOffset.FromUnixTimeSeconds((int)_currentValue);
+
+        _effectText.text = dateTimeOffset.ToString("mm:ss");
     }
 
     protected override void UpdateTextProcess()
     {
-        _effectText.text = TextUtility.Multiply + _currentValue + TextUtility.MoreAndMultiply + _nextValue;
+        DateTimeOffset dateTimeOffset = DateTimeOffset.FromUnixTimeSeconds((int)_currentValue);
+        DateTimeOffset nextTimeOffset = DateTimeOffset.FromUnixTimeSeconds((int)_nextValue);
+        _effectText.text = dateTimeOffset.ToString("mm:ss") + TextUtility.MoreSign + TextUtility.GetColorText(nextTimeOffset.ToString("mm:ss"));
     }
 }

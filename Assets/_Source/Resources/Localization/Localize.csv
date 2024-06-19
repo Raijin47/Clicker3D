@@ -33,6 +33,7 @@ DiamondName3,Сладких сновидений - Ур.,en,tr
 DiamondName4,Какой-то текст - Ур.,en,tr
 DiamondName5,Какой-то текст - Ур.,en,tr
 DiamondName6,Какой-то текст - Ур.,en,tr
+DiamondName7,Какой-то имя - ур.,en,tr
 EnhancementDescription0,Увеличивает силу клика,en,tr
 EnhancementDescription1,Увеличивает шанс критического клика,en,tr
 PetDescription0,"Слегка туповат, но многие считают его милым.",en,tr
@@ -54,19 +55,20 @@ JobDescription6,Чёт на жевательном,en,tr
 JobDescription7,Идеальный десерт в жаркую погоду.,en,tr
 JobDescription8,Вкусный тортик с вишенкой.,en,tr
 RebithDescription0,Увеличивает силу клика,en,tr
-RebithDescription1,Снижает стоимость улучшений за монеты,en,tr
+RebithDescription1,Снижает стоимость тренировки персонала,en,tr
 RebithDescription2,Вероятность пропустить этап,en,tr
 RebithDescription3,Уменьшение шкалы популярности,en,tr
 RebithDescription4,Увеличивает доход от работы,en,tr
 RebithDescription5,Увеличивает любовную силу питомцев,en,tr
-RebithDescription6,Получите бонусные деньги при престиже,en,tr
+RebithDescription6,Снижение стоимости покупки сладостей,en,tr
 DiamondDescription0,Увеличивает весь доход,en,tr
 DiamondDescription1,Бонус к валюте престижа,en,tr
 DiamondDescription2,Снижение потери дней при сбросе престижа,en,tr
 DiamondDescription3,Увеличивает время офлайн дохода,en,tr
 DiamondDescription4,Объем офлайн дохода,en,tr
 DiamondDescription5,Длительность бонусов за рекламу,en,tr
-DiamondDescription6,Эфективность бонусов за рекламу,en,tr
+DiamondDescription6,Эффективность буста денег,en,tr
+DiamondDescription7,Эффективность буста любви,en,tr
 HelpTitle0,Улучшения,en,tr
 HelpTitle1,Бонусы,en,tr
 HelpTitle2,Питомцы,en,tr

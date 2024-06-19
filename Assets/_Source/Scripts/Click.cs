@@ -45,7 +45,7 @@ public class Click : MonoBehaviour
 
     private void UpdateValue()
     {
-        _clickForce = Math.Round(Modifier.DiamondIncome * Modifier.EnhancementClickForce * Modifier.PrestigeClickForce * Modifier.ADsBoost * Modifier.TimeMoneyBoost);       
+        _clickForce = Math.Round(Modifier.EnhancementClickForce * Modifier.PrestigeClickForce * Modifier.ADsBoost * Modifier.TimeMoneyBoost);       
         _criticalClickForce = Math.Round(_clickForce * _criticalModifier);
 
         _textClick = ConvertNumber.Convert(_clickForce);

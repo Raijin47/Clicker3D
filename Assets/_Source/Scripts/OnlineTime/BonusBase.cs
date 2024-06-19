@@ -12,7 +12,6 @@ public abstract class BonusBase : MonoBehaviour
     [SerializeField] private GameObject _infoPanel;
     [SerializeField] private TextMeshProUGUI _textTimer;
     [SerializeField] protected TextMeshProUGUI _textValue;
-    [SerializeField] protected int _baseTime;
 
     private TimeBonusService _timeBonusService;
     private Coroutine _updateTimerCoroutine;

@@ -23,26 +23,13 @@ public static class Modifier
     #endregion
 
     #region Diamond
-    private static double _diamondIncome;
     private static double _prestigeMultiplier;
     private static double _reductionLostDays;
     private static double _offlineIncomeTime;
     private static double _offlineIncomeModifire;
     private static double _bonusDurationTime;
-    private static double _modifireBonusAds;
-
-    public static double DiamondIncome
-    {
-        get => _diamondIncome;
-        set
-        {
-            _diamondIncome = value * 0.01d + 1d;
-            GlobalEvent.SendIncreaseClick();
-            GlobalEvent.SendIncreasePetIncome();
-            GlobalEvent.SendIncreaseJobIncome();
-        }
-    }
-
+    private static double _adsBoostMoney;
+    private static double _adsBoostLove;
     public static double PrestigeMultiplier
     {
         get => _prestigeMultiplier;
@@ -81,7 +68,7 @@ public static class Modifier
         }
     }
 
-    public static double BonusDurationTime
+    public static double BoostDurationTime
     {
         get => _bonusDurationTime;
         set 
@@ -91,12 +78,22 @@ public static class Modifier
         } 
     }
 
-    public static double ModifireBonusAds
+    public static double AdsBoostMoney
     {
-        get => _modifireBonusAds;
+        get => _adsBoostMoney;
         set
         {
-            _modifireBonusAds = value;
+            _adsBoostMoney = value;
+            GlobalEvent.SendChangeModifireBonusAds();
+        }
+    }
+
+    public static double AdsBoostLove
+    {
+        get => _adsBoostLove;       
+        set
+        {
+            _adsBoostLove = value;
             GlobalEvent.SendChangeModifireBonusAds();
         }
     }
@@ -106,7 +103,8 @@ public static class Modifier
     private static double _prestigeClickForce;
     private static double _chanceSkipStage;
     private static double _healthReductionModifier;
-    private static double _costReductionModifier;
+    private static double _costReductionTraining;
+    private static double _costReductionPurchase;
     private static double _jobIncomeModifier;
     private static double _petIncomeModifier;
 
@@ -138,13 +136,23 @@ public static class Modifier
         }
     }
 
-    public static double CostReductionModifier
+    public static double CostReductionTraining
     {
-        get => _costReductionModifier;
+        get => _costReductionTraining;
         set
         {
-            _costReductionModifier = (100d - value) * 0.01d;
-            GlobalEvent.SendCostReduction();
+            _costReductionTraining = (100d - value) * 0.01d;
+            GlobalEvent.SendCostReductionTraining();
+        }
+    }
+
+    public static double CostReductionPurchase
+    {
+        get => _costReductionPurchase;
+        set
+        {
+            _costReductionPurchase = (100d - value) * 0.01d;
+            GlobalEvent.SendCostReductionPurchase();
         }
     }
 

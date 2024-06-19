@@ -17,7 +17,7 @@ public abstract class RebithIncreaseScaleBase : RebithBase
     protected override void UpdateTextProcess()
     {
         _priceText.text = ConvertNumber.Convert(_currentPrice);
-        _effectText.text = ConvertNumber.Convert(_currentValue) + TextUtility.PercentAndMore + ConvertNumber.Convert(_nextValue) + TextUtility.Percent;
+        _effectText.text = ConvertNumber.Convert(_currentValue) + TextUtility.PercentAndMore + TextUtility.GetColorText(ConvertNumber.Convert(_nextValue) + TextUtility.Percent);
         UpdateScale();
     }
 

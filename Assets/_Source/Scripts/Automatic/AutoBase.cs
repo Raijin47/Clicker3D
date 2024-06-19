@@ -33,7 +33,7 @@ public abstract class AutoBase : MonoBehaviour
         {
             _currentIncome = Math.Round(value);
 
-            _incomeText.text = ConvertNumber.Convert(CurrentIncome) + TextUtility.MoreSign + TextUtility.GetColorText(ConvertNumber.Convert(NextIncome(_level + 1)));
+            _incomeText.text = ConvertNumber.Convert(_currentIncome) + TextUtility.MoreSign + TextUtility.GetColorText(ConvertNumber.Convert(NextIncome(_level + 1)));
         }
     }
 
@@ -79,11 +79,21 @@ public abstract class AutoBase : MonoBehaviour
     {
         _gameObject.SetActive(true);
 
+        Level = level;
+    }
+
+    protected virtual void OnEnable()
+    {
         GlobalEvent.OnMoneyChange.AddListener(CheckInteractableButton);
-        GlobalEvent.OnCostReduction.AddListener(UpdatePrice);
         GlobalEvent.OnChangeCountUpgrade.AddListener(SwitchPrice);
         _buttonUpgrade.onClick.AddListener(UpgradeButton);
-        Level = level;
+    }
+
+    protected virtual void OnDisable()
+    {
+        GlobalEvent.OnMoneyChange.RemoveListener(CheckInteractableButton);
+        GlobalEvent.OnChangeCountUpgrade.RemoveListener(SwitchPrice);
+        _buttonUpgrade.onClick.RemoveListener(UpgradeButton);
     }
 
     protected void UpdatePrice()
@@ -91,7 +101,7 @@ public abstract class AutoBase : MonoBehaviour
         double currentLevel = Level;
         double value = 0;
 
-        value += Math.Round(IncreaseValue.Calculate(currentLevel, _basePrice, _degreeIncreasePrice) * Modifier.CostReductionModifier);
+        value += Math.Round(IncreaseValue.Calculate(currentLevel, _basePrice, _degreeIncreasePrice) * CostReduction());
         currentLevel++;
 
         _price1 = Math.Round(value);
@@ -99,7 +109,7 @@ public abstract class AutoBase : MonoBehaviour
         for (int i = 0; i < 9; i++)
         {
             currentLevel++;
-            value += Math.Round(IncreaseValue.Calculate(currentLevel, _basePrice, _degreeIncreasePrice) * Modifier.CostReductionModifier);
+            value += Math.Round(IncreaseValue.Calculate(currentLevel, _basePrice, _degreeIncreasePrice) * CostReduction());
         }
 
         _price10 = Math.Round(value);
@@ -107,7 +117,7 @@ public abstract class AutoBase : MonoBehaviour
         for (int i = 0; i < 89; i++)
         {
             currentLevel++;
-            value += Math.Round(IncreaseValue.Calculate(currentLevel, _basePrice, _degreeIncreasePrice) * Modifier.CostReductionModifier);
+            value += Math.Round(IncreaseValue.Calculate(currentLevel, _basePrice, _degreeIncreasePrice) * CostReduction());
         }
 
         _price100 = Math.Round(value);
@@ -117,7 +127,7 @@ public abstract class AutoBase : MonoBehaviour
 
     protected abstract void SwitchPrice();
     protected abstract void SaveLevel();
-
+    protected abstract double CostReduction();
     protected abstract void UpdateLevel();
     public abstract void GetCurrentIncome();
     protected abstract void CalculateIncome();
@@ -149,9 +159,6 @@ public abstract class AutoBase : MonoBehaviour
 
     public virtual void Deactivate()
     {
-        GlobalEvent.OnMoneyChange.RemoveListener(CheckInteractableButton);
-        GlobalEvent.OnCostReduction.RemoveListener(GetCurrentIncome);
-        GlobalEvent.OnChangeCountUpgrade.RemoveListener(SwitchPrice);
         Level = 0;
         _gameObject.SetActive(false);
     }

@@ -12,7 +12,7 @@ public abstract class EnhancementBase : UpgradeBase
     {
         GlobalEvent.OnMoneyChange.AddListener(CheckInteractableButton);
         GlobalEvent.OnRebith.AddListener(ResetLevel);
-        GlobalEvent.OnCostReduction.AddListener(UpdatePrice);
+        GlobalEvent.OnCostReductionTraining.AddListener(UpdatePrice);
         GlobalEvent.OnChangeCountUpgrade.AddListener(SwitchPrice);
     }
 
@@ -78,7 +78,7 @@ public abstract class EnhancementBase : UpgradeBase
         double currentLevel = Level;
         double value = 0;
 
-        value += IncreaseValue.Calculate(currentLevel, _baseUpgradePrice, _degreeIncreasePrice) * Modifier.CostReductionModifier;
+        value += IncreaseValue.Calculate(currentLevel, _baseUpgradePrice, _degreeIncreasePrice) * Modifier.CostReductionTraining;
         currentLevel++;
 
         _price1 = Math.Round(value);
@@ -86,7 +86,7 @@ public abstract class EnhancementBase : UpgradeBase
         for (int i = 0; i < 9; i++)
         {
             currentLevel++;
-            value += IncreaseValue.Calculate(currentLevel, _baseUpgradePrice, _degreeIncreasePrice) * Modifier.CostReductionModifier;
+            value += IncreaseValue.Calculate(currentLevel, _baseUpgradePrice, _degreeIncreasePrice) * Modifier.CostReductionTraining;
         }
 
         _price10 = Math.Round(value);
@@ -94,7 +94,7 @@ public abstract class EnhancementBase : UpgradeBase
         for (int i = 0; i < 89; i++)
         {
             currentLevel++;
-            value += IncreaseValue.Calculate(currentLevel, _baseUpgradePrice, _degreeIncreasePrice) * Modifier.CostReductionModifier;
+            value += IncreaseValue.Calculate(currentLevel, _baseUpgradePrice, _degreeIncreasePrice) * Modifier.CostReductionTraining;
         }
 
         _price100 = Math.Round(value);

@@ -7,9 +7,9 @@ public class Pet : AutoBase
 
     public override void GetCurrentIncome()
     {
-        CurrentIncome = Math.Round(_baseIncome * Level * Math.Pow(_increasePercent, Math.Floor(Level / _increaseEveryLevel) *
-            Modifier.PetIncomeModifier * Modifier.DiamondIncome * Modifier.TimeLoveBoost * Modifier.ADsBoost) *
-            Locator.Instance.Improvement.ImprovedPets[_id].Modifier);       
+        CurrentIncome = _baseIncome * Level * Math.Pow(_increasePercent, Math.Floor(Level / _increaseEveryLevel)) *
+            Modifier.PetIncomeModifier * Modifier.TimeLoveBoost * Modifier.ADsBoost *
+            Locator.Instance.Improvement.ImprovedPets[_id].Modifier;
     }
 
     protected override void SaveLevel()
@@ -20,8 +20,8 @@ public class Pet : AutoBase
 
     protected override double NextIncome(int level)
     {
-        return Math.Round(_baseIncome * level * Math.Pow(_increasePercent, Math.Floor(level / _increaseEveryLevel) * 
-            Modifier.PetIncomeModifier * Modifier.DiamondIncome * Modifier.TimeLoveBoost * Modifier.ADsBoost) *
+        return Math.Round(_baseIncome * level * Math.Pow(_increasePercent, Math.Floor(level / _increaseEveryLevel)) * 
+            Modifier.PetIncomeModifier * Modifier.TimeLoveBoost * Modifier.ADsBoost *
             Locator.Instance.Improvement.ImprovedPets[_id].Modifier);
     }
 
@@ -88,5 +88,22 @@ public class Pet : AutoBase
             case CountUpgradeButton.CountState.x10: CurrentPrice = _price10; break;
             case CountUpgradeButton.CountState.x100: CurrentPrice = _price100; break;
         }
+    }
+
+    protected override double CostReduction()
+    {
+        return Modifier.CostReductionTraining;
+    }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        GlobalEvent.OnCostReductionTraining.AddListener(UpdatePrice);
+    }
+
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+        GlobalEvent.OnCostReductionTraining.RemoveListener(UpdatePrice);
     }
 }

@@ -9,7 +9,8 @@ public class GlobalEvent
     public static UnityEvent OnStageChange = new();
     public static UnityEvent OnIncreaseJobIncome = new();
     public static UnityEvent OnIncreaseClick = new();
-    public static UnityEvent OnCostReduction = new();
+    public static UnityEvent OnCostReductionTraining = new();
+    public static UnityEvent OnCostReductionPurchase = new();
     public static UnityEvent OnHealthReduction = new();
     public static UnityEvent OnReductionLostDays = new();
     public static UnityEvent OnIncreasePetIncome = new();
@@ -27,7 +28,8 @@ public class GlobalEvent
     public static void SendIncreaseJobIncome() => OnIncreaseJobIncome.Invoke();
     public static void SendIncreasePetIncome() => OnIncreasePetIncome.Invoke();
     public static void SendIncreaseClick() => OnIncreaseClick.Invoke();
-    public static void SendCostReduction() => OnCostReduction.Invoke();
+    public static void SendCostReductionTraining() => OnCostReductionTraining.Invoke();
+    public static void SendCostReductionPurchase() => OnCostReductionPurchase.Invoke();
     public static void SendHealthReduction() => OnHealthReduction.Invoke();
     public static void SendReductionLostDays() => OnReductionLostDays.Invoke();
     public static void SendIncreaseRebithMultiplier() => OnIncreaseRebithMultiplier.Invoke();
