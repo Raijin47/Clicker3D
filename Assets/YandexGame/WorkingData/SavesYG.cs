@@ -15,7 +15,7 @@
         public double CurrentHealth;
 
         public int[] JobLevel = new int[9];
-        public int[] PetLevel = new int[9];
+        public int[] PetLevel = new int[10];
         public int CurrentJob;
         public int CurrentPet;
 
@@ -37,7 +37,7 @@
         public int[] LastReceiveTime = new int[2];
         public bool[] IsActiveTimer = new bool[2];
 
-        public int[] UpgradePet = new int[9];
+        public int[] UpgradePet = new int[10];
         public int[] UpgradeJob = new int[9];
 
         public int LastLoginTime;

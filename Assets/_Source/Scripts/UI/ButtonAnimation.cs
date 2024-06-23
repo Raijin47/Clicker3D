@@ -7,24 +7,28 @@ public class ButtonAnimation : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     #region Sub-Classes
     [System.Serializable]
     public class UIButtonEvent : UnityEvent<PointerEventData.InputButton> { }
-    #endregion
+	#endregion
+
+	[SerializeField] private RectTransform _rectTransform;
 
     public UIButtonEvent OnButtonPress;
 	public UIButtonEvent OnButtonRelease;
 
 	void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
 	{
-		if (OnButtonPress != null)
-		{
-			OnButtonPress.Invoke(eventData.button);
-		}
+		ButtonAnimationCore.Pressed(_rectTransform);
+		//if (OnButtonPress != null)
+		//{
+		//	OnButtonPress.Invoke(eventData.button);
+		//}
 	}
 
 	void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
 	{
-		if (OnButtonRelease != null)
-		{
-			OnButtonRelease.Invoke(eventData.button);
-		}
+		ButtonAnimationCore.Release(_rectTransform);
+		//if (OnButtonRelease != null)
+		//{
+		//	OnButtonRelease.Invoke(eventData.button);
+		//}
 	}
 }

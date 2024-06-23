@@ -272,6 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec8c123453fdb964f911bdfd81a03f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 6536025340776601929}
   OnButtonPress:
     m_PersistentCalls:
       m_Calls: []

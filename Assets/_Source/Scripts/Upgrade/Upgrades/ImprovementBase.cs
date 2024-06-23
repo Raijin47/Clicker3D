@@ -14,7 +14,6 @@ public abstract class ImprovementBase : MonoBehaviour
     [SerializeField] protected TextMeshProUGUI _descriptionText;
     [SerializeField] protected TextMeshProUGUI _titleName;
     [SerializeField] protected ImprovementData _data;
-    [SerializeField] private string[] _gradeKeys;
 
     private double _modifier;
     private int _availableGrade;

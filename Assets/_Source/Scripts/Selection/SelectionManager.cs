@@ -17,6 +17,13 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] private Image _upgradeButton;
     [SerializeField] private Image _outfitButton;
 
+    [SerializeField] private RectTransform _autoIncomeRect;
+    [SerializeField] private RectTransform _autoPopularityRect;
+    [SerializeField] private RectTransform _rebithRect;
+    [SerializeField] private RectTransform _shopRect;
+    [SerializeField] private RectTransform _upgradeRect;
+    [SerializeField] private RectTransform _outfitRect;
+
     private SelectionState _selectionState;
 
     private SelectionBase _autoIncome;
@@ -28,12 +35,12 @@ public class SelectionManager : MonoBehaviour
 
     public void Init()
     {
-        _autoIncome = new SelectionBase(_autoIncomeCanvas, _autoIncomeButton);
-        _autoPopularity = new SelectionBase(_autoPopularityCanvas, _autoPopularivyButton);
-        _shop = new SelectionBase(_shopCanvas, _shopButton);
-        _rebith = new SelectionBase(_rebithCanvas, _rebithButton);
-        _upgrade = new SelectionBase(_upgradeCanvas, _upgradeButton);
-        _outfit = new SelectionBase(_outfitCanvas, _outfitButton);
+        _autoIncome = new SelectionBase(_autoIncomeCanvas, _autoIncomeButton, _autoIncomeRect);
+        _autoPopularity = new SelectionBase(_autoPopularityCanvas, _autoPopularivyButton, _autoPopularityRect);
+        _shop = new SelectionBase(_shopCanvas, _shopButton, _shopRect);
+        _rebith = new SelectionBase(_rebithCanvas, _rebithButton, _rebithRect);
+        _upgrade = new SelectionBase(_upgradeCanvas, _upgradeButton, _upgradeRect);
+        _outfit = new SelectionBase(_outfitCanvas, _outfitButton, _outfitRect);
         _selectionState = new SelectionState(_upgrade);
     }
 

@@ -27,7 +27,7 @@ public abstract class AutoBaseManager : MonoBehaviour
         _id = id;
 
         UpdatePrice();
-
+        InitializedGirl();
         for (int i = 0; i < _id; i++) Activate(i);
 
         CalculateIncome();
@@ -50,6 +50,11 @@ public abstract class AutoBaseManager : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    protected virtual void InitializedGirl()
+    {
+
     }
 
     protected abstract void AddAdditionalListener();
@@ -127,10 +132,15 @@ public abstract class AutoBaseManager : MonoBehaviour
 
     private void UpdatePrice()
     {
-        _buyPanel.SetActive(_id < _autoBases.Length);
+        _buyPanel.SetActive(IsNextButtonExists());
 
         _currentPrice = _price[_id];
         _buyPriceText.text = ConvertNumber.Convert(_currentPrice);
+    }
+
+    protected virtual bool IsNextButtonExists()
+    {
+        return _id < _autoBases.Length;
     }
 
 #if UNITY_EDITOR

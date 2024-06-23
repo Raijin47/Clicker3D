@@ -11,6 +11,12 @@ public class PetsManager : AutoBaseManager
         return _id != 0; 
     }
 
+    protected override void InitializedGirl()
+    {
+        _autoBases[9].Activate(YandexGame.savesData.PetLevel[9]);
+    }
+
+
     public Vector3 GetPosition()
     {
         return _pets[Random.Range(0, _id)].transform.position;
@@ -34,5 +40,10 @@ public class PetsManager : AutoBaseManager
     protected override void SaveAuto()
     {
         YandexGame.savesData.CurrentPet = _id;
+    }
+
+    protected override bool IsNextButtonExists()
+    {
+        return _id < _autoBases.Length - 1;
     }
 }
