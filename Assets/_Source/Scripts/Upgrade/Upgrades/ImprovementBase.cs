@@ -17,7 +17,9 @@ public abstract class ImprovementBase : MonoBehaviour
 
     private double _modifier;
     private int _availableGrade;
-    protected int _currentGrade;
+    protected int _nextGrade;
+
+    private string _currentPriceText;
 
     public double Modifier
     {
@@ -29,6 +31,8 @@ public abstract class ImprovementBase : MonoBehaviour
         }
     }
 
+    public double Price => _data.Price[ActiveGrade];
+
     public abstract int ActiveGrade
     {
         get;
@@ -38,26 +42,34 @@ public abstract class ImprovementBase : MonoBehaviour
     public void Init()
     {
         GlobalEvent.OnMoneyChange.AddListener(CheckInteractableButton);
-        _currentGrade = ActiveGrade + 1;
-        Modifier = CalculateModifier();
+        _nextGrade = ActiveGrade + 1;
+        _modifier = CalculateModifier();
         UpdateUI();
     }
 
     private void OnEnable()
     {
         LocalizationManager.LocalizationChanged += Localize;
+        LocalizationManager.LocalizationChanged += UpdatePriceText;
     }
 
     private void OnDisable()
     {
         LocalizationManager.LocalizationChanged += Localize;
+        LocalizationManager.LocalizationChanged -= UpdatePriceText;
     }
 
     public void PurchasedUpgrade()
     {
-        if(IsPurchaseAvailable())
+        if (IsPurchaseAvailable())
         {
-            Locator.Instance.Wallet.Money -= _data.Price[_currentGrade];
+            Locator.Instance.Wallet.Money -= _data.Price[ActiveGrade];
+
+            Locator.Instance.Particle.GoldTransform.position = _button.transform.position;
+            Locator.Instance.Particle.GoldParticle.Play();
+
+            SFXController.OnUpgradeMoney?.Invoke();
+
             Activate();
         }
     }
@@ -66,26 +78,40 @@ public abstract class ImprovementBase : MonoBehaviour
 
     public void Show(int value)
     {
-        if (value <= _availableGrade) return;
-
-        _availableGrade = value;
-        UpdateUI();      
+        if(value > _availableGrade)
+        {
+            _availableGrade = value;
+            UpdateUI();
+        }
     }
 
     private void UpdateUI()
     {
-        if (_currentGrade == 0) return;
-        _priceText.text = ConvertNumber.Convert(_data.Price[_currentGrade]);
-        _frameImage.color = Locator.Instance.Improvement.Color[_currentGrade];
+        _currentPriceText = ConvertNumber.Convert(_data.Price[ActiveGrade]);
+        UpdatePriceText();
+        _frameImage.color = Locator.Instance.Improvement.Color[ActiveGrade];
         _upgradeObject.SetActive(ActiveGrade < _availableGrade);
         Localize();
+        Locator.Instance.Improvement.SortingImproved();
     }
 
+    private void UpdatePriceText()
+    {
+        _priceText.text = IsPurchaseAvailable() ?
+            TextUtility.GetBlackText( GetPriceText()) : 
+            TextUtility.GetWhiteText(GetPriceText());
+    }
+
+    private string GetPriceText()
+    {
+        string text = LocalizationManager.Localize(TextUtility.Explore) + "\n" + TextUtility.GoldImg + _currentPriceText;
+        return text;
+    }
 
     public void Activate()
     {
-        ActiveGrade = _currentGrade;
-        _currentGrade = ActiveGrade + 1;
+        ActiveGrade = _nextGrade;
+        _nextGrade++;
 
         Modifier = CalculateModifier();
         UpdateUI();
@@ -109,17 +135,18 @@ public abstract class ImprovementBase : MonoBehaviour
         _upgradeObject.SetActive(false);
         ActiveGrade = 0;
         _availableGrade = 0;
-        _currentGrade = ActiveGrade + 1;
+        _nextGrade = 1;
     }
 
     private void CheckInteractableButton()
     {
         _button.interactable = IsPurchaseAvailable();
+        UpdatePriceText();
     }
 
     private bool IsPurchaseAvailable()
     {
-        bool _isPurchaseAvailable = Locator.Instance.Wallet.Money >= _data.Price[_currentGrade];
+        bool _isPurchaseAvailable = Locator.Instance.Wallet.Money >= _data.Price[ActiveGrade];
         return _isPurchaseAvailable;
     }
 }

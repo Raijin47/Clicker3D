@@ -66,15 +66,14 @@ namespace ExampleYGDateTime
             DateTimeOffset saveTimeOffset = DateTimeOffset.FromUnixTimeSeconds(YandexGame.savesData.LastLoginDay);
             DateTimeOffset currentTimeOffset = DateTimeOffset.FromUnixTimeSeconds((int)currentTime);
 
-            DateTime day1 = new DateTime(saveTimeOffset.Year, saveTimeOffset.Month, saveTimeOffset.Day);
-            DateTime day2 = new DateTime(currentTimeOffset.Year, currentTimeOffset.Month, currentTimeOffset.Day);
+            DateTime day1 = new (saveTimeOffset.Year, saveTimeOffset.Month, saveTimeOffset.Day);
+            DateTime day2 = new (currentTimeOffset.Year, currentTimeOffset.Month, currentTimeOffset.Day);
 
             TimeSpan span = day2.Subtract(day1);
 
             _isDailyLogin = span.Days == 1;
 
-            if (span.Days > 0) return true;
-            else return false;
+            return span.Days > 0;
         }
     }
 }

@@ -12,22 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c017e0ee8d6ea44abb0bc4eb849e328, type: 3}
   m_Name: Improvement Girl 9
   m_EditorClassIdentifier: 
-  _name: ImprovementPetName8{0}
+  _name: ImprovementPetName9{0}
+  _sex: F
   _prices:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 40000
+  - 11000000
+  - 12200000000
+  - 13280000000000
+  - 14400000000000000
+  - 1.56e+19
+  - 1.69e+22
+  - 1.83e+25
+  - 1.98e+28
+  - 2.33e+34
+  - 3.48e+49
+  - 5.2e+64
+  - 31
   _increasesValue:
   - 1
   - 2

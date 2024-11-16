@@ -10,16 +10,14 @@ public class Health : MonoBehaviour
     [SerializeField] private Stage _stage;
     [SerializeField] private Image _imageHealth;
     [SerializeField] private TextMeshProUGUI _textHealth;
-    private const double _baseHealth = 100;
-    private const double _degreeIncreaseHealth = 1.07d;
+    private const double _baseHealth = 45;
+    private const double _degreeIncreaseHealth = 1.15d;
 
     private double _currentHealth;
     private double _maxHealth;
     private string _textMaxHealth;
     private const string _division = " / ";
     private const float _one = 1f;
-    private const double _increasePercent = 5;
-    private const double _increaseEveryLevel = 10;
     private Coroutine _maxHealthUpdateProcessCoroutine;
 
 
@@ -48,6 +46,8 @@ public class Health : MonoBehaviour
         }
     }
 
+    private readonly WaitForSeconds interval = new(1f);
+
     private IEnumerator MaxHealthUpdateProcess()
     {
         while (true)
@@ -59,7 +59,7 @@ public class Health : MonoBehaviour
                 UpdateMaxHealth();
                 UpdateUI();
                 YandexGame.savesData.CurrentHealth = _currentHealth;
-                yield return null;
+                yield return interval;
             }
             yield return null;
         }
@@ -81,11 +81,8 @@ public class Health : MonoBehaviour
 
     private void UpdateMaxHealth()
     {
-        _maxHealth =
-            //IncreaseValue.CalculateConstant(_stage.CurrentStage, 0.3d, 1)
-            IncreaseValue.CalculateDegree(_stage.CurrentStage, _baseHealth, _degreeIncreaseHealth)
-            * Math.Pow(_increasePercent, Math.Floor(_stage.CurrentStage / _increaseEveryLevel))
-            * Modifier.HealthReductionModifier;
+        _maxHealth = Math.Round(IncreaseValue.Calculate(_stage.CurrentStage, _baseHealth, _degreeIncreaseHealth)
+            * Modifier.HealthReductionModifier * ((_stage.CurrentStage % 5 == 0) ? 3 : 1) * ((_stage.CurrentStage % 10 == 0) ? 2 : 1));
         _textMaxHealth = ConvertNumber.Convert(_maxHealth);
     }
 

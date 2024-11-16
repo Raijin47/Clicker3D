@@ -4,11 +4,13 @@ using UnityEngine;
 public class ImprovementData : ScriptableObject
 {
     [SerializeField] private string _name;
+    [SerializeField] private string _sex;
     [SerializeField] private double[] _prices;    
     [SerializeField] private double[] _increasesValue;
     [SerializeField] private double[] _increasesPercent;
 
     public string Name => _name;
+    public string Sex => _sex;
     public double[] Price => _prices;
     public double[] IncreasesValue => _increasesValue;   
     public double[] IncreasesPercent => _increasesPercent;

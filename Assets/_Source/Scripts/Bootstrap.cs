@@ -5,28 +5,35 @@ public class Bootstrap : MonoBehaviour
 {
     [SerializeField] private SelectionManager _selectionManager;
     [SerializeField] private DiamondManager _diamondManager;
-    [SerializeField] private EnhancementManager _enhancementManager;
+    [SerializeField] private EnhancementForceClick _enhancementClick;
     [SerializeField] private LanguageSettings _languageSettings;
     [SerializeField] private OfflineReward _offlineReward;
     [SerializeField] private AdsManager _adsManager;
     [SerializeField] private Customization _customization;
+    [SerializeField] private HidingPanel _hidingPanel;
+    [SerializeField] private SFXController _sfxController;
+    [SerializeField] private DailyRoulette _roulette;
 
     public void Init()
     {
-        _adsManager.Init();
         _languageSettings.Init();
+        _adsManager.Init();
+        Locator.Instance.Wallet.Init();
         Locator.Instance.Rebith.Init();
         _diamondManager.Init();
-        _enhancementManager.Init();
-        Locator.Instance.Wallet.Init();
+        Locator.Instance.Improvement.Init();
+        _enhancementClick.Init();
         Locator.Instance.Click.Init();
         Locator.Instance.Stage.Init();
         Locator.Instance.Health.Init();
         Locator.Instance.Jobs.Init(YandexGame.savesData.CurrentJob);
         Locator.Instance.Pets.Init(YandexGame.savesData.CurrentPet);
-        Locator.Instance.Improvement.Init();
+        
+        _hidingPanel.Init();
         _offlineReward.Init();
+        _roulette.Init();
         _customization.Init();
+        _sfxController.Init();
     }
 
     private void Start()
@@ -40,11 +47,11 @@ public class Bootstrap : MonoBehaviour
     {
         _selectionManager ??= GetComponent<SelectionManager>();
         _diamondManager ??= GetComponent<DiamondManager>();
-        _enhancementManager ??= GetComponent<EnhancementManager>();
         _languageSettings ??= GetComponent<LanguageSettings>();
         _offlineReward ??= GetComponent<OfflineReward>();
         _adsManager ??= GetComponent<AdsManager>();
         _customization ??= GetComponent<Customization>();
+        _roulette ??= GetComponent<DailyRoulette>();
     }
 #endif
     #endregion

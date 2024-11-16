@@ -1,18 +1,20 @@
+using UnityEngine;
 using YG;
 
 public abstract class RebithBase : UpgradeBase
 {
-    private const double _increaseDegreePrice = 1.3d;
+    [SerializeField] private double _increaseDegreePrice = 1.3d;
 
     protected override void AddListener()
     {
         GlobalEvent.OnRebithChange.AddListener(CheckInteractableButton);
+        GlobalEvent.OnRebithChange.AddListener(UpdatePriceText);
     }
 
-    protected override int GetLevel()
+    public override int Level
     {
-        int level = YandexGame.savesData.RebithLevel[_id];
-        return level;
+        get => YandexGame.savesData.RebithLevel[_id];
+        set => YandexGame.savesData.RebithLevel[_id] = value;
     }
 
     protected override bool IsPurchaseAvailable()
@@ -24,11 +26,7 @@ public abstract class RebithBase : UpgradeBase
     protected override void ExecutePurchase()
     {
         Locator.Instance.Wallet.Rebith -= _currentPrice;
-    }
-
-    protected override void SetLevel()
-    {
-        YandexGame.savesData.RebithLevel[_id] = Level;
+        SFXController.OnUpgradeRebith?.Invoke();
     }
 
     protected override void PlayParticle()
@@ -40,5 +38,10 @@ public abstract class RebithBase : UpgradeBase
     protected override double CalculateUpgradePrice()
     {
         return IncreaseValue.CalculateDegree(Level, _baseUpgradePrice, _increaseDegreePrice);
+    }
+
+    protected override string Currency()
+    {
+        return TextUtility.PrestigeImg;
     }
 }

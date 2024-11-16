@@ -31,6 +31,7 @@ public class Stage : MonoBehaviour
             }
         }
     }
+
     public void Init()
     {
         CurrentStage = YandexGame.savesData.CurrentStage;

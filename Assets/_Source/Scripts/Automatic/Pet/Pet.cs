@@ -1,16 +1,10 @@
 using YG;
 using System;
+using Assets.SimpleLocalization;
 
 public class Pet : AutoBase
 {
     private const double _increaseEveryLevel = 10;
-
-    public override void GetCurrentIncome()
-    {
-        CurrentIncome = _baseIncome * Level * Math.Pow(_increasePercent, Math.Floor(Level / _increaseEveryLevel)) *
-            Modifier.PetIncomeModifier * Modifier.TimeLoveBoost * Modifier.ADsBoost *
-            Locator.Instance.Improvement.ImprovedPets[_id].Modifier;
-    }
 
     protected override void SaveLevel()
     {
@@ -18,11 +12,21 @@ public class Pet : AutoBase
         Locator.Instance.Jobs.AutoBases[_id].GetUpgrade();
     }
 
-    protected override double NextIncome(int level)
+    public override void GetCurrentIncome()
     {
-        return Math.Round(_baseIncome * level * Math.Pow(_increasePercent, Math.Floor(level / _increaseEveryLevel)) * 
+        CurrentIncome = GetValue(Level);
+    }
+
+    protected override double GetNextIncome()
+    {
+        return GetValue(Level + 1);
+    }
+
+    protected override double GetValue(int level)
+    {
+        return Math.Round(_baseIncome * level * Math.Pow(_increasePercent, Math.Floor(level / _increaseEveryLevel)) *
             Modifier.PetIncomeModifier * Modifier.TimeLoveBoost * Modifier.ADsBoost *
-            Locator.Instance.Improvement.ImprovedPets[_id].Modifier);
+            Locator.Instance.Improvement.Pets[_id].Modifier * Locator.Instance.Improvement.Island.Value);
     }
 
     public override void Activate(int level)
@@ -46,18 +50,18 @@ public class Pet : AutoBase
     {
         switch (Level)
         {
-            case >= 1000: Locator.Instance.Improvement.ImprovedPets[_id].Show(12); break;
-            case >= 750: Locator.Instance.Improvement.ImprovedPets[_id].Show(11); break;
-            case >= 500: Locator.Instance.Improvement.ImprovedPets[_id].Show(10); break;
-            case >= 400: Locator.Instance.Improvement.ImprovedPets[_id].Show(9); break;
-            case >= 350: Locator.Instance.Improvement.ImprovedPets[_id].Show(8); break;
-            case >= 300: Locator.Instance.Improvement.ImprovedPets[_id].Show(7); break;
-            case >= 250: Locator.Instance.Improvement.ImprovedPets[_id].Show(6); break;
-            case >= 200: Locator.Instance.Improvement.ImprovedPets[_id].Show(5); break;
-            case >= 150: Locator.Instance.Improvement.ImprovedPets[_id].Show(4); break;
-            case >= 100: Locator.Instance.Improvement.ImprovedPets[_id].Show(3); break;
-            case >= 50: Locator.Instance.Improvement.ImprovedPets[_id].Show(2); break;
-            case >= 10: Locator.Instance.Improvement.ImprovedPets[_id].Show(1); break;
+            case >= 1000: Locator.Instance.Improvement.Pets[_id].Show(12); break;
+            case >= 750: Locator.Instance.Improvement.Pets[_id].Show(11); break;
+            case >= 500: Locator.Instance.Improvement.Pets[_id].Show(10); break;
+            case >= 400: Locator.Instance.Improvement.Pets[_id].Show(9); break;
+            case >= 350: Locator.Instance.Improvement.Pets[_id].Show(8); break;
+            case >= 300: Locator.Instance.Improvement.Pets[_id].Show(7); break;
+            case >= 250: Locator.Instance.Improvement.Pets[_id].Show(6); break;
+            case >= 200: Locator.Instance.Improvement.Pets[_id].Show(5); break;
+            case >= 150: Locator.Instance.Improvement.Pets[_id].Show(4); break;
+            case >= 100: Locator.Instance.Improvement.Pets[_id].Show(3); break;
+            case >= 50: Locator.Instance.Improvement.Pets[_id].Show(2); break;
+            case >= 10: Locator.Instance.Improvement.Pets[_id].Show(1); break;
         }
     }
 
@@ -84,9 +88,18 @@ public class Pet : AutoBase
     {
         switch (Locator.Instance.CountLoveUpgrade.CurrentState)
         {
-            case CountUpgradeButton.CountState.x1: CurrentPrice = _price1; break;
-            case CountUpgradeButton.CountState.x10: CurrentPrice = _price10; break;
-            case CountUpgradeButton.CountState.x100: CurrentPrice = _price100; break;
+            case CountUpgradeButton.CountState.x1: 
+                CurrentPrice = _price1;
+                CurrentPriceText = _price1Text;
+                break;
+            case CountUpgradeButton.CountState.x10: 
+                CurrentPrice = _price10;
+                CurrentPriceText = _price10Text;
+                break;
+            case CountUpgradeButton.CountState.x100: 
+                CurrentPrice = _price100;
+                CurrentPriceText = _price100Text;
+                break;
         }
     }
 
@@ -105,5 +118,10 @@ public class Pet : AutoBase
     {
         base.OnDisable();
         GlobalEvent.OnCostReductionTraining.RemoveListener(UpdatePrice);
+    }
+
+    protected override string TypeUpgradeText()
+    {
+        return LocalizationManager.Localize(TextUtility.Traininig);
     }
 }

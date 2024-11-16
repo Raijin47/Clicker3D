@@ -7,9 +7,9 @@ public class AudioSettings: MonoBehaviour
     [SerializeField] private AudioMixerGroup _mixer;
     [SerializeField] private Slider _sliderMusic;
 
-    private readonly float _defaultMusicVolume = -20;
-    private readonly float _minMusicVolume = -30;
-    private readonly float _offSoundVolume = -80;
+    private const float _defaultMusicVolume = -20;
+    private const float _minMusicVolume = -30;
+    private const float _offSoundVolume = -80;
 
     private readonly string MusicSave = "MusicVolume";
     private readonly string Music = "Music";

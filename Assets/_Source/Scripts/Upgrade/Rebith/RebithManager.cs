@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Assets.SimpleLocalization;
+using System.Collections;
 
 public class RebithManager : UpgradeManagerBase
 {
@@ -8,22 +10,25 @@ public class RebithManager : UpgradeManagerBase
     [SerializeField] private Wallet _wallet;
     [SerializeField] private TextMeshProUGUI[] _currentRewardText;
     [SerializeField] private TextMeshProUGUI _infoReductionStageText;
+    [SerializeField] private TextMeshProUGUI _prestigeText;
     [SerializeField] private GameObject[] _rebirth—onfirmationPanel;
     [SerializeField] private Button _rebithButton;
     [SerializeField] private ParticleSystem _particle;
+    [SerializeField] private GameObject _lockImage;
 
-    [SerializeField] private int _dayToRebith;
+    private const int DayToRebith = 59;
+    private const double BaseReward = 0.05d;
+    private const double IgnoreLevel = 35d;
+    private const double Degree = 2d;
 
-    private const double _baseRewardRebith = 10d;
-    private const double _degreeIncreaseRewardRebith= 1.32d;
+    private double _rewardValue;
 
-    private double _currentDegreeIncreaseRebith;
     private string _currentRewardString;
+
+    private const string PrestigeKey = "Prestige";
 
     public override void Init()
     {
-        _currentDegreeIncreaseRebith = _degreeIncreaseRewardRebith;
-
         GlobalEvent.OnStageChange.AddListener(UpdateUI);
         GlobalEvent.OnReductionLostDays.AddListener(UpdateStageInfo);
         GlobalEvent.OnIncreaseRebithMultiplier.AddListener(UpdateRebithReward);
@@ -33,36 +38,67 @@ public class RebithManager : UpgradeManagerBase
         UpdateUI();
     }
 
+    private void OnEnable()
+    {
+        LocalizationManager.LocalizationChanged += UpdateUI;
+    }
+
+    private void OnDisable()
+    {
+        LocalizationManager.LocalizationChanged -= UpdateUI;
+    }
+
     private void UpdateUI()
     {
-        _rebithButton.interactable = _stage.CurrentStage > _dayToRebith;
+        bool isActive = _stage.CurrentStage > DayToRebith;
+        _rebithButton.interactable = isActive;
+
+        string text = LocalizationManager.Localize(PrestigeKey);
+
+        _prestigeText.text = isActive ? TextUtility.GetBlackText(text) : TextUtility.GetWhiteText(text);
         UpdateRebithReward();
         UpdateStageInfo();
     }
 
     public void RebithButton()
     {
-        _wallet.Rebith += CalculateValue();
-        _rebirth—onfirmationPanel[0].SetActive(false);
-        _rebirth—onfirmationPanel[1].SetActive(false);
-        GlobalEvent.SendRebith();
-
-        if (_particle != null) _particle.Play();
+        _rewardValue = CalculateValue();
+        _wallet.Rebith += _rewardValue;
+        ExecuteRebith();
     }
 
     public void AdditionalReward()
     {
-        _wallet.Rebith += System.Math.Round(CalculateValue() * 1.5f);
+        _rewardValue = System.Math.Round(CalculateValue() * 1.5f);
+        _wallet.Rebith += _rewardValue;
+        ExecuteRebith();
+    }
+
+    private void ExecuteRebith()
+    {
         _rebirth—onfirmationPanel[0].SetActive(false);
         _rebirth—onfirmationPanel[1].SetActive(false);
+        Locator.Instance.Improvement.OnReset();
         GlobalEvent.SendRebith();
 
+        StartCoroutine(PlayRebithProcess());
+    }
+    private readonly WaitForSeconds Interval = new(2f);
+    private IEnumerator PlayRebithProcess()
+    {
         if (_particle != null) _particle.Play();
+
+        SFXController.OnRebithProcess?.Invoke();
+        yield return Interval;
+
+        Locator.Instance.RewardPanel.OpenPanel(2,_rewardValue);
     }
 
     private double CalculateValue()
     {
-        return System.Math.Round(IncreaseValue.CalculateDegree(_stage.CurrentStage, _baseRewardRebith, _currentDegreeIncreaseRebith) * Modifier.PrestigeMultiplier);
+        double Stage = System.Math.Clamp(_stage.CurrentStage - IgnoreLevel, 0, int.MaxValue);
+
+        return System.Math.Round(IncreaseValue.CalculateDegree(Stage, BaseReward, Degree) * Modifier.PrestigeMultiplier);
     }
 
     private void UpdateRebithReward()
@@ -70,7 +106,7 @@ public class RebithManager : UpgradeManagerBase
         _currentRewardString = ConvertNumber.Convert(CalculateValue());
         _currentRewardText[0].text = _currentRewardString;
         _currentRewardText[1].text = _currentRewardString;
-        _currentRewardText[2].text = ConvertNumber.Convert(CalculateValue() / 2);
+        _currentRewardText[2].text = ConvertNumber.Convert(System.Math.Round(CalculateValue() / 2));
     }
 
     private void UpdateStageInfo()

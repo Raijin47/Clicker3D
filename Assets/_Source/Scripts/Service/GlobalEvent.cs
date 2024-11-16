@@ -19,6 +19,7 @@ public class GlobalEvent
     public static UnityEvent OnChangeModifireBonusAds = new();
     public static UnityEvent OnChangeJobIncome = new();
     public static UnityEvent OnChangeCountUpgrade = new();
+    public static UnityEvent OnUpgradeIsland = new();
 
     public static void SendChangeMoney() => OnMoneyChange.Invoke();
     public static void SendChangeDiamonds() => OnDiamondChange.Invoke();

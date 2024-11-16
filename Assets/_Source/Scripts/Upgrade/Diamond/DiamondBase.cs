@@ -9,12 +9,13 @@ public abstract class DiamondBase : UpgradeBase
     protected override void AddListener()
     {
         GlobalEvent.OnDiamondChange.AddListener(CheckInteractableButton);
+        GlobalEvent.OnDiamondChange.AddListener(UpdatePriceText);
     }
 
-    protected override int GetLevel()
+    public override int Level
     {
-        int level = YandexGame.savesData.DiamondLevel[_id];
-        return level;
+        get => YandexGame.savesData.DiamondLevel[_id];
+        set => YandexGame.savesData.DiamondLevel[_id] = value;
     }
 
     protected override bool IsPurchaseAvailable()
@@ -26,11 +27,7 @@ public abstract class DiamondBase : UpgradeBase
     protected override void ExecutePurchase()
     {
         Locator.Instance.Wallet.Diamonds -= _currentPrice;
-    }
-
-    protected override void SetLevel()
-    {
-        YandexGame.savesData.DiamondLevel[_id] = Level;
+        SFXController.OnUpgradeDiamonds?.Invoke();
     }
 
     protected override void PlayParticle()
@@ -42,5 +39,10 @@ public abstract class DiamondBase : UpgradeBase
     protected override double CalculateUpgradePrice()
     {
         return _baseUpgradePrice + Level * _fixedIncreasePrice;
+    }
+
+    protected override string Currency()
+    {
+        return TextUtility.DiamondImg;
     }
 }

@@ -16,6 +16,8 @@
 
         public int[] JobLevel = new int[9];
         public int[] PetLevel = new int[10];
+        public int ClickLevel;
+        public int ImprovementClickLevel;
         public int CurrentJob;
         public int CurrentPet;
 
@@ -28,9 +30,9 @@
         public double Rebith;
         public double Diamonds;
 
+        public int IslandLevel;
         public int[] RebithLevel = new int[9];
         public int[] DiamondLevel = new int[9];
-        public int[] EnchancementLevel = new int[9];
         public bool[] SkinsPurchased = new bool[10];
         public bool[] ColorPurchased = new bool[30];
 
@@ -47,15 +49,18 @@
 
         public int LastLoginDay;
         public bool IsClaimReward;
-        public int DailyLoginInRow;
 
+        public bool IsShowPanel;
+
+        public int StepTutorial;
         public bool IsTutorialComplated;
 
-        // ...
+        public int DailySpinAdsCount;
+        public bool ActiveSpin;
 
         public SavesYG()
         {
-            DailyLoginInRow = 1;
+            Diamonds = 0;
             CurrentSkinEquip = 8;
             CurrentHairColor = 0;
             CurrentEyesColor = 10;
@@ -65,11 +70,8 @@
             ColorPurchased[10] = true;
             ColorPurchased[20] = true;
             CurrentStage = 1;
-            EnchancementLevel[0] = 1;
-#if UNITY_EDITOR
-            Diamonds = 5000;
-            Rebith = 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000d;
-#endif
+            ClickLevel = 1;
+            PetLevel[9] = 1;
         }
     }
 }

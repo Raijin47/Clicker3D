@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Assets.SimpleLocalization;
 
 public abstract class UpgradeBase : MonoBehaviour
 {
@@ -9,51 +10,50 @@ public abstract class UpgradeBase : MonoBehaviour
     [SerializeField] protected TextMeshProUGUI _priceText;
     [SerializeField] protected TextMeshProUGUI _effectText;
     [SerializeField] protected Button _upgradeButton;
-    [SerializeField] private GameObject _textProcess;
-    [SerializeField] private GameObject _textMax;
 
     [SerializeField] protected double _baseUpgradePrice;
     [SerializeField] protected double _baseValue;
     [SerializeField] protected double _fixedIncreaseValue;
     [SerializeField] protected int _maxLevel;
 
+    protected string _currentPriceText;
+
     protected double _currentValue;
     protected double _currentPrice;
     protected double _nextValue;
-    private int _level;
 
-    public int Level 
-    { 
-        protected get => _level;
-        set 
-        {
-            _level = value;
-            _levelText.text = _level.ToString();
-        } 
+    public abstract int Level
+    {
+        get;
+        set;
     }
 
     public void Init()
     {
         _upgradeButton.onClick.AddListener(UpgradeButton);
-        Level = GetLevel();
         AddListener();
         UpdateValue();
+    }
+
+    private void OnEnable()
+    {
+        LocalizationManager.LocalizationChanged += UpdatePriceText;
+    }
+
+    private void OnDisable()
+    {
+        LocalizationManager.LocalizationChanged -= UpdatePriceText;
     }
 
     private void UpgradeButton()
     {
         if (IsPurchaseAvailable())
         {
-            UpgradeLevel();
+            Level++;
             ExecutePurchase();
             UpdateValue();
             PlayParticle();
         }
-    }
-
-    protected virtual void UpgradeLevel()
-    {
-        Level++;
     }
 
     protected abstract void PlayParticle();
@@ -65,11 +65,11 @@ public abstract class UpgradeBase : MonoBehaviour
 
     protected void UpdateValue()
     {
-        SetLevel();
         _currentValue = CalculateUpgradeValue();
         _nextValue = CalculateUpgradeNext();
         _currentPrice = CalculateUpgradePrice();
-        
+        _currentPriceText = ConvertNumber.Convert(_currentPrice);
+
         Execute();
         UpdateUI();
         CheckInteractableButton();
@@ -86,26 +86,40 @@ public abstract class UpgradeBase : MonoBehaviour
 
     protected void UpdateUI()
     {
-        if (Level == _maxLevel)
+        if (Level != _maxLevel) UpdateTextProcess();
+        else UpdateTextMax();
+
+        _levelText.text = Level.ToString();
+        UpdatePriceText();
+    }
+
+    protected void UpdatePriceText()
+    {
+        if (Level != _maxLevel)
         {
-            _textProcess.SetActive(false);
-            _textMax.SetActive(true);
-            UpdateTextMax();
+            _priceText.text = IsPurchaseAvailable() ?
+                TextUtility.GetBlackText(GetPriceText()) :
+                TextUtility.GetWhiteText(GetPriceText());
         }
         else
         {
-            _priceText.text = ConvertNumber.Convert(_currentPrice);
-            UpdateTextProcess();
+            _priceText.text = TextUtility.GetWhiteText(
+                LocalizationManager.Localize(TextUtility.Max));       
         }
     }
 
+    private string GetPriceText()
+    {
+        string text = LocalizationManager.Localize(TextUtility.Improve) + "\n" + Currency() + _currentPriceText;
+        return text;
+    }
+
+    protected abstract string Currency();
     protected abstract double CalculateUpgradePrice();
     protected abstract void Execute();
-    protected abstract int GetLevel();
     protected abstract void AddListener();
     protected abstract void ExecutePurchase();
     protected abstract bool IsPurchaseAvailable();
-    protected abstract void SetLevel();
     protected abstract void UpdateTextMax();
     protected abstract void UpdateTextProcess();
 }

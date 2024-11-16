@@ -4,22 +4,32 @@ using YG;
 
 public class LanguageSettings : MonoBehaviour
 {
+    [SerializeField] private GameObject _panelSelect;
+    [SerializeField] private TutorialManager _tutorialManager;
+
     public void Init()
     {
-        if (YandexGame.savesData.isFirstSession)
+        if(!YandexGame.savesData.IsInitOfflineTimer)
         {
-            LocalizationManager.Language = YandexGame.lang;
+            _panelSelect.SetActive(true);
         }
         else
         {
-            LocalizationManager.Language = YandexGame.savesData.language;
+            _panelSelect.SetActive(false);
+            InitRead();
         }
+    }
+
+    public void InitRead()
+    {
         LocalizationManager.Read();
+        _tutorialManager.Init();
     }
 
     public void SetLanguage(string lang)
     {
         LocalizationManager.Language = lang;
         YandexGame.savesData.language = lang;
+        YandexGame.SaveProgress();
     }
 }

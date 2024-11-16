@@ -106,9 +106,11 @@ public abstract class AutoBaseManager : MonoBehaviour
             _income += _autoBases[i].CurrentIncome;
         }
 
-        _currentIncomeText.text = "+" + ConvertNumber.Convert(_income);
+        _currentIncomeText.text = "+" + ConvertNumber.Convert(_income) + Currency();
         _updateIncomeCoroutine = StartCoroutine(IncomeProcess());
     }
+
+    protected abstract string Currency();
 
     protected void RecalculateAutoBase()
     {
@@ -122,6 +124,7 @@ public abstract class AutoBaseManager : MonoBehaviour
     private void CheckInteractableButton()
     {
         _buttonBuy.interactable = IsPurchaseAvailable();
+        UpdatePriceText();
     }
 
     private bool IsPurchaseAvailable()
@@ -135,7 +138,21 @@ public abstract class AutoBaseManager : MonoBehaviour
         _buyPanel.SetActive(IsNextButtonExists());
 
         _currentPrice = _price[_id];
-        _buyPriceText.text = ConvertNumber.Convert(_currentPrice);
+
+        UpdatePriceText();
+    }
+
+    private void UpdatePriceText()
+    {
+        _buyPriceText.text = IsPurchaseAvailable()? 
+            TextUtility.GetBlackText(PriceText()) : 
+            TextUtility.GetWhiteText(PriceText());
+    }
+
+    private string PriceText()
+    {
+        string text = TextUtility.GoldImg + ConvertNumber.Convert(_currentPrice);
+        return text;
     }
 
     protected virtual bool IsNextButtonExists()

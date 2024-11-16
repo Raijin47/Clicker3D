@@ -12,6 +12,6 @@ public class RebithHealthReduction : RebithBase
 
     protected override void UpdateTextProcess()
     {
-        _effectText.text = _currentValue + TextUtility.PercentAndMore + _nextValue + TextUtility.Percent;
+        _effectText.text = _currentValue + TextUtility.PercentAndMore + TextUtility.GetColorText(_nextValue + TextUtility.Percent);
     }
 }

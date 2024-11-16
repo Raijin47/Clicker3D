@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class HidingPanel : MonoBehaviour
 {
@@ -9,31 +10,21 @@ public class HidingPanel : MonoBehaviour
     [SerializeField] private RectTransform _rectTransform;
     [SerializeField] private Vector2 _hidingPosition;
     [SerializeField] private Vector2 _showPosition;
+    [SerializeField] private Button _button;
 
-    private bool _isShow;
-
-    private void Start()
+    public bool IsShow
     {
-        _isShow = true;
-        Execute(_isShow);
-    }
-    public void ActionButton()
-    {
-        _isShow = !_isShow;
-        Execute(_isShow);
-    }
-
-    private void Execute(bool isShow)
-    {
-        if (isShow)
+        get => YandexGame.savesData.IsShowPanel;
+        set
         {
-            _imageIcon.sprite = _hideSprite;
-            _rectTransform.anchoredPosition = _showPosition;
-        }
-        else
-        {
-            _imageIcon.sprite = _showSprite;
-            _rectTransform.anchoredPosition = _hidingPosition;
+            YandexGame.savesData.IsShowPanel = value;
+            _imageIcon.sprite = value ? _hideSprite : _showSprite;
+            _rectTransform.anchoredPosition = value ? _showPosition : _hidingPosition;
+            SFXController.OnOpenPanel?.Invoke(value);
         }
     }
+
+    private void Start() => _button.onClick.AddListener(() => IsShow = !IsShow);
+
+    public void Init() => IsShow = IsShow;
 }

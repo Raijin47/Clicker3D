@@ -100,23 +100,13 @@ public static class Modifier
     #endregion
 
     #region Rebith
-    private static double _prestigeClickForce;
     private static double _chanceSkipStage;
     private static double _healthReductionModifier;
     private static double _costReductionTraining;
     private static double _costReductionPurchase;
     private static double _jobIncomeModifier;
     private static double _petIncomeModifier;
-
-    public static double PrestigeClickForce
-    {
-        get => _prestigeClickForce;
-        set
-        {
-            _prestigeClickForce = value * 0.01d;
-            GlobalEvent.SendIncreaseClick();
-        }
-    }
+    private static double _islandModirier;
 
     public static double ChanceSkipStage {
         get => _chanceSkipStage;
@@ -175,6 +165,18 @@ public static class Modifier
             GlobalEvent.SendIncreasePetIncome();
         }
     }
+
+    public static double IslandModifier
+    {
+        get => _islandModirier;
+        set
+        {
+            _islandModirier = value * 0.01d;
+            GlobalEvent.OnUpgradeIsland.Invoke();
+        }
+    }
+
+
     #endregion
 
     #region ADs

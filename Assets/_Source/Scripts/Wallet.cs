@@ -8,52 +8,48 @@ public class Wallet : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _diamondsText;
     [SerializeField] private TextMeshProUGUI _rebithText;
 
-    private double _money;
-    private double _diamonds;
-    private double _rebith;
-
     public void Init()
     {
         GlobalEvent.OnRebith.AddListener(OnReset);
 
-        Money = YandexGame.savesData.Money;
-        Diamonds = YandexGame.savesData.Diamonds;
-        Rebith = YandexGame.savesData.Rebith;
+        _moneyText.text = TextUtility.GoldImg + ConvertNumber.Convert(Money);
+        _diamondsText.text = TextUtility.DiamondImg + ConvertNumber.Convert(Diamonds);
+        _rebithText.text = TextUtility.PrestigeImg + ConvertNumber.Convert(Rebith);
     }
 
     public double Money
     {
-        get => _money;
+        get => YandexGame.savesData.Money;
         set
         {
-            _money = value;
-            _moneyText.text = ConvertNumber.Convert(_money);
+            YandexGame.savesData.Money = value;
+            _moneyText.text = TextUtility.GoldImg + ConvertNumber.Convert(Money);
             GlobalEvent.SendChangeMoney();
-            YandexGame.savesData.Money = _money;
+            YandexGame.SaveLocal();
         }
     }
 
     public double Diamonds
     {
-        get => _diamonds;
+        get => YandexGame.savesData.Diamonds;
         set
         {
-            _diamonds = value;
-            _diamondsText.text = ConvertNumber.Convert(_diamonds);
+            YandexGame.savesData.Diamonds = value;
+            _diamondsText.text = TextUtility.DiamondImg + ConvertNumber.Convert(Diamonds);
             GlobalEvent.SendChangeDiamonds();
-            YandexGame.savesData.Diamonds = _diamonds;
+            YandexGame.SaveProgress();
         }
     }
 
     public double Rebith
     {
-        get => _rebith;
+        get => YandexGame.savesData.Rebith;
         set
         {
-            _rebith = value;
-            _rebithText.text = ConvertNumber.Convert(_rebith);
+            YandexGame.savesData.Rebith = value;
+            _rebithText.text = TextUtility.PrestigeImg + ConvertNumber.Convert(Rebith);
             GlobalEvent.SendChangeRebith();
-            YandexGame.savesData.Rebith = _rebith;
+            YandexGame.SaveProgress();
         }
     }
 

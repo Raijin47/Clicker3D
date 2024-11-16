@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Improvement Job 4
   m_EditorClassIdentifier: 
   _name: ImprovementJobName4{0}
+  _sex: M
   _prices:
-  - 0
   - 588000000
   - 16830000000
   - 550000000000
@@ -27,7 +27,7 @@ MonoBehaviour:
   - 1.14e+39
   - 1.71e+54
   - 2.55e+69
-  - 0
+  - 26
   _increasesValue:
   - 1
   - 2

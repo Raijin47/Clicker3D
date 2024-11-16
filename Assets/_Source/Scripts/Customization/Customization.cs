@@ -2,25 +2,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using YG;
 using Assets.SimpleLocalization;
+using TMPro;
 
 public class Customization : MonoBehaviour
 {
     [SerializeField] private Outfit[] _outfits;
-    [SerializeField] private GameObject _purchasedSkinInfo;
-    [SerializeField] private GameObject _buySkinInfo;
     [SerializeField] private Button _skinButton;
     [SerializeField] private Sprite[] _skinIcons;
     [SerializeField] private Material _hairMaterial;
     [SerializeField] private Material _eyesMaterial;
     [SerializeField] private Material _bodyMaterial;
+    [SerializeField] private TextMeshProUGUI _buttonText;
     [SerializeField] private LocalizedText _nameText;
-    [SerializeField] private LocalizedText _infoText;
     [SerializeField] private Image _skinImage;
     [SerializeField] private SkinColor[] _skinColors;
     [SerializeField] private string[] _skinNames;
-    [SerializeField] private int _skinPrice;
-
     [SerializeField] private Texture[] _bodyTextures;
+
+    private const int SkinPrice = 1500;
 
     private int _currentSkinEquip;
     private int _currentHairColor;
@@ -31,8 +30,8 @@ public class Customization : MonoBehaviour
     private readonly int _shaderMainTexture = Shader.PropertyToID("_MainTex");
     private readonly int _shaderMainColor = Shader.PropertyToID("_MainColor");
     private readonly int _shaderHighlight = Shader.PropertyToID("_HighlightColor");
-    private readonly string _infoEquip = "Equip";
-    private readonly string _infoUnequip = "Unequip";
+    private const string Equip = "Equip";
+    private const string Unequip = "Unequip";
 
     public void Init()
     {
@@ -65,14 +64,28 @@ public class Customization : MonoBehaviour
 
         _bodyMaterial.SetTexture(_shaderMainTexture, _bodyTextures[_outfits[_currentSkinEquip].BodyType]);
         YandexGame.savesData.CurrentSkinEquip = _currentSkinID;
+
+        SFXController.OnSelectOutfit?.Invoke();
+    }
+
+    private void OnEnable()
+    {
+        LocalizationManager.LocalizationChanged += UpdateUIState;
+        GlobalEvent.OnDiamondChange.AddListener(UpdateUIState);
+    }
+
+    private void OnDisable()
+    {
+        LocalizationManager.LocalizationChanged -= UpdateUIState;
     }
 
     private void BuyOutfit()
     {
         if (IsPurchaseAvailable())
         {
-            Locator.Instance.Wallet.Diamonds -= _skinPrice;
+            Locator.Instance.Wallet.Diamonds -= SkinPrice;
             YandexGame.savesData.SkinsPurchased[_currentSkinID] = true;
+            SFXController.OnUpgradeDiamonds?.Invoke();
         }
     }
 
@@ -81,6 +94,7 @@ public class Customization : MonoBehaviour
         _currentHairColor = id;
         _hairMaterial.SetColor(_shaderMainColor, _skinColors[_currentHairColor].Color);
         YandexGame.savesData.CurrentHairColor = id;
+        SFXController.OnSelectOutfit?.Invoke();
     }
 
     public void SetBodyColor(int id)
@@ -88,6 +102,7 @@ public class Customization : MonoBehaviour
         _currentBodyColor = id;
         _bodyMaterial.SetColor(_shaderMainColor, _skinColors[_currentBodyColor].Color);
         YandexGame.savesData.CurrentBodyColor = id;
+        SFXController.OnSelectOutfit?.Invoke();
     }
 
     public void SetEyesColor(int id)
@@ -95,6 +110,7 @@ public class Customization : MonoBehaviour
         _currentEyesColor = id;
         _eyesMaterial.SetColor(_shaderHighlight, _skinColors[_currentEyesColor].Color);
         YandexGame.savesData.CurrentEyesColor = id;
+        SFXController.OnSelectOutfit?.Invoke();
     }
 
     public void PreviewButton()
@@ -120,37 +136,45 @@ public class Customization : MonoBehaviour
         _nameText.SetKey(_skinNames[_currentSkinID]);
         _skinImage.sprite = _skinIcons[_currentSkinID];
 
-        if (YandexGame.savesData.SkinsPurchased[_currentSkinID])
+        UpdateUIState();
+    }
+
+    private void UpdateUIState()
+    {
+        if (YandexGame.savesData.SkinsPurchased[_currentSkinID]) Purchased();
+        else NotPurchased();
+    }
+
+    private void Purchased()
+    {
+        if (_currentSkinEquip == _currentSkinID)
         {
-            _buySkinInfo.SetActive(false);
-            _purchasedSkinInfo.SetActive(true);
-
-            if (_currentSkinEquip == _currentSkinID)
-            {
-                _skinButton.interactable = false;
-                _infoText.SetKey(_infoEquip);
-            }
-            else
-            {
-                _skinButton.interactable = true;
-                _infoText.SetKey(_infoUnequip);
-            }
-
-            _skinImage.color = Color.white;
+            _skinButton.interactable = false;
+            _buttonText.text = TextUtility.GetWhiteText(LocalizationManager.Localize(Equip));
         }
         else
         {
-            _buySkinInfo.SetActive(true);
-            _purchasedSkinInfo.SetActive(false);
-            _skinButton.interactable = IsPurchaseAvailable();
-
-            _skinImage.color = Color.black; 
+            _skinButton.interactable = true;
+            _buttonText.text = TextUtility.GetBlackText(LocalizationManager.Localize(Unequip));
         }
+
+        _skinImage.color = Color.white;
+    }
+
+    private void NotPurchased()
+    {
+        _buttonText.text = IsPurchaseAvailable() ?
+            TextUtility.GetBlackText(TextUtility.DiamondImg + SkinPrice):
+            TextUtility.GetWhiteText(TextUtility.DiamondImg + SkinPrice);
+
+        _skinButton.interactable = IsPurchaseAvailable();
+
+        _skinImage.color = Color.black;
     }
 
     private bool IsPurchaseAvailable()
     {
-        bool _isPurchaseAvailable = Locator.Instance.Wallet.Diamonds >= _skinPrice;
+        bool _isPurchaseAvailable = Locator.Instance.Wallet.Diamonds >= SkinPrice;
         return _isPurchaseAvailable;
     }
 

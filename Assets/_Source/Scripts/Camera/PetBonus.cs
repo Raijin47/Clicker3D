@@ -96,8 +96,12 @@ public class PetBonus : MonoBehaviour
 
     private void GetBonus()
     {
-        Locator.Instance.Wallet.Diamonds += DiamondReward();
+        double reward = DiamondReward();
+        Locator.Instance.Wallet.Diamonds += reward;
+        Locator.Instance.RewardPanel.OpenPanel(1, reward);
         _particleDiamond.Play();
+
+        SFXController.OnGetDiamonds?.Invoke();
 
         DestroyBonus();
         _particleGetBonus.Play();

@@ -1,142 +1,30 @@
 Key,ru,en,tr
-EnhancementName0,Привлекательность - Ур.,en,tr
-EnhancementName1,Набор косметики - Ур.,en,tr
-GirlName,Лариэль - ур.,Laryel - lvl.,tr
-GirlDescription,Какое-то описание бабы,en,tr
-PetName0,Джек - Ур.,en,tr
-PetName1,Чип - Ур.,en,tr
-PetName2,Флора - Ур.,en,tr
-PetName3,Винни - Ур.,en,tr
-PetName4,Малина - Ур.,en,tr
-PetName5,Луна - Ур.,en,tr
-PetName6,Карамелька - Ур.,en,tr
-PetName7,Мия - Ур.,en,tr
-PetName8,Скай - Ур.,en,tr
-JobName0,Пончик - Ур.,en,tr
-JobName1,Печеньки - Ур.,en,tr
-JobName2,Конфеты - Ур.,en,tr
-JobName3,Леденцы - Ур.,en,tr
-JobName4,Кексик - Ур.,en,tr
-JobName5,Терамису - Ур.,en,tr
-JobName6,Мармеладки - Ур.,en,tr
-JobName7,Мороженка - Ур.,en,tr
-JobName8,Тортик - Ур.,en,tr
-RebithName0,Бог кликеров - Ур.,en,tr
-RebithName1,Манипуляции на рынке - Ур.,en,tr
-RebithName2,Машина времени - Ур.,en,tr
-RebithName3,Богиня любви - Ур.,en,tr
-RebithName4,До седьмого пота - Ур.,en,tr
-RebithName5,Любовь к животным - Ур.,en,tr
-RebithName6,Подушка на все случа жизни - Ур.,en,tr
-DiamondName0,Любовь реальна? - Ур.,en,tr
-DiamondName1,Помощь богини любви - Ур.,en,tr
-DiamondName2,Машина времени - Ур.,en,tr
-DiamondName3,Сладких сновидений - Ур.,en,tr
-DiamondName4,Какой-то текст - Ур.,en,tr
-DiamondName5,Какой-то текст - Ур.,en,tr
-DiamondName6,Какой-то текст - Ур.,en,tr
-DiamondName7,Какой-то имя - ур.,en,tr
-EnhancementDescription0,Увеличивает силу клика,en,tr
-EnhancementDescription1,Увеличивает шанс критического клика,en,tr
-PetDescription0,"Слегка туповат, но многие считают его милым.",en,tr
-PetDescription1,"Безумный обжора, никакой морковки не напасёшься...",en,tr
-PetDescription2,"Обоятельный котик, особенно когда сходит мимо лотка.",en,tr
-PetDescription3,"Вроде и милый, но он тут только из-за денег.",en,tr
-PetDescription4,"Слишком активный, даже когда спит.",en,tr
-PetDescription5,Любит всех и вся... и рыбку и молоко и много всего вкусного.,en,tr
-PetDescription6,"Лучший друг безумного тусера, но в отличии от него старается не спать на тусах.",en,tr
-PetDescription7,"С виду ужастный, но на самом деле крайне обоятельный кролик.",en,tr
-PetDescription8,Самая активная кошка на районе.,en,tr
-JobDescription0,"Любимое лакомство полицейских, да и не только.",en,tr
-JobDescription1,"Печеньки с шоколадом, что может быть лучше...",en,tr
-JobDescription2,Осторожно!!! Вредно для здоровья - зубы лечить нынче дорого.,en,tr
-JobDescription3,Заебешься сосать,en,tr
-JobDescription4,"Кексики это хорошо, но стоит знать меру.",en,tr
-JobDescription5,"Меньше вреда для зубов, хоть и с шоколадом",en,tr
-JobDescription6,Чёт на жевательном,en,tr
-JobDescription7,Идеальный десерт в жаркую погоду.,en,tr
-JobDescription8,Вкусный тортик с вишенкой.,en,tr
-RebithDescription0,Увеличивает силу клика,en,tr
-RebithDescription1,Снижает стоимость тренировки персонала,en,tr
-RebithDescription2,Вероятность пропустить этап,en,tr
-RebithDescription3,Уменьшение шкалы популярности,en,tr
-RebithDescription4,Увеличивает доход от работы,en,tr
-RebithDescription5,Увеличивает любовную силу питомцев,en,tr
-RebithDescription6,Снижение стоимости покупки сладостей,en,tr
-DiamondDescription0,Увеличивает весь доход,en,tr
-DiamondDescription1,Бонус к валюте престижа,en,tr
-DiamondDescription2,Снижение потери дней при сбросе престижа,en,tr
-DiamondDescription3,Увеличивает время офлайн дохода,en,tr
-DiamondDescription4,Объем офлайн дохода,en,tr
-DiamondDescription5,Длительность бонусов за рекламу,en,tr
-DiamondDescription6,Эффективность буста денег,en,tr
-DiamondDescription7,Эффективность буста любви,en,tr
-HelpTitle0,Улучшения,en,tr
-HelpTitle1,Бонусы,en,tr
-HelpTitle2,Питомцы,en,tr
-HelpTitle3,Сладости,en,tr
-HelpTitle4,Престиж,en,tr
-HelpTitle5,Магазин,en,tr
-Help0,Базовые улучшения. Cбрасываются после престижа.,en,tr
-Help1,"Рекламные бонусы позволяют получить преимущество за просмотр рекламы, более того каждый просмотр рекламы в игре даёт дополнительный множитель для всего дохода.",,en
-Help2,Питомцы милые и красивые за счёт чего позволяют быстрее завоевывать сердца фанатов. Сбрасываються после престижа.,en,tr
-Help3,Акции позволяют получать дополнительный пассивный доход. Сбрасывается после престижа.,en,tr
-Help4,"Начните всё сначала, cбрасывает весь прогрес - взамен даёт слёзы богини.",en,tr
-Help5,Магазин постоянных улучшений за алмазы. Не сбрасывается после престижа!,en,tr
-Skin0,Купальник,Skin 0,tr
-Skin1,Чирлидер,Skin 1,tr
-Skin2,Спортивный,Skin 2,tr
-Skin3,Школьный купальник,Skin 3,tr
-Skin4,Бизнес леди,Skin 4,tr
-Skin5,Хулиганка,Skin 5,tr
-Skin6,Официантка,Skin 6,tr
-Skin7,Стильная,Skin 7,tr
-Skin8,Повседневная,Skin 8,tr
-PetTitle,Питомцы,en,tr
-JobTitle,Сладости,en,tr
-TitleEnhancement,Базовые улучшения,en,tr
-TitleAdsBonus,Рекламные бонусы,en,tr
-Get,Получить,en,tr
-Equip,Одето,en,tr
-Unequip,Одеть,Clothe,tr
-ColorHair,Цвет волос,Hair color,tr
-ColorEye,Цвет глаз,Eye color,tr
-ColorBody,Цвет кожи,En,tr
-GetGlory,Получите звёзды славы!,Get Glory Stars!,tr
-PrestigeDes,"Поверните время вспять, чтобы сбросить прогресс. Получите Звезды Славы для постоянных улучшений.",en,tr
-PrestigeWarning,Улучшения с помощью драгоценных камней не будут сброшены.,en,tr
-PrestigeReward,Награда Престижа,en,tr
-GloryStars,Звёзды славы,en,tr
-StartingDay,Дата начала,en,tr
-Close,Закрыть,Close,tr
-SpecialOffer,Специальное предложение!,Special Offer!,tr
-PrestigeAdsDes,"Вы можете получить дополнительные Звёзды Славы, посмотрев короткую рекламу!",en,tr
-AdditionalReward,Дополнительная награда,en,tr
-Accept,Принять,en,tr
-Reject,Отклонить,Reject,tr
-Settings,Настройки,Settings,tr
-Language,Язык Системы,en,tr
-Audio,Настройки звука,en,tr
-OfflineEarningsTitle,Офлайн Заработок,Offline Earnings,tr
-OfflineEarningsSub,Пока вас не было вы заработали!,While you were away you earned!,tr
-OfflineEarningsDes,Максимальная Офлайн Награда,Offline Max Reward,tr
-Receive,Забрать,Receive,tr
-PowerSavingMode,Режим энергосбережения,Power Saving Mode,tr
-ReceiveAds,Забрать х2,Receive x2,tr
-ReceiveDaily,Забрать!,Receive!,tr
-DailyReward,Ежедневная награда,en,tr
-DailyRewardSub,Заходи каждый день!,en,tr
-Level,Ур.,Lv.,tr
-Prestige,Престиж,Prestige,tr
-PrestigeDescription,"Расти быстрее и сильнее, используя Престиж!","Grow faster, stronger by utilizing Prestige!",tr
-PrestigeGet,Текущие количество Слёз богини,Tears of the Goddess to get,tr
-DailyLoginInRow{0},Подряд - {0},Login - {0},tr
-OfflineReward{0},За время вашего отсутствия вы заработали {0},ds{0},tr
-Seconds{0},{0} секунд,{0} seconds,tr
-Sec,/сек.,/sec.,tr
-ShopTitle,Магазин,Shop,tr
-Day{0},День {0},Day {0},tr
-Max,МАКС.,MAX.,tr
-Unlock,Открыть,Unlock,tr
-Rating,Рейтинг,Rating,tr
-BestPlayers,Лучшие Игроки!,Best Players!,tr
+RewardObtained,Награда получена!,Reward Obtained!,Ödül Alındı!
+PetTitle,Персонал острова,Island staff,Ada personeli
+JobTitle,Сладости,Sweets,Tatlı
+TitleAdsBonus,Рекламные бонусы,Advertising bonuses,Promosyon Bonusları
+GetGlory,Получите Звёзды Славы!,Get Glory Stars!,Zafer Yıldızları Alın!
+PrestigeDes,"Пройдите ритуал, чтобы сбросить прогресс. Получите Звезды Славы для постоянных улучшений.",Go through the ritual to reset your progress. Get the Stars of Fame for constant improvements.,İlerlemenizi sıfırlamak için ritüelden geçin. Sürekli iyileştirmeler için Şöhret Yıldızlarını alın.
+PrestigeWarning,Улучшения с помощью драгоценных алмазов не будут сброшены.,Upgrades with precious diamonds will not be reset.,Değerli elmaslarla yapılan yükseltmeler sıfırlanmayacaktır.
+PrestigeReward,Награда Ритуала,The Reward of the Ritual,Ritüelin Ödülü
+GloryStars,Звёзды Славы,Stars of Glory,Zafer Yıldızları
+StartingDay,Дата начала,Starting date,Başlangıç tarihi
+SpecialOffer,Специальное предложение!,Special Offer!,Özel teklif!
+PrestigeAdsDes,"Вы можете получить дополнительные Звёзды Славы, посмотрев короткую рекламу!",You can get additional Stars of Fame by watching a short commercial!,Kısa bir reklam izleyerek ek Şöhret Yıldızları elde edebilirsiniz!
+AdditionalReward,Дополнительная награда,Additional reward,Ek ödül
+Settings,Настройки,Settings,Ayarlar
+Language,Язык Системы,Language System,Dil Sistemi
+Audio,Настройки звука,Sound Settings,Ses Ayarları
+OfflineEarningsTitle,Офлайн Заработок,Offline Earnings,Çevrimdışı Kazançlar
+OfflineEarningsSub,"Вас не было, но вы заработали!",While you were away you earned!,Sen yokken kazandın!
+OfflineEarningsDes,Максимальная Офлайн Награда,Offline Max Reward,Çevrimdışı Maksimum Ödül
+PowerSavingMode,Режим энергосбережения,Power Saving Mode,Güç Tasarrufu Modu
+DailyReward,Ежедневная награда,Daily Reward,Günlük Ödül
+DailyRewardSub,Заходи каждый день!,Come in every day!,Her gün gel!
+Level,Ур.,Lv.,Sev.
+DailyLoginInRow{0},Подряд - {0},Login - {0},Giriş - {0}
+OfflineReward{0},За время вашего отсутствия вы заработали {0},"During your absence, you have earned {0}","Yokluğun sırasında, kazandın {0}"
+Seconds{0},{0} секунд,{0} seconds,{0} saniyeler
+Day{0},День {0},Day {0},Gün {0}
+Rating,Рейтинг,Rating,Değerlendirme
+BestPlayers,Лучшие Игроки!,Best Players!,En iyi oyuncular!

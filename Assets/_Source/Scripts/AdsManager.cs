@@ -8,30 +8,38 @@ public class AdsManager : MonoBehaviour
 	[SerializeField] private Customization _customization;
 	[SerializeField] private RebithManager _rebithManager;
 	[SerializeField] private OfflineReward _offlineReward;
+	[SerializeField] private AdsReward _adsReward;
 	[SerializeField] private BonusBase[] _timeBonuses;
 	[SerializeField] private TextMeshProUGUI _adsBonusText;
 	[SerializeField] private Image _fillImage;
-	[SerializeField] private double _adsModifier;
+	[SerializeField] private RouletteSpin _roulette;
 
-	private readonly double _increasePercent = 1.5;
-	private readonly double _increaseEveryLevel = 10;
+	private const double _adsModifier = 10;
+	private const double _increasePercent = 1.1;
+	private const double _increaseEveryLevel = 10;
 
 	private void OnEnable() => YandexGame.RewardVideoEvent += Rewarded;
 	private void OnDisable() => YandexGame.RewardVideoEvent -= Rewarded;
 
-    private int GetAdsModifier()
+
+	private int Level
     {
-		return YandexGame.savesData.AdsLevel;
+		get => YandexGame.savesData.AdsLevel;
+		set
+        {
+			YandexGame.savesData.AdsLevel = value;
+			YandexGame.SaveProgress();
+			UpdateAdsModifier();
+		}
     }
 
-    private void SetAdsModifier(int level)
+    private void UpdateAdsModifier()
     {
-		YandexGame.savesData.AdsLevel = level;
-		Modifier.ADsBoost = YandexGame.savesData.AdsLevel * _adsModifier * System.Math.Pow(_increasePercent, System.Math.Floor(level / _increaseEveryLevel));
+		Modifier.ADsBoost = Level * _adsModifier * System.Math.Pow(_increasePercent, System.Math.Floor(Level / _increaseEveryLevel));
 		
-		_adsBonusText.text = ConvertNumber.Convert(YandexGame.savesData.AdsLevel * _adsModifier * System.Math.Pow(_increasePercent, System.Math.Floor(level / _increaseEveryLevel))) + "%";
+		_adsBonusText.text = ConvertNumber.Convert(YandexGame.savesData.AdsLevel * _adsModifier * System.Math.Pow(_increasePercent, System.Math.Floor(Level / _increaseEveryLevel))) + "%";
 
-		double a = level / _increaseEveryLevel;
+		double a = Level / _increaseEveryLevel;
 
 		float b = (float)(a - System.Math.Floor(a));
 
@@ -43,7 +51,7 @@ public class AdsManager : MonoBehaviour
 		for (int i = 0; i < _timeBonuses.Length; i++)
 			_timeBonuses[i].Init();
 
-        SetAdsModifier(YandexGame.savesData.AdsLevel);
+		UpdateAdsModifier();
 	}
 
 	private void Rewarded(int id)
@@ -55,9 +63,11 @@ public class AdsManager : MonoBehaviour
             case 32: _timeBonuses[1].Reward(); break;
             case 35: _rebithManager.AdditionalReward(); break;
 			case 36: _offlineReward.GetReward(true); break;
+			case 37: _adsReward.ClosePunel(true); break;
+			case 38: _roulette.AdsReward(); break;
 		}
 
-        SetAdsModifier(GetAdsModifier() + 1);
+		Level++;
 	}
 
 	public void OpenRewardAd(int id)

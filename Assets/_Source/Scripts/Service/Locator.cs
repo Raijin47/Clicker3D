@@ -18,6 +18,8 @@ public class Locator : MonoBehaviour
     [SerializeField] private ImprovementManager _improvementManager;
     [SerializeField] private CountUpgradeButton _countUpgradeMoney;
     [SerializeField] private CountUpgradeButton _countUpgradeLove;
+    [SerializeField] private RewardPanel _rewardPanel;
+
     private void OnEnable() => YandexGame.GetDataEvent += GetData;
     private void OnDisable() => YandexGame.GetDataEvent -= GetData;
     private void Awake()
@@ -41,7 +43,7 @@ public class Locator : MonoBehaviour
     public Camera Camera => _camera;
     public RebithManager Rebith => _rebithManager;
     public ImprovementManager Improvement => _improvementManager;
-
+    public RewardPanel RewardPanel => _rewardPanel;
     public CountUpgradeButton CountLoveUpgrade => _countUpgradeLove;
     public CountUpgradeButton CountMoneyUpgrade => _countUpgradeMoney;
 

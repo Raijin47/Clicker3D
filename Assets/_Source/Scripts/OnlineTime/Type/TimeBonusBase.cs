@@ -4,13 +4,6 @@ public abstract class TimeBonusBase : BonusBase
 
     protected abstract void Execute();
 
-    public override void Init()
-    {
-        UpdateTimeUI();
-        base.Init();
-        GlobalEvent.OnChangeBonusDurationTime.AddListener(UpdateTimeUI);
-    }
-
     protected override int GetTime()
     {
         return (int)(Modifier.BoostDurationTime);
@@ -20,6 +13,7 @@ public abstract class TimeBonusBase : BonusBase
     {
         base.ShowInfo();
         _isActive = false;
+        UpdateUI();
         Execute();
     }
 
@@ -36,11 +30,8 @@ public abstract class TimeBonusBase : BonusBase
         Execute();
     }
 
-    protected abstract void UpdateUI();
-
-
-    protected void UpdateTimeUI()
+    protected virtual void UpdateUI()
     {
-        //_textTime.SetValue(GetTime().ToString());
+        if (_timeBonusService.IsActiveTimer) return;
     }
 }

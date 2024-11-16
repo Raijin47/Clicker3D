@@ -13,21 +13,21 @@ MonoBehaviour:
   m_Name: Improvement Pet 5
   m_EditorClassIdentifier: 
   _name: ImprovementPetName5{0}
+  _sex: F
   _prices:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 3980000000000
+  - 1070000000000000
+  - 1.16e+18
+  - 1.25e+21
+  - 1.36e+24
+  - 1.47e+27
+  - 1.59e+30
+  - 1.73e+33
+  - 1.87e+36
+  - 2.2e+42
+  - 3.28e+57
+  - 4.91e+72
+  - 37
   _increasesValue:
   - 1
   - 2

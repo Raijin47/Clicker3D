@@ -46,4 +46,9 @@ public class PetsManager : AutoBaseManager
     {
         return _id < _autoBases.Length - 1;
     }
+
+    protected override string Currency()
+    {
+        return TextUtility.LoveImg;
+    }
 }

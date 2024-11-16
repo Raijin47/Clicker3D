@@ -11,7 +11,7 @@ public class ImprovementJob : ImprovementBase
 
     protected override void Localize()
     {
-        string Grade = LocalizationManager.Localize(TextUtility.JobGrade + _currentGrade);
+        string Grade = LocalizationManager.Localize(TextUtility.Grade + _data.Sex + _nextGrade);
         _titleName.text = LocalizationManager.Localize(_data.Name, Grade);
 
         string Name = LocalizationManager.Localize(TextUtility.ImprovementJobDesName + _id);
@@ -19,7 +19,7 @@ public class ImprovementJob : ImprovementBase
         string[] Args = new[]
         {
             TextUtility.GetColorText(Name),
-            TextUtility.GetColorText(_data.IncreasesValue[_currentGrade].ToString())
+            TextUtility.GetColorText(_data.IncreasesValue[_nextGrade].ToString())
         };
 
         _descriptionText.text = LocalizationManager.Localize(TextUtility.ImprovementJobDes, Args);

@@ -7,6 +7,7 @@ public class TimeBonusLove : TimeBonusBase
 
     protected override void UpdateUI()
     {
-        _textValue.text = TextUtility.Multiply + Modifier.AdsBoostLove;
+        base.UpdateUI();
+        _textValue.text = TextUtility.GetBlackText(TextUtility.Multiply + Modifier.AdsBoostLove + TextUtility.LoveImg);
     }
 }

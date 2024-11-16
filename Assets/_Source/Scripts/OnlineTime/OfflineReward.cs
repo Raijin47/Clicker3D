@@ -15,9 +15,8 @@ public class OfflineReward : MonoBehaviour
     [SerializeField] private JobsManager _jobsManager;
     [SerializeField] private PetsManager _petsManager;
     [SerializeField] private GameObject _panelReward;
-    [SerializeField] private DailyReward _dailyReward;
     private OfflineRewardService _offlineRewardService;
-    private WaitForSeconds _interval = new WaitForSeconds(10);
+    private WaitForSeconds _interval = new(10);
     private bool _isInitOfflineTimer;
     private double _offlineRewardMoney;
     private double _offlineRewardHeart;
@@ -63,7 +62,6 @@ public class OfflineReward : MonoBehaviour
         else
         {
             YG.YandexGame.savesData.IsInitOfflineTimer = true;
-            _dailyReward.Init();
         }
 
         StartCoroutine(SaveTimeCoroutine());
@@ -81,7 +79,6 @@ public class OfflineReward : MonoBehaviour
         Locator.Instance.Health.CurrentHealth += _offlineRewardHeart;
 
         _panelReward.SetActive(false);
-        _dailyReward.Init();
     }
 
     private IEnumerator SaveTimeCoroutine()

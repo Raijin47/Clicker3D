@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: fx_circle_line02
-  m_Shader: {fileID: 4800000, guid: 23794b75ed2194bc68866806484e9b7e, type: 3}
+  m_Shader: {fileID: 4800000, guid: 2d1cdc9f7f07445d9a8161c284764c69, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4

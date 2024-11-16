@@ -8,12 +8,9 @@ public abstract class BonusBase : MonoBehaviour
 {
     [SerializeField] private int _id;
     [SerializeField] private Button _button;
-    [SerializeField] private GameObject _timerObject;
-    [SerializeField] private GameObject _infoPanel;
-    [SerializeField] private TextMeshProUGUI _textTimer;
     [SerializeField] protected TextMeshProUGUI _textValue;
 
-    private TimeBonusService _timeBonusService;
+    protected TimeBonusService _timeBonusService;
     private Coroutine _updateTimerCoroutine;
 
     private void Awake()
@@ -37,7 +34,7 @@ public abstract class BonusBase : MonoBehaviour
     {
         while (_timeBonusService.IsActiveTimer)
         {
-            _textTimer.text = _timeBonusService.TimeLeft();
+            _textValue.text = TextUtility.GetWhiteText(_timeBonusService.TimeLeft());
 
             if (_timeBonusService.CheckTimerEnded())
             {
@@ -80,15 +77,11 @@ public abstract class BonusBase : MonoBehaviour
     protected virtual void ShowInfo()
     {
         _button.interactable = true;
-        _infoPanel.SetActive(true);
-        _timerObject.SetActive(false);
     }
 
     protected virtual void ShowTimer()
     {
         _button.interactable = false;
-        _infoPanel.SetActive(false);
-        _timerObject.SetActive(true);
     }
 
     protected abstract int GetTime();

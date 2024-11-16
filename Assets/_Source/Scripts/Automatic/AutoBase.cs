@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using Assets.SimpleLocalization;
 
 public abstract class AutoBase : MonoBehaviour
 {
@@ -22,6 +23,11 @@ public abstract class AutoBase : MonoBehaviour
     private const double _degreeIncreasePrice = 1.15;
     protected const double _increasePercent = 1.5;
 
+    protected string _currentPriceText;
+    protected string _price1Text;
+    protected string _price10Text;
+    protected string _price100Text;
+
     protected double _currentIncome;
     protected double _currentPrice;
     private int _level;
@@ -33,22 +39,37 @@ public abstract class AutoBase : MonoBehaviour
         {
             _currentIncome = Math.Round(value);
 
-            _incomeText.text = ConvertNumber.Convert(_currentIncome) + TextUtility.MoreSign + TextUtility.GetColorText(ConvertNumber.Convert(NextIncome(_level + 1)));
+            _incomeText.text = ConvertNumber.Convert(_currentIncome) + TextUtility.MoreSign + TextUtility.GetColorText(ConvertNumber.Convert(GetNextIncome()));
         }
     }
 
-    protected abstract double NextIncome(int level);
-
+    protected abstract double GetNextIncome();
+    protected string CurrentPriceText
+    {
+        get => _currentPriceText;
+        set
+        {
+            _currentPriceText = value;
+            UpdatePriceText();
+        }
+    }
     protected double CurrentPrice
     {
         get => _currentPrice;
         set
         {
             _currentPrice = Math.Round(value);
-            _priceText.text = ConvertNumber.Convert(_currentPrice);
             CheckInteractableButton();
         }
     }
+
+    private void UpdatePriceText()
+    {
+        string text = TypeUpgradeText() + "\n" + TextUtility.GoldImg + CurrentPriceText;
+        _priceText.text = IsPurchaseAvailable()? TextUtility.GetBlackText(text) : TextUtility.GetWhiteText(text);
+    }
+
+    protected abstract string TypeUpgradeText();
 
     public int Level
     {
@@ -86,6 +107,7 @@ public abstract class AutoBase : MonoBehaviour
     {
         GlobalEvent.OnMoneyChange.AddListener(CheckInteractableButton);
         GlobalEvent.OnChangeCountUpgrade.AddListener(SwitchPrice);
+        LocalizationManager.LocalizationChanged += UpdatePriceText;
         _buttonUpgrade.onClick.AddListener(UpgradeButton);
     }
 
@@ -93,6 +115,7 @@ public abstract class AutoBase : MonoBehaviour
     {
         GlobalEvent.OnMoneyChange.RemoveListener(CheckInteractableButton);
         GlobalEvent.OnChangeCountUpgrade.RemoveListener(SwitchPrice);
+        LocalizationManager.LocalizationChanged -= UpdatePriceText;
         _buttonUpgrade.onClick.RemoveListener(UpgradeButton);
     }
 
@@ -102,9 +125,9 @@ public abstract class AutoBase : MonoBehaviour
         double value = 0;
 
         value += Math.Round(IncreaseValue.Calculate(currentLevel, _basePrice, _degreeIncreasePrice) * CostReduction());
-        currentLevel++;
 
         _price1 = Math.Round(value);
+        _price1Text = ConvertNumber.Convert(_price1);
 
         for (int i = 0; i < 9; i++)
         {
@@ -113,14 +136,16 @@ public abstract class AutoBase : MonoBehaviour
         }
 
         _price10 = Math.Round(value);
+        _price10Text = ConvertNumber.Convert(_price10);
 
-        for (int i = 0; i < 89; i++)
+        for (int i = 0; i < 90; i++)
         {
             currentLevel++;
             value += Math.Round(IncreaseValue.Calculate(currentLevel, _basePrice, _degreeIncreasePrice) * CostReduction());
         }
 
         _price100 = Math.Round(value);
+        _price100Text = ConvertNumber.Convert(_price100);
 
         SwitchPrice();
     }
@@ -131,7 +156,7 @@ public abstract class AutoBase : MonoBehaviour
     protected abstract void UpdateLevel();
     public abstract void GetCurrentIncome();
     protected abstract void CalculateIncome();
-
+    protected abstract double GetValue(int level);
     
     public void UpgradeButton()
     {
@@ -141,6 +166,7 @@ public abstract class AutoBase : MonoBehaviour
             UpdateLevel();
             GetCurrentIncome();
             CalculateIncome();
+            SFXController.OnUpgradeMoney?.Invoke();
             Locator.Instance.Particle.GoldTransform.position = _buttonUpgrade.transform.position;
             Locator.Instance.Particle.GoldParticle.Play();
         }
@@ -149,6 +175,7 @@ public abstract class AutoBase : MonoBehaviour
     private void CheckInteractableButton()
     {
         _buttonUpgrade.interactable = IsPurchaseAvailable();
+        UpdatePriceText();
     }
 
     private bool IsPurchaseAvailable()

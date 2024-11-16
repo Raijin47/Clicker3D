@@ -13,21 +13,21 @@ MonoBehaviour:
   m_Name: Improvement Pet 8
   m_EditorClassIdentifier: 
   _name: ImprovementPetName8{0}
+  _sex: F
   _prices:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 4.93e+19
+  - 1.32e+22
+  - 1.43e+25
+  - 1.55e+28
+  - 1.68e+31
+  - 1.82e+34
+  - 1.97e+37
+  - 2.1e+40
+  - 2.32e+43
+  - 2.72e+49
+  - 4.06e+64
+  - 6.07e+79
+  - 40
   _increasesValue:
   - 1
   - 2

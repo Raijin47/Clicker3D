@@ -204,27 +204,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prestige
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 448
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed85d4c002816c34c88884f294806383
-      internalID: -522847885
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Upgrade
       rect:
         serializedVersion: 2
@@ -270,8 +249,8 @@ TextureImporter:
       name: Pet
       rect:
         serializedVersion: 2
-        x: 256
-        y: 256
+        x: 384
+        y: 384
         width: 128
         height: 128
       alignment: 0
@@ -283,27 +262,6 @@ TextureImporter:
       bones: []
       spriteID: e7009cb8ed11cff409dd4b8747a00bde
       internalID: 966558300
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gold
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 320
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7e5a1f9441a05e147a0c0e69b8bfccc1
-      internalID: -1067360769
       vertices: []
       indices: 
       edges: []
@@ -375,8 +333,8 @@ TextureImporter:
       name: Show
       rect:
         serializedVersion: 2
-        x: 448
-        y: 320
+        x: 64
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -396,8 +354,8 @@ TextureImporter:
       name: Ads
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 256
+        y: 256
         width: 128
         height: 128
       alignment: 0
@@ -414,31 +372,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bonus
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58185dab1c150404bb1465e87becd8aa
-      internalID: 1324359368
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Square
       rect:
         serializedVersion: 2
-        x: 287
+        x: 286
         y: 3
         width: 2
         height: 2
@@ -477,32 +414,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Diamond
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 384
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be055633bb4ca1347a7c94b422aca8ff
-      internalID: -789209435
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Hide
       rect:
         serializedVersion: 2
-        x: 448
-        y: 384
+        x: 0
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -606,8 +522,8 @@ TextureImporter:
       name: Preview
       rect:
         serializedVersion: 2
-        x: 386
-        y: 237
+        x: 389
+        y: 298
         width: 44
         height: 81
       alignment: 0
@@ -627,8 +543,8 @@ TextureImporter:
       name: Next
       rect:
         serializedVersion: 2
-        x: 432
-        y: 237
+        x: 438
+        y: 298
         width: 44
         height: 81
       alignment: 0
@@ -666,11 +582,32 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Help
+      name: Scale
       rect:
         serializedVersion: 2
-        x: 448
-        y: 448
+        x: 0
+        y: 0
+        width: 256
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8aab7668e514984e96adf0a5d02c009
+      internalID: 1564160409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prestige
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -680,8 +617,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a8bbd466523e4a4ab5a04d87e34e7c0
-      internalID: -550398421
+      spriteID: 3b0b636b013e0a949a1edd2adf5787b6
+      internalID: 1483081911
       vertices: []
       indices: 
       edges: []
@@ -713,10 +650,11 @@ TextureImporter:
       Mask: 627691271
       Next: 1072719277
       Pet: 966558300
-      Prestige: -522847885
+      Prestige: 1483081911
       Preview: 1554973131
       PunelBase: -1766508717
       Rebith: 1347802459
+      Scale: 1564160409
       Setting: -702125155
       Shop: 763397455
       Show: -1002214779

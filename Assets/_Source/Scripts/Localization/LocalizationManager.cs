@@ -33,7 +33,7 @@ namespace Assets.SimpleLocalization
 		/// </summary>
         public static void AutoLanguage()
         {
-            Language = "ru";
+            Language = YG.YandexGame.savesData.language;
         }
 
 		/// <summary>

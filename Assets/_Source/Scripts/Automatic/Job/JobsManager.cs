@@ -16,6 +16,7 @@ public class JobsManager : AutoBaseManager
     {
         base.CalculateIncome();
         GlobalEvent.SendChangeJobIncome();
+        GlobalEvent.SendIncreaseClick();
     }
 
     protected override void GetIncome()
@@ -26,5 +27,10 @@ public class JobsManager : AutoBaseManager
     protected override void SaveAuto()
     {
         YandexGame.savesData.CurrentJob = _id;
+    }
+
+    protected override string Currency()
+    {
+        return TextUtility.GoldImg;
     }
 }
